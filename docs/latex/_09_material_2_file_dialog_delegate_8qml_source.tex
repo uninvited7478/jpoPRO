@@ -1,0 +1,68 @@
+\doxysection{File\+Dialog\+Delegate.\+qml}
+\hypertarget{_09_material_2_file_dialog_delegate_8qml_source}{}\label{_09_material_2_file_dialog_delegate_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Dialogs/quickimpl/qml/+Material/FileDialogDelegate.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Dialogs/quickimpl/qml/+Material/FileDialogDelegate.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2021\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00005}00005\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00006}00006\ import\ QtQuick.Controls.Material}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00007}00007\ import\ QtQuick.Controls.Material.impl}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00008}00008\ import\ QtQuick.Dialogs.quickimpl\ as\ DialogsQuickImpl}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00010}00010\ DialogsQuickImpl.FileDialogDelegate\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00011}00011\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00013}00013\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00015}00015\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding,}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitIndicatorHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00019}00019\ \ \ \ \ padding:\ 16}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00020}00020\ \ \ \ \ verticalPadding:\ 8}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00021}00021\ \ \ \ \ spacing:\ 16}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00023}00023\ \ \ \ \ icon.width:\ 16}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00024}00024\ \ \ \ \ icon.height:\ 16}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00025}00025\ \ \ \ \ icon.color:\ enabled\ ?\ Material.foreground\ :\ Material.hintTextColor}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00026}00026\ \ \ \ \ icon.source:\ "{}qrc:/qt-\/project.org/imports/QtQuick/Dialogs/quickimpl/images/"{}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ +\ (fileIsDir\ ?\ "{}folder"{}\ :\ "{}file"{})\ +\ "{}-\/icon-\/square.png"{}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00029}00029\ \ \ \ \ file:\ fileUrl}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00031}00031\ \ \ \ \ required\ property\ int\ index}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00032}00032\ \ \ \ \ required\ property\ string\ fileName}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00033}00033\ \ \ \ \ required\ property\ url\ fileUrl}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00034}00034\ \ \ \ \ required\ property\ double\ fileSize}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00035}00035\ \ \ \ \ required\ property\ date\ fileModified}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00036}00036\ \ \ \ \ required\ property\ bool\ fileIsDir}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00038}00038\ \ \ \ \ required\ property\ int\ fileDetailRowWidth}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00040}00040\ \ \ \ \ contentItem:\ FileDialogDelegateLabel\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ delegate:\ control}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ fileDetailRowTextColor:\ control.Material.hintTextColor}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ fileDetailRowWidth:\ control.fileDetailRowWidth}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00046}00046\ \ \ \ \ background:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ implicitHeight:\ control.Material.delegateHeight}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ color:\ control.highlighted\ ?\ Color.transparent(control.Material.accentColor,\ 0.08)\ :\ "{}transparent"{}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ Ripple\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ parent.width}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ parent.height}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ clip:\ visible}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ pressed:\ control.pressed}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ anchor:\ control}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ active:\ control.down\ ||\ control.visualFocus\ ||\ control.hovered}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.highlighted\ ?\ control.Material.highlightedRippleColor\ :\ control.Material.rippleColor}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_delegate_8qml_source_l00062}00062\ \}}
+
+\end{DoxyCode}

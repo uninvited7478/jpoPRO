@@ -1,0 +1,110 @@
+\doxysection{test\+\_\+data\+\_\+manager.\+cpp}
+\hypertarget{test__data__manager_8cpp_source}{}\label{test__data__manager_8cpp_source}\index{tests/test\_data\_manager.cpp@{tests/test\_data\_manager.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <QtTest/QtTest>}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../data\_manager.h"{}}\ \textcolor{comment}{//\ Ścieżka\ do\ data\_manager.h\ w\ głównym\ katalogu}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <QTemporaryFile>}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <QJsonDocument>}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00007}\mbox{\hyperlink{class_test_data_manager}{00007}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_data_manager}{TestDataManager}}\ :\ \textcolor{keyword}{public}\ QObject\ \{}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00008}00008\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00010}00010\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordtype}{void}\ initTestCase()\ \{}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Inicjalizacja\ przed\ wszystkimi\ testami}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00013}00013\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordtype}{void}\ cleanupTestCase()\ \{}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sprzątanie\ po\ wszystkich\ testach}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00017}00017\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{void}\ testSaveToFile()\ \{}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_data_manager}{DataManager}}\ dm;}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ QSignalSpy\ saveSuccessSpy(\&dm,\ \&\mbox{\hyperlink{class_data_manager_a9b792162b823961d0f8e921b1743a8ef}{DataManager::saveSuccess}});}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ QSignalSpy\ saveErrorSpy(\&dm,\ \&\mbox{\hyperlink{class_data_manager_ab360df367c6a36fa1fef90009e6d58d6}{DataManager::saveError}});}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Przygotuj\ dane\ testowe}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ QJsonArray\ data\ =\ \{\ QJsonObject\{\{\textcolor{stringliteral}{"{}key"{}},\ \textcolor{stringliteral}{"{}value"{}}\}\}\ \};}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ QTemporaryFile\ tempFile;}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ QVERIFY(tempFile.open());}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ zapisu}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ dm.\mbox{\hyperlink{class_data_manager_adb07ac99bfd2139a3125280cf44e9b99}{saveToFile}}(data,\ tempFile.fileName());}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sprawdź,\ czy\ sygnał\ sukcesu\ został\ wyemitowany}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ QCOMPARE(saveSuccessSpy.count(),\ 1);}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ QCOMPARE(saveErrorSpy.count(),\ 0);}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sprawdź\ zawartość\ pliku}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ tempFile.seek(0);}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ QByteArray\ fileContent\ =\ tempFile.readAll();}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ QJsonDocument\ doc\ =\ QJsonDocument::fromJson(fileContent);}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ QVERIFY(!doc.isNull());}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ QCOMPARE(doc.array(),\ data);}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{void}\ testLoadFromFile()\ \{}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_data_manager}{DataManager}}\ dm;}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ QSignalSpy\ loadSuccessSpy(\&dm,\ \&\mbox{\hyperlink{class_data_manager_ae143e1a31d2a40145b1bfc946b6bfe5d}{DataManager::loadSuccess}});}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ QSignalSpy\ loadErrorSpy(\&dm,\ \&\mbox{\hyperlink{class_data_manager_a2d46f8584b720161986549b2ed8e58b5}{DataManager::loadError}});}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Przygotuj\ plik\ z\ danymi}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ QJsonArray\ data\ =\ \{\ QJsonObject\{\{\textcolor{stringliteral}{"{}key"{}},\ \textcolor{stringliteral}{"{}value"{}}\}\}\ \};}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ QTemporaryFile\ tempFile;}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ QVERIFY(tempFile.open());}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ QJsonDocument\ doc(data);}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ tempFile.write(doc.toJson());}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ tempFile.close();}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ wczytywania}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ QJsonArray\ loadedData\ =\ dm.\mbox{\hyperlink{class_data_manager_afbca6576ef6c865c4695f5d5dcb6db1a}{loadFromFile}}(tempFile.fileName());}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sprawdź,\ czy\ sygnał\ sukcesu\ został\ wyemitowany}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ QCOMPARE(loadSuccessSpy.count(),\ 1);}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ QCOMPARE(loadErrorSpy.count(),\ 0);}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sprawdź\ wczytane\ dane}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ QCOMPARE(loadedData,\ data);}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{void}\ testLoadFromNonExistentFile()\ \{}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_data_manager}{DataManager}}\ dm;}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ QSignalSpy\ loadSuccessSpy(\&dm,\ \&\mbox{\hyperlink{class_data_manager_ae143e1a31d2a40145b1bfc946b6bfe5d}{DataManager::loadSuccess}});}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ QSignalSpy\ loadErrorSpy(\&dm,\ \&\mbox{\hyperlink{class_data_manager_a2d46f8584b720161986549b2ed8e58b5}{DataManager::loadError}});}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ wczytywania\ z\ nieistniejącego\ pliku}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ QJsonArray\ loadedData\ =\ dm.\mbox{\hyperlink{class_data_manager_afbca6576ef6c865c4695f5d5dcb6db1a}{loadFromFile}}(\textcolor{stringliteral}{"{}non\_existent\_file.json"{}});}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sprawdź,\ czy\ sygnał\ błędu\ został\ wyemitowany}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ QCOMPARE(loadSuccessSpy.count(),\ 0);}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ QCOMPARE(loadErrorSpy.count(),\ 1);}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ QVERIFY(loadedData.isEmpty());}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordtype}{void}\ testSaveToReadOnlyFile()\ \{}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_data_manager}{DataManager}}\ dm;}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ QSignalSpy\ saveSuccessSpy(\&dm,\ \&\mbox{\hyperlink{class_data_manager_a9b792162b823961d0f8e921b1743a8ef}{DataManager::saveSuccess}});}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ QSignalSpy\ saveErrorSpy(\&dm,\ \&\mbox{\hyperlink{class_data_manager_ab360df367c6a36fa1fef90009e6d58d6}{DataManager::saveError}});}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Przygotuj\ dane\ testowe}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ QJsonArray\ data\ =\ \{\ QJsonObject\{\{\textcolor{stringliteral}{"{}key"{}},\ \textcolor{stringliteral}{"{}value"{}}\}\}\ \};}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ QTemporaryFile\ tempFile;}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ QVERIFY(tempFile.open());}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ tempFile.setPermissions(QFileDevice::ReadOwner);\ \textcolor{comment}{//\ Ustaw\ plik\ jako\ tylko\ do\ odczytu}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ tempFile.close();}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ zapisu}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ dm.\mbox{\hyperlink{class_data_manager_adb07ac99bfd2139a3125280cf44e9b99}{saveToFile}}(data,\ tempFile.fileName());}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sprawdź,\ czy\ sygnał\ błędu\ został\ wyemitowany}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ QCOMPARE(saveSuccessSpy.count(),\ 0);}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ QCOMPARE(saveErrorSpy.count(),\ 1);}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00101}00101\ \};}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00103}00103\ QTEST\_MAIN(\mbox{\hyperlink{class_test_data_manager}{TestDataManager}})}
+\DoxyCodeLine{\Hypertarget{test__data__manager_8cpp_source_l00104}00104\ \textcolor{preprocessor}{\#include\ "{}test\_data\_manager.moc"{}\ }\textcolor{comment}{//\ Ten\ plik\ powinien\ być\ generowany\ automatycznie\ przez\ AUTOMOC}}
+
+\end{DoxyCode}

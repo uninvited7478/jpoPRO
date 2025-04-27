@@ -1,0 +1,188 @@
+\doxysection{Data\+Manager Class Reference}
+\hypertarget{class_data_manager}{}\label{class_data_manager}\index{DataManager@{DataManager}}
+
+
+Klasa odpowiedzialna za zarządzanie zapisywaniem i wczytywaniem danych w formacie JSON.  
+
+
+
+
+{\ttfamily \#include $<$data\+\_\+manager.\+h$>$}
+
+Inheritance diagram for Data\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_data_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_data_manager_a9b792162b823961d0f8e921b1743a8ef}{save\+Success}} ()
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany po pomyślnym zapisaniu danych do pliku. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_manager_ab360df367c6a36fa1fef90009e6d58d6}{save\+Error}} (QString message)
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany w przypadku błędu podczas zapisu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_manager_ae143e1a31d2a40145b1bfc946b6bfe5d}{load\+Success}} ()
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany po pomyślnym wczytaniu danych z pliku. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_manager_a2d46f8584b720161986549b2ed8e58b5}{load\+Error}} (QString message)
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany w przypadku błędu podczas wczytywania. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_data_manager_affb37dc13db06ecf6853c9fa25e5ed7a}{Data\+Manager}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{class_data_manager}{Data\+Manager}. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{class_data_manager_adb07ac99bfd2139a3125280cf44e9b99}{save\+To\+File}} (QJson\+Array data, const QString \&filename)
+\begin{DoxyCompactList}\small\item\em Zapisuje tablicę JSON do pliku. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE QJson\+Array \mbox{\hyperlink{class_data_manager_afbca6576ef6c865c4695f5d5dcb6db1a}{load\+From\+File}} (const QString \&filename)
+\begin{DoxyCompactList}\small\item\em Wczytuje tablicę JSON z pliku. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa odpowiedzialna za zarządzanie zapisywaniem i wczytywaniem danych w formacie JSON. 
+
+\doxylink{class_data_manager}{Data\+Manager} umożliwia zapisywanie tablic JSON do plików oraz wczytywanie ich z powrotem. Emituje sygnały w przypadku sukcesu lub błędu, które są używane w interfejsie QML. 
+
+Definition at line \mbox{\hyperlink{data__manager_8h_source_l00014}{14}} of file \mbox{\hyperlink{data__manager_8h_source}{data\+\_\+manager.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_data_manager_affb37dc13db06ecf6853c9fa25e5ed7a}\index{DataManager@{DataManager}!DataManager@{DataManager}}
+\index{DataManager@{DataManager}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{DataManager()}{DataManager()}}
+{\footnotesize\ttfamily \label{class_data_manager_affb37dc13db06ecf6853c9fa25e5ed7a} 
+Data\+Manager\+::\+Data\+Manager (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor klasy \doxylink{class_data_manager}{Data\+Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Wskaźnik na obiekt nadrzędny (domyślnie nullptr). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{data__manager_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{data__manager_8cpp_source}{data\+\_\+manager.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_data_manager_a2d46f8584b720161986549b2ed8e58b5}\index{DataManager@{DataManager}!loadError@{loadError}}
+\index{loadError@{loadError}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{loadError}{loadError}}
+{\footnotesize\ttfamily \label{class_data_manager_a2d46f8584b720161986549b2ed8e58b5} 
+void Data\+Manager\+::load\+Error (\begin{DoxyParamCaption}\item[{QString}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Sygnał emitowany w przypadku błędu podczas wczytywania. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Komunikat błędu. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{appjpo_p_r_o__autogen_2_e_w_i_e_g_a46_w_w_2moc__data__manager_8cpp_source_l00170}{170}} of file \mbox{\hyperlink{appjpo_p_r_o__autogen_2_e_w_i_e_g_a46_w_w_2moc__data__manager_8cpp_source}{moc\+\_\+data\+\_\+manager.\+cpp}}.
+
+\Hypertarget{class_data_manager_afbca6576ef6c865c4695f5d5dcb6db1a}\index{DataManager@{DataManager}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily \label{class_data_manager_afbca6576ef6c865c4695f5d5dcb6db1a} 
+QJson\+Array Data\+Manager\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const QString \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Wczytuje tablicę JSON z pliku. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Ścieżka do pliku, z którego dane zostaną wczytane. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Wczytana tablica JSON lub pusta tablica w przypadku błędu. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{data__manager_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{data__manager_8cpp_source}{data\+\_\+manager.\+cpp}}.
+
+\Hypertarget{class_data_manager_ae143e1a31d2a40145b1bfc946b6bfe5d}\index{DataManager@{DataManager}!loadSuccess@{loadSuccess}}
+\index{loadSuccess@{loadSuccess}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{loadSuccess}{loadSuccess}}
+{\footnotesize\ttfamily \label{class_data_manager_ae143e1a31d2a40145b1bfc946b6bfe5d} 
+void Data\+Manager\+::load\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Sygnał emitowany po pomyślnym wczytaniu danych z pliku. 
+
+
+
+Definition at line \mbox{\hyperlink{appjpo_p_r_o__autogen_2_e_w_i_e_g_a46_w_w_2moc__data__manager_8cpp_source_l00164}{164}} of file \mbox{\hyperlink{appjpo_p_r_o__autogen_2_e_w_i_e_g_a46_w_w_2moc__data__manager_8cpp_source}{moc\+\_\+data\+\_\+manager.\+cpp}}.
+
+\Hypertarget{class_data_manager_ab360df367c6a36fa1fef90009e6d58d6}\index{DataManager@{DataManager}!saveError@{saveError}}
+\index{saveError@{saveError}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{saveError}{saveError}}
+{\footnotesize\ttfamily \label{class_data_manager_ab360df367c6a36fa1fef90009e6d58d6} 
+void Data\+Manager\+::save\+Error (\begin{DoxyParamCaption}\item[{QString}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Sygnał emitowany w przypadku błędu podczas zapisu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Komunikat błędu. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{appjpo_p_r_o__autogen_2_e_w_i_e_g_a46_w_w_2moc__data__manager_8cpp_source_l00158}{158}} of file \mbox{\hyperlink{appjpo_p_r_o__autogen_2_e_w_i_e_g_a46_w_w_2moc__data__manager_8cpp_source}{moc\+\_\+data\+\_\+manager.\+cpp}}.
+
+\Hypertarget{class_data_manager_a9b792162b823961d0f8e921b1743a8ef}\index{DataManager@{DataManager}!saveSuccess@{saveSuccess}}
+\index{saveSuccess@{saveSuccess}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{saveSuccess}{saveSuccess}}
+{\footnotesize\ttfamily \label{class_data_manager_a9b792162b823961d0f8e921b1743a8ef} 
+void Data\+Manager\+::save\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Sygnał emitowany po pomyślnym zapisaniu danych do pliku. 
+
+
+
+Definition at line \mbox{\hyperlink{appjpo_p_r_o__autogen_2_e_w_i_e_g_a46_w_w_2moc__data__manager_8cpp_source_l00152}{152}} of file \mbox{\hyperlink{appjpo_p_r_o__autogen_2_e_w_i_e_g_a46_w_w_2moc__data__manager_8cpp_source}{moc\+\_\+data\+\_\+manager.\+cpp}}.
+
+\Hypertarget{class_data_manager_adb07ac99bfd2139a3125280cf44e9b99}\index{DataManager@{DataManager}!saveToFile@{saveToFile}}
+\index{saveToFile@{saveToFile}!DataManager@{DataManager}}
+\doxysubsubsection{\texorpdfstring{saveToFile()}{saveToFile()}}
+{\footnotesize\ttfamily \label{class_data_manager_adb07ac99bfd2139a3125280cf44e9b99} 
+void Data\+Manager\+::save\+To\+File (\begin{DoxyParamCaption}\item[{QJson\+Array}]{data}{, }\item[{const QString \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Zapisuje tablicę JSON do pliku. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Tablica JSON do zapisania. \\
+\hline
+{\em filename} & Ścieżka do pliku, w którym dane zostaną zapisane. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{data__manager_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{data__manager_8cpp_source}{data\+\_\+manager.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+data\+\_\+manager.\+h\item 
+build/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+9\+\_\+0\+\_\+\+Min\+GW\+\_\+64\+\_\+bit-\/\+Debug/appjpo\+PRO\+\_\+autogen/\+EWIEGA46\+WW/moc\+\_\+data\+\_\+manager.\+cpp\item 
+build/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+9\+\_\+0\+\_\+\+Min\+GW\+\_\+64\+\_\+bit-\/\+Debug/test\+Data\+Manager\+\_\+autogen/\+EWIEGA46\+WW/moc\+\_\+data\+\_\+manager.\+cpp\item 
+data\+\_\+manager.\+cpp\end{DoxyCompactItemize}

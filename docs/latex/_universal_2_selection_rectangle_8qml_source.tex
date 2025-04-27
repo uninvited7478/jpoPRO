@@ -1,0 +1,43 @@
+\doxysection{Selection\+Rectangle.\+qml}
+\hypertarget{_universal_2_selection_rectangle_8qml_source}{}\label{_universal_2_selection_rectangle_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Universal/SelectionRectangle.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Universal/SelectionRectangle.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2021\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00006}00006\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00007}00007\ import\ QtQuick.Controls.Universal}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00009}00009\ T.SelectionRectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00010}00010\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00012}00012\ \ \ \ \ topLeftHandle:\ handle}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00013}00013\ \ \ \ \ bottomRightHandle:\ handle}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00015}00015\ \ \ \ \ Component\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00016}00016\ \ \ \ \ \ \ \ \ id:\ handle}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ implicitWidth:\ 8}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ implicitHeight:\ 24}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ radius:\ 4}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ tapHandler.pressed\ ||\ SelectionRectangle.dragging\ ?\ control.Universal.chromeHighColor\ :}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hoverHandler.hovered\ ?\ control.Universal.chromeAltLowColor\ :}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ control.Universal.accent}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ visible:\ control.active}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ property\ Item\ control:\ SelectionRectangle.control}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ HoverHandler\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ id:\ hoverHandler}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ TapHandler\ \ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ id:\ tapHandler}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_universal_2_selection_rectangle_8qml_source_l00037}00037\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,60 @@
+\doxysection{Style\+Image.\+qml}
+\hypertarget{impl_2_style_image_8qml_source}{}\label{impl_2_style_image_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/FluentWinUI3/impl/StyleImage.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/FluentWinUI3/impl/StyleImage.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2024\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00006}00006\ //\ This\ item\ will\ resize\ the\ child\ image\ in\ such\ a\ way\ that\ any\ drop\ shadow}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00007}00007\ //\ or\ blur\ (or\ other\ effects)\ will\ be\ drawn\ outside\ its\ own\ bounds.}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00008}00008\ //\ The\ effect\ is\ that\ users\ of\ this\ item\ won't\ have\ to\ take\ e.g\ shadows}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00009}00009\ //\ into\ account\ when\ positioning\ it,\ as\ such\ effects\ will\ only\ be\ visual,\ and}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00010}00010\ //\ not\ be\ a\ part\ of\ the\ geometry.}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00012}00012\ Item\ \{}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00013}00013\ \ \ \ \ id:\ root}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00014}00014\ \ \ \ \ implicitWidth:\ horizontal\ ?\ imageConfig.width\ :\ imageConfig.height}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00015}00015\ \ \ \ \ implicitHeight:\ horizontal\ ?\ imageConfig.height\ :\ imageConfig.width}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00017}00017\ \ \ \ \ required\ property\ var\ imageConfig}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00019}00019\ \ \ \ \ //\ Set\ horizontal\ to\ false\ if\ you\ want\ the\ image\ to\ be\ rotated\ 90\ degrees}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00020}00020\ \ \ \ \ //\ Doing\ so\ will\ rotate\ the\ image,\ but\ also\ flip\ it,\ to\ make\ sure\ that}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00021}00021\ \ \ \ \ //\ the\ shadow\ ends\ up\ on\ the\ correct\ side.\ The\ implicit\ geometry\ of\ the}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00022}00022\ \ \ \ \ //\ item\ will\ also\ be\ adjusted\ to\ match\ the\ rotated\ image.}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00023}00023\ \ \ \ \ property\ bool\ horizontal:\ true}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00025}00025\ \ \ \ \ //\ The\ minimum\ size\ of\ the\ image\ should\ be\ at\ least\ 1px\ tall\ and\ wide,\ even\ without\ any\ offsets}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00026}00026\ \ \ \ \ property\ real\ minimumWidth:\ Math.max(1,\ imageConfig.leftOffset\ +\ imageConfig.rightOffset)}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00027}00027\ \ \ \ \ property\ real\ minimumHeight:\ Math.max(1,\ imageConfig.topOffset\ +\ imageConfig.bottomOffset)}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00029}00029\ \ \ \ \ BorderImage\ \{}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ x:\ -\/imageConfig.leftShadow}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ y:\ -\/imageConfig.topShadow}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ width:\ Math.max(root.minimumWidth,\ (root.horizontal\ ?\ root.width\ :\ root.height))}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ imageConfig.leftShadow\ +\ imageConfig.rightShadow}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ height:\ Math.max(root.minimumHeight,\ (root.horizontal\ ?\ root.height\ :\ root.width))}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ imageConfig.topShadow\ +\ imageConfig.bottomShadow}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ source:\ imageConfig.filePath\ ?\ \`{}qrc:/qt-\/project.org/imports/QtQuick/Controls/FluentWinUI3/\$\{imageConfig.filePath\}`\ :\ "{}"{}}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ border\ \{}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ top:\ Math.min(height\ /\ 2,\ imageConfig.topOffset\ +\ imageConfig.topShadow)}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ left:\ Math.min(width\ /\ 2,\ imageConfig.leftOffset\ +\ imageConfig.leftShadow)}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ bottom:\ Math.min(height\ /\ 2,\ imageConfig.bottomOffset\ +\ imageConfig.bottomShadow)}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ right:\ Math.min(width\ /\ 2,\ imageConfig.rightOffset\ +\ imageConfig.rightShadow)}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ transform:\ [}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ Rotation\ \{}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ angle:\ root.horizontal\ ?\ 0\ :\ 90}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ Scale\ \{}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ xScale:\ root.horizontal\ ?\ 1\ :\ -\/1}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl_2_style_image_8qml_source_l00054}00054\ \}}
+
+\end{DoxyCode}

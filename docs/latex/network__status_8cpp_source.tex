@@ -1,0 +1,15 @@
+\doxysection{network\+\_\+status.\+cpp}
+\hypertarget{network__status_8cpp_source}{}\label{network__status_8cpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{network__status_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}network\_status.h"{}}}
+\DoxyCodeLine{\Hypertarget{network__status_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{\Hypertarget{network__status_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <Qthread>}}
+\DoxyCodeLine{\Hypertarget{network__status_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{network__status_8cpp_source_l00005}\mbox{\hyperlink{class_network_status_abdf55f37c8ade8236863667d49d4488a}{00005}}\ \mbox{\hyperlink{class_network_status_abdf55f37c8ade8236863667d49d4488a}{NetworkStatus::NetworkStatus}}(QObject\ *parent)\ :\ QObject(parent)\ \{\}}
+\DoxyCodeLine{\Hypertarget{network__status_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{network__status_8cpp_source_l00007}\mbox{\hyperlink{class_network_status_a65059c7251b90563660c039ced61f785}{00007}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_status_a65059c7251b90563660c039ced61f785}{NetworkStatus::onInternetStatusChanged}}(\textcolor{keywordtype}{bool}\ connected)\ \{}
+\DoxyCodeLine{\Hypertarget{network__status_8cpp_source_l00008}00008\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}NetworkStatus:\ Internet\ status\ changed\ to"{}}\ <<\ (connected\ ?\ \textcolor{stringliteral}{"{}connected"{}}\ :\ \textcolor{stringliteral}{"{}disconnected"{}})\ <<\ \textcolor{stringliteral}{"{}in\ main\ thread:"{}}\ <<\ QThread::currentThreadId();}
+\DoxyCodeLine{\Hypertarget{network__status_8cpp_source_l00009}00009\ \ \ \ \ emit\ \mbox{\hyperlink{class_network_status_ad640a62fe4b7e2e19d7299b5f2ce85c7}{internetStatusChanged}}(connected);}
+\DoxyCodeLine{\Hypertarget{network__status_8cpp_source_l00010}00010\ \}}
+
+\end{DoxyCode}

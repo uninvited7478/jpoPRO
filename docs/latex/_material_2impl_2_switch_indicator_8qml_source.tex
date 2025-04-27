@@ -1,0 +1,107 @@
+\doxysection{Switch\+Indicator.\+qml}
+\hypertarget{_material_2impl_2_switch_indicator_8qml_source}{}\label{_material_2impl_2_switch_indicator_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/impl/SwitchIndicator.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/impl/SwitchIndicator.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00006}00006\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00007}00007\ import\ QtQuick.Controls.Material}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00008}00008\ import\ QtQuick.Controls.Material.impl}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00010}00010\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00011}00011\ \ \ \ \ id:\ indicator}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00012}00012\ \ \ \ \ width:\ control.Material.switchIndicatorWidth}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00013}00013\ \ \ \ \ height:\ control.Material.switchIndicatorHeight}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00014}00014\ \ \ \ \ radius:\ height\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00015}00015\ \ \ \ \ y:\ parent.height\ /\ 2\ -\/\ height\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00016}00016\ \ \ \ \ color:\ control.enabled}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ ?\ (control.checked}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ ?\ control.Material.switchCheckedTrackColor\ :\ control.Material.switchUncheckedTrackColor)}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00019}00019\ \ \ \ \ \ \ \ \ :\ (control.checked}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ ?\ control.Material.switchDisabledCheckedTrackColor}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ :\ control.Material.switchDisabledUncheckedTrackColor)}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00022}00022\ \ \ \ \ border.width:\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00023}00023\ \ \ \ \ border.color:\ control.enabled}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00024}00024\ \ \ \ \ \ \ \ \ ?\ (control.checked\ ?\ control.Material.switchCheckedTrackColor\ :\ control.Material.switchUncheckedHandleColor)}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ :\ (control.checked\ ?\ control.Material.switchDisabledCheckedTrackColor\ :\ control.Material.switchDisabledUncheckedTrackBorderColor)}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00027}00027\ \ \ \ \ property\ T.AbstractButton\ control}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00028}00028\ \ \ \ \ property\ alias\ handle:\ handle}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00030}00030\ \ \ \ \ Behavior\ on\ color\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ ColorAnimation\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ duration:\ 200}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00035}00035\ \ \ \ \ Behavior\ on\ border.color\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ ColorAnimation\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ duration:\ 200}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00041}00041\ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ id:\ handle}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ x:\ Math.max(offset,\ Math.min(parent.width\ -\/\ offset\ -\/\ width,}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ indicator.control.visualPosition\ *\ parent.width\ -\/\ (width\ /\ 2)))}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ y:\ (parent.height\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ //\ We\ use\ scale\ to\ allow\ us\ to\ enlarge\ the\ circle\ from\ the\ center,}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ //\ as\ using\ width/height\ will\ cause\ it\ to\ jump\ due\ to\ the\ position\ x/y\ bindings.}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ //\ However,\ a\ large\ enough\ scale\ on\ certain\ displays\ will\ show\ the\ triangles}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ //\ that\ make\ up\ the\ circle,\ so\ instead\ we\ make\ sure\ that\ the\ circle\ is\ always}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ //\ its\ largest\ size\ so\ that\ more\ triangles\ are\ used,\ and\ downscale\ instead.}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ width:\ normalSize\ *\ largestScale}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ height:\ normalSize\ *\ largestScale}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ radius:\ width\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ color:\ indicator.control.enabled}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ ?\ (indicator.control.checked}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ indicator.control.Material.switchCheckedHandleColor}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ indicator.control.hovered}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ indicator.control.Material.switchUncheckedHoveredHandleColor\ :\ indicator.control.Material.switchUncheckedHandleColor)}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ :\ (indicator.control.checked}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ indicator.control.Material.switchDisabledCheckedHandleColor}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ indicator.control.Material.switchDisabledUncheckedHandleColor)}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ scale:\ indicator.control.down\ ?\ 1\ :\ (indicator.control.checked\ ?\ checkedSize\ /\ largestSize\ :\ normalSize\ /\ largestSize)}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00064}00064\ \ \ \ \ \ \ \ \ readonly\ property\ int\ offset:\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00065}00065\ \ \ \ \ \ \ \ \ readonly\ property\ real\ normalSize:\ !hasIcon\ ?\ indicator.control.Material.switchNormalHandleHeight\ :\ checkedSize}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00066}00066\ \ \ \ \ \ \ \ \ readonly\ property\ real\ checkedSize:\ indicator.control.Material.switchCheckedHandleHeight}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00067}00067\ \ \ \ \ \ \ \ \ readonly\ property\ real\ largestSize:\ indicator.control.Material.switchLargestHandleHeight}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00068}00068\ \ \ \ \ \ \ \ \ readonly\ property\ real\ largestScale:\ largestSize\ /\ normalSize}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00069}00069\ \ \ \ \ \ \ \ \ readonly\ property\ bool\ hasIcon:\ indicator.control.icon.name.length\ >\ 0}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ indicator.control.icon.source.toString().length\ >\ 0}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00072}00072\ \ \ \ \ \ \ \ \ Behavior\ on\ x\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ enabled:\ !indicator.control.pressed}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ SmoothedAnimation\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ duration:\ 300}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00079}00079\ \ \ \ \ \ \ \ \ Behavior\ on\ scale\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ NumberAnimation\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ duration:\ 100}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00083}00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00085}00085\ \ \ \ \ \ \ \ \ Behavior\ on\ color\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ ColorAnimation\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ duration:\ 200}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00091}00091\ \ \ \ \ \ \ \ \ IconImage\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ (parent.width\ -\/\ width)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ y:\ (parent.height\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ name:\ indicator.control.icon.name}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ source:\ indicator.control.icon.source}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ sourceSize:\ Qt.size(indicator.control.icon.width,\ indicator.control.icon.height)}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ indicator.control.icon.color}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ visible:\ handle.hasIcon}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00099}00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2impl_2_switch_indicator_8qml_source_l00101}00101\ \}}
+
+\end{DoxyCode}

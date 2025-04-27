@@ -1,0 +1,126 @@
+\doxysection{Spin\+Box.\+qml}
+\hypertarget{_material_2_spin_box_8qml_source}{}\label{_material_2_spin_box_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/SpinBox.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/SpinBox.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00006}00006\ import\ QtQuick.Controls.Material}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00007}00007\ import\ QtQuick.Controls.Material.impl}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00009}00009\ T.SpinBox\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00010}00010\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00012}00012\ \ \ \ \ //\ Note:\ the\ width\ of\ the\ indicators\ are\ calculated\ into\ the\ padding}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00013}00013\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ contentItem.implicitWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00015}00015\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding,}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ up.implicitIndicatorHeight,\ down.implicitIndicatorHeight)}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00019}00019\ \ \ \ \ spacing:\ 6}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00020}00020\ \ \ \ \ topPadding:\ Material.textFieldVerticalPadding}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00021}00021\ \ \ \ \ bottomPadding:\ Material.textFieldVerticalPadding}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00022}00022\ \ \ \ \ leftPadding:\ control.mirrored\ ?\ (up.indicator\ ?\ up.indicator.width\ :\ 0)\ :\ (down.indicator\ ?\ down.indicator.width\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00023}00023\ \ \ \ \ rightPadding:\ control.mirrored\ ?\ (down.indicator\ ?\ down.indicator.width\ :\ 0)\ :\ (up.indicator\ ?\ up.indicator.width\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00025}00025\ \ \ \ \ validator:\ IntValidator\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ locale:\ control.locale.name}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ bottom:\ Math.min(control.from,\ control.to)}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ top:\ Math.max(control.from,\ control.to)}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00031}00031\ \ \ \ \ contentItem:\ TextInput\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ text:\ control.displayText}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ font:\ control.font}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ color:\ enabled\ ?\ control.Material.foreground\ :\ control.Material.hintTextColor}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ selectionColor:\ control.Material.textSelectionColor}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ selectedTextColor:\ control.Material.foreground}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ horizontalAlignment:\ Qt.AlignHCenter}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ verticalAlignment:\ Qt.AlignVCenter}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ cursorDelegate:\ CursorDelegate\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ readOnly:\ !control.editable}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ validator:\ control.validator}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ inputMethodHints:\ control.inputMethodHints}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ clip:\ width\ <\ implicitWidth}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00049}00049\ \ \ \ \ up.indicator:\ Item\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ x:\ control.mirrored\ ?\ 0\ :\ control.width\ -\/\ width}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ implicitWidth:\ control.Material.touchTarget}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ implicitHeight:\ control.Material.touchTarget}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ height:\ control.height}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ width:\ height}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ Ripple\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ clipRadius:\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ control.spacing}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ y:\ control.spacing}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ parent.width\ -\/\ 2\ *\ control.spacing}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ parent.height\ -\/\ 2\ *\ control.spacing}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ pressed:\ control.up.pressed}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ active:\ control.up.pressed\ ||\ control.up.hovered\ ||\ control.visualFocus}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.Material.rippleColor}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00067}00067\ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ (parent.width\ -\/\ width)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ y:\ (parent.height\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ Math.min(parent.width\ /\ 3,\ parent.height\ /\ 3)}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ enabled\ ?\ control.Material.foreground\ :\ control.Material.spinBoxDisabledIconColor}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00074}00074\ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ (parent.width\ -\/\ width)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ y:\ (parent.height\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ Math.min(parent.width\ /\ 3,\ parent.height\ /\ 3)}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ enabled\ ?\ control.Material.foreground\ :\ control.Material.spinBoxDisabledIconColor}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00080}00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00083}00083\ \ \ \ \ down.indicator:\ Item\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00084}00084\ \ \ \ \ \ \ \ \ x:\ control.mirrored\ ?\ control.width\ -\/\ width\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00085}00085\ \ \ \ \ \ \ \ \ implicitWidth:\ control.Material.touchTarget}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00086}00086\ \ \ \ \ \ \ \ \ implicitHeight:\ control.Material.touchTarget}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00087}00087\ \ \ \ \ \ \ \ \ height:\ control.height}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00088}00088\ \ \ \ \ \ \ \ \ width:\ height}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00090}00090\ \ \ \ \ \ \ \ \ Ripple\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ clipRadius:\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ control.spacing}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ y:\ control.spacing}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ parent.width\ -\/\ 2\ *\ control.spacing}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ parent.height\ -\/\ 2\ *\ control.spacing}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ pressed:\ control.down.pressed}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ active:\ control.down.pressed\ ||\ control.down.hovered\ ||\ control.visualFocus}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.Material.rippleColor}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00099}00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00101}00101\ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ (parent.width\ -\/\ width)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ y:\ (parent.height\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ parent.width\ /\ 3}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ enabled\ ?\ control.Material.foreground\ :\ control.Material.spinBoxDisabledIconColor}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00107}00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00108}00108\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00110}00110\ \ \ \ \ background:\ MaterialTextContainer\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00111}00111\ \ \ \ \ \ \ \ \ implicitWidth:\ 140}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00112}00112\ \ \ \ \ \ \ \ \ implicitHeight:\ control.Material.textFieldHeight}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00114}00114\ \ \ \ \ \ \ \ \ outlineColor:\ (enabled\ \&\&\ control.hovered)\ ?\ control.Material.primaryTextColor\ :\ control.Material.hintTextColor}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00115}00115\ \ \ \ \ \ \ \ \ focusedOutlineColor:\ control.Material.accentColor}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00116}00116\ \ \ \ \ \ \ \ \ controlHasActiveFocus:\ control.activeFocus}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00117}00117\ \ \ \ \ \ \ \ \ controlHasText:\ true}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00118}00118\ \ \ \ \ \ \ \ \ horizontalPadding:\ control.Material.textFieldHorizontalPadding}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00119}00119\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_spin_box_8qml_source_l00120}00120\ \}}
+
+\end{DoxyCode}

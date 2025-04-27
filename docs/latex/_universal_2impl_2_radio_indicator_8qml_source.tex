@@ -1,0 +1,53 @@
+\doxysection{Radio\+Indicator.\+qml}
+\hypertarget{_universal_2impl_2_radio_indicator_8qml_source}{}\label{_universal_2impl_2_radio_indicator_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Universal/impl/RadioIndicator.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Universal/impl/RadioIndicator.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00005}00005\ import\ QtQuick.Controls.Universal}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00007}00007\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00008}00008\ \ \ \ \ id:\ indicator}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00009}00009\ \ \ \ \ implicitWidth:\ 20}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00010}00010\ \ \ \ \ implicitHeight:\ 20}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00011}00011\ \ \ \ \ radius:\ width\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00012}00012\ \ \ \ \ color:\ "{}transparent"{}}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00013}00013\ \ \ \ \ border.width:\ 2\ //\ RadioButtonBorderThemeThickness}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00014}00014\ \ \ \ \ border.color:\ \ control.checked\ ?\ "{}transparent"{}\ :}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ !control.enabled\ ?\ control.Universal.baseLowColor\ :}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ control.down\ ?\ control.Universal.baseMediumColor\ :}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ control.hovered\ ?\ control.Universal.baseHighColor\ :\ control.Universal.baseMediumHighColor}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00019}00019\ \ \ \ \ property\ var\ control}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00021}00021\ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00022}00022\ \ \ \ \ \ \ \ \ id:\ checkOuterEllipse}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00023}00023\ \ \ \ \ \ \ \ \ width:\ parent.width}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00024}00024\ \ \ \ \ \ \ \ \ height:\ parent.height}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ radius:\ width\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ opacity:\ indicator.control.checked\ ?\ 1\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ color:\ "{}transparent"{}}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00029}00029\ \ \ \ \ \ \ \ \ border.width:\ 2\ //\ RadioButtonBorderThemeThickness}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ border.color:\ !indicator.control.enabled\ ?\ indicator.control.Universal.baseLowColor\ :}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indicator.control.down\ ?\ indicator.control.Universal.baseMediumColor\ :\ indicator.control.Universal.accent}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00034}00034\ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ id:\ checkGlyph}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ x:\ (parent.width\ -\/\ width)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ y:\ (parent.height\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ width:\ parent.width\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ height:\ parent.height\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ radius:\ width\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ opacity:\ indicator.control.checked\ ?\ 1\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ color:\ !indicator.control.enabled\ ?\ indicator.control.Universal.baseLowColor\ :}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indicator.control.down\ ?\ indicator.control.Universal.baseMediumColor\ :}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indicator.control.hovered\ ?\ indicator.control.Universal.baseHighColor\ :\ indicator.control.Universal.baseMediumHighColor}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_universal_2impl_2_radio_indicator_8qml_source_l00047}00047\ \}}
+
+\end{DoxyCode}

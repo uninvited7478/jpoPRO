@@ -1,0 +1,64 @@
+\doxysection{Check\+Indicator.\+qml}
+\hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source}{}\label{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/FluentWinUI3/impl/CheckIndicator.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/FluentWinUI3/impl/CheckIndicator.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2024\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00005}00005\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00006}00006\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00007}00007\ import\ QtQuick.Shapes}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00009}00009\ ColorImage\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00010}00010\ \ \ \ \ id:\ indicator}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00012}00012\ \ \ \ \ required\ property\ T.AbstractButton\ control}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00013}00013\ \ \ \ \ required\ property\ url\ filePath}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00015}00015\ \ \ \ \ source:\ filePath}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00016}00016\ \ \ \ \ color:\ control.enabled\ \&\&\ control.checkState\ !==\ Qt.Unchecked\ ?\ control.palette.accent\ :\ defaultColor}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00018}00018\ \ \ \ \ readonly\ property\ color\ indicatorColor:\ control.down\ ?\ Application.styleHints.colorScheme\ ==\ Qt.Light}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ Qt.rgba(1,\ 1,\ 1,\ 0.7)\ :\ Qt.rgba(0,\ 0,\ 0,\ 0.5)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Application.styleHints.colorScheme\ ===\ Qt.Dark\ \&\&\ !control.enabled}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ Qt.rgba(1,\ 1,\ 1,\ 0.5302)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Application.styleHints.colorScheme\ ===\ Qt.Dark\ ?\ "{}black"{}\ :\ "{}white"{}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00024}00024\ \ \ \ \ //\ TODO:\ Add\ animation\ for\ checkmark\ indicator}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00025}00025\ \ \ \ \ Shape\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ x:\ (parent.width\ -\/\ width)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ y:\ (parent.height\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ width:\ 12}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00029}00029\ \ \ \ \ \ \ \ \ height:\ 12}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ visible:\ control.checked}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ antialiasing:\ true}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ preferredRendererType:\ Shape.CurveRenderer}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ ShapePath\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ strokeWidth:\ 1}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ strokeColor:\ indicator.indicatorColor}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ fillColor:\ "{}transparent"{}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ capStyle:\ ShapePath.RoundCap}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ joinStyle:\ ShapePath.RoundJoin}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ startX:\ 1}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ startY:\ 6}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ PathLine\ \{\ x:\ 5;\ y:\ 10\ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ PathLine\ \{\ x:\ 11;\ y:\ 3\ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00049}00049\ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ x:\ (parent.width\ -\/\ width)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ y:\ (parent.height\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ visible:\ control.checkState\ ===\ Qt.PartiallyChecked}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ width:\ 8}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ height:\ 1}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ radius:\ height\ *\ 0.5}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ color:\ indicator.indicatorColor}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2impl_2_check_indicator_8qml_source_l00058}00058\ \}}
+
+\end{DoxyCode}

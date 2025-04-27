@@ -1,0 +1,89 @@
+\doxysection{Progress\+Bar.\+qml}
+\hypertarget{_fusion_2_progress_bar_8qml_source}{}\label{_fusion_2_progress_bar_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Fusion/ProgressBar.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Fusion/ProgressBar.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00006}00006\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00007}00007\ import\ QtQuick.Controls.Fusion}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00008}00008\ import\ QtQuick.Controls.Fusion.impl}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00010}00010\ T.ProgressBar\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00011}00011\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00013}00013\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00015}00015\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00018}00018\ \ \ \ \ contentItem:\ Item\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00019}00019\ \ \ \ \ \ \ \ \ implicitWidth:\ 120}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00020}00020\ \ \ \ \ \ \ \ \ implicitHeight:\ 24}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00021}00021\ \ \ \ \ \ \ \ \ scale:\ control.mirrored\ ?\ -\/1\ :\ 1}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00023}00023\ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ parent.height}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ (control.indeterminate\ ?\ 1.0\ :\ control.position)\ *\ parent.width}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ radius:\ 2}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ border.color:\ Qt.darker(Fusion.highlight(control.palette),\ 1.4)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ gradient:\ Gradient\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GradientStop\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position:\ 0}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color:\ Qt.lighter(Fusion.highlight(control.palette),\ 1.2)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GradientStop\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position:\ 1}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color:\ Fusion.highlight(control.palette)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ Item\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ 1;\ y:\ 1}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ parent.width\ -\/\ 2}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ parent.height\ -\/\ 2}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ visible:\ control.indeterminate}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ clip:\ true}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ ColorImage\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width:\ Math.ceil(parent.width\ /\ implicitWidth\ +\ 1)\ *\ implicitWidth}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ height:\ parent.height}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mirror:\ control.mirrored}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fillMode:\ Image.TileHorizontally}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ source:\ "{}qrc:/qt-\/project.org/imports/QtQuick/Controls/Fusion/images/progressmask.png"{}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color:\ Color.transparent(Qt.lighter(Fusion.highlight(control.palette),\ 1.2),\ 160\ /\ 255)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ visible:\ control.indeterminate}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NumberAnimation\ on\ x\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ running:\ control.indeterminate\ \&\&\ control.visible}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ from:\ -\/31\ //\ progressmask.png\ width}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ to:\ 0}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ loops:\ Animation.Infinite}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ duration:\ 750}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00069}00069\ \ \ \ \ background:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00070}00070\ \ \ \ \ \ \ \ \ implicitWidth:\ 120}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00071}00071\ \ \ \ \ \ \ \ \ implicitHeight:\ 24}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00073}00073\ \ \ \ \ \ \ \ \ radius:\ 2}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00074}00074\ \ \ \ \ \ \ \ \ color:\ control.palette.base}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00075}00075\ \ \ \ \ \ \ \ \ border.color:\ Fusion.outline(control.palette)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00077}00077\ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ 1;\ y:\ 1;\ height:\ 1}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ parent.width\ -\/\ 2}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ Fusion.topShadow}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00081}00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_progress_bar_8qml_source_l00083}00083\ \}}
+
+\end{DoxyCode}

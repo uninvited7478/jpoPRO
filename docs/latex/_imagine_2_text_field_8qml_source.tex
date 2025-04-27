@@ -1,0 +1,72 @@
+\doxysection{Text\+Field.\+qml}
+\hypertarget{_imagine_2_text_field_8qml_source}{}\label{_imagine_2_text_field_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Imagine/TextField.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Imagine/TextField.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00006}00006\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00007}00007\ import\ QtQuick.Controls.Imagine}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00008}00008\ import\ QtQuick.Controls.Imagine.impl}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00010}00010\ T.TextField\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00011}00011\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00013}00013\ \ \ \ \ implicitWidth:\ implicitBackgroundWidth\ +\ leftInset\ +\ rightInset}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ Math.max(contentWidth,\ placeholder.implicitWidth)\ +\ leftPadding\ +\ rightPadding}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00015}00015\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ contentHeight\ +\ topPadding\ +\ bottomPadding,}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ placeholder.implicitHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00019}00019\ \ \ \ \ topPadding:\ background\ ?\ background.topPadding\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00020}00020\ \ \ \ \ leftPadding:\ background\ ?\ background.leftPadding\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00021}00021\ \ \ \ \ rightPadding:\ background\ ?\ background.rightPadding\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00022}00022\ \ \ \ \ bottomPadding:\ background\ ?\ background.bottomPadding\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00024}00024\ \ \ \ \ topInset:\ background\ ?\ -\/background.topInset\ ||\ 0\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00025}00025\ \ \ \ \ leftInset:\ background\ ?\ -\/background.leftInset\ ||\ 0\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00026}00026\ \ \ \ \ rightInset:\ background\ ?\ -\/background.rightInset\ ||\ 0\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00027}00027\ \ \ \ \ bottomInset:\ background\ ?\ -\/background.bottomInset\ ||\ 0\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00029}00029\ \ \ \ \ color:\ control.palette.text}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00030}00030\ \ \ \ \ selectionColor:\ control.palette.highlight}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00031}00031\ \ \ \ \ selectedTextColor:\ control.palette.highlightedText}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00032}00032\ \ \ \ \ placeholderTextColor:\ control.palette.placeholderText}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00033}00033\ \ \ \ \ verticalAlignment:\ Qt.AlignVCenter}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00035}00035\ \ \ \ \ ContextMenu.menu:\ TextEditingContextMenu\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ control:\ control}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00039}00039\ \ \ \ \ PlaceholderText\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ id:\ placeholder}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ x:\ control.leftPadding}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ y:\ control.topPadding}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ width:\ control.width\ -\/\ (control.leftPadding\ +\ control.rightPadding)}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ height:\ control.height\ -\/\ (control.topPadding\ +\ control.bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ text:\ control.placeholderText}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ font:\ control.font}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ color:\ control.placeholderTextColor}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ verticalAlignment:\ control.verticalAlignment}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ visible:\ !control.length\ \&\&\ !control.preeditText\ \&\&\ (!control.activeFocus\ ||\ control.horizontalAlignment\ !==\ Qt.AlignHCenter)}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ elide:\ Text.ElideRight}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ renderType:\ control.renderType}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00055}00055\ \ \ \ \ background:\ NinePatchImage\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ source:\ Imagine.url\ +\ "{}textfield-\/background"{}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ NinePatchImageSelector\ on\ source\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ states:\ [}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}disabled"{}:\ !control.enabled\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}focused"{}:\ control.activeFocus\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}mirrored"{}:\ control.mirrored\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}hovered"{}:\ control.enabled\ \&\&\ control.hovered\}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_text_field_8qml_source_l00066}00066\ \}}
+
+\end{DoxyCode}

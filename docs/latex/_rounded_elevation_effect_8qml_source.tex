@@ -1,0 +1,41 @@
+\doxysection{Rounded\+Elevation\+Effect.\+qml}
+\hypertarget{_rounded_elevation_effect_8qml_source}{}\label{_rounded_elevation_effect_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/impl/RoundedElevationEffect.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/impl/RoundedElevationEffect.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2022\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00004}00004\ import\ QtQuick.Controls.Material}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00005}00005\ import\ QtQuick.Controls.Material.impl}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00007}00007\ ElevationEffect\ \{}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00008}00008\ \ \ \ \ required\ property\ int\ roundedScale}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00010}00010\ \ \ \ \ \_shadows:\ roundedScale\ ===\ Material.NotRounded\ ?\ \_defaultShadows\ :\ roundedShadows()}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00012}00012\ \ \ \ \ function\ roundedShadows()\ \{}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00013}00013\ \ \ \ \ \ \ \ \ //\ Make\ a\ deep\ copy.}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00014}00014\ \ \ \ \ \ \ \ \ let\ shadows\ =\ [...\_defaultShadows]}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00015}00015\ \ \ \ \ \ \ \ \ for\ (let\ i\ =\ 0,\ strength\ =\ 0.95;\ i\ <\ shadows.length;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ //\ See\ comment\ on\ BoxShadow's\ strength\ property\ for\ why\ we\ do\ this.}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ shadows[i].strength\ =\ strength}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ //\ We\ don't\ want\ the\ strength\ to\ be\ too\ high\ for\ the\ controls\ with\ very\ slightly\ rounded}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ //\ corners,\ as\ they\ are\ quite\ close\ to\ the\ non-\/rounded\ ones\ in\ terms\ of\ not\ needing\ adjustments.}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ //\ This\ is\ still\ not\ great\ for\ the\ higher\ elevations\ for\ ExtraSmallScale,\ but\ it's\ as\ good}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ //\ as\ I\ can\ get\ it.}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ strength\ =\ Math.max(0.05,\ strength\ -\/\ (roundedScale\ >\ Material.ExtraSmallScale\ ?\ 0.1\ :\ 0.3))}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ //\ The\ values\ at\ index\ 0\ are\ already\ 0,\ and\ we\ don't\ want\ our\ Math.max(1,\ ...)\ code\ to\ affect\ them.}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (i\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ The\ blur\ values\ for\ e.g.\ buttons\ with\ rounded\ corners\ are\ too\ large,\ so\ we\ reduce\ them.}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (let\ angularShadowIndex\ =\ 0;\ angularShadowIndex\ <\ shadows[i].angularValues.length;\ ++angularShadowIndex)\ \{}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ shadows[i].angularValues[angularShadowIndex].blur\ =}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Math.max(1,\ Math.floor(shadows[i].angularValues[angularShadowIndex].blur\ /\ 4))}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ return\ shadows}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rounded_elevation_effect_8qml_source_l00035}00035\ \}}
+
+\end{DoxyCode}

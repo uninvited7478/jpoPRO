@@ -1,0 +1,43 @@
+\doxysection{Scroll\+View.\+qml}
+\hypertarget{_windows_2_scroll_view_8qml_source}{}\label{_windows_2_scroll_view_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Windows/ScrollView.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Windows/ScrollView.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2020\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00005}00005\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00006}00006\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00008}00008\ T.ScrollView\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00009}00009\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00011}00011\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00013}00013\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00016}00016\ \ \ \ \ rightPadding:\ effectiveScrollBarWidth}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00017}00017\ \ \ \ \ bottomPadding:\ effectiveScrollBarHeight}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00019}00019\ \ \ \ \ //\ Don't\ set\ \_\_notCustomizable\ here,\ because\ it\ would\ require\ special-\/casing}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00020}00020\ \ \ \ \ //\ setFlickable's\ call\ to\ setContentItem.}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00022}00022\ \ \ \ \ ScrollBar.vertical:\ ScrollBar\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00023}00023\ \ \ \ \ \ \ \ \ parent:\ control}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00024}00024\ \ \ \ \ \ \ \ \ x:\ control.mirrored\ ?\ 0\ :\ control.width\ -\/\ width}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ y:\ 0}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ height:\ control.height\ -\/\ (control.ScrollBar.horizontal.visible\ ?\ control.ScrollBar.horizontal.height\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ active:\ control.ScrollBar.horizontal.active}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00030}00030\ \ \ \ \ ScrollBar.horizontal:\ ScrollBar\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ parent:\ control}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ x:\ 0}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ y:\ control.height\ -\/\ height}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ width:\ control.width\ -\/\ (control.ScrollBar.vertical.visible\ ?\ control.ScrollBar.vertical.width\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ active:\ control.ScrollBar.vertical.active}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_scroll_view_8qml_source_l00037}00037\ \}}
+
+\end{DoxyCode}

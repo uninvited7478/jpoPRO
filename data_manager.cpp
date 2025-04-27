@@ -8,19 +8,21 @@ DataManager::DataManager(QObject *parent) : QObject(parent) {}
 void DataManager::saveToFile(QJsonArray data, const QString &filename) {
     QFile file(filename);
     if (!file.open(QIODevice::WriteOnly)) {
-        qWarning() << "Nie można zapisać pliku";
+        emit saveError("Nie można zapisać pliku: " + file.errorString());
         return;
     }
 
     QJsonDocument doc(data);
     file.write(doc.toJson());
     file.close();
+    emit saveSuccess();
 }
 
 QJsonArray DataManager::loadFromFile(const QString &filename) {
     QFile file(filename);
+    qDebug() << file.fileName();
     if (!file.open(QIODevice::ReadOnly)) {
-        qWarning() << "Nie można odczytać pliku";
+        emit loadError("Nie można odczytać pliku: " + file.errorString());
         return QJsonArray();
     }
 
@@ -28,5 +30,10 @@ QJsonArray DataManager::loadFromFile(const QString &filename) {
     file.close();
 
     QJsonDocument doc = QJsonDocument::fromJson(rawData);
+    if (doc.isNull() || !doc.isArray()) {
+        emit loadError("Nieprawidłowy format JSON");
+        return QJsonArray();
+    }
+    emit loadSuccess();
     return doc.array();
 }

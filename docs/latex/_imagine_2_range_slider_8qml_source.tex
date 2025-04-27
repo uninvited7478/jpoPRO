@@ -1,0 +1,110 @@
+\doxysection{Range\+Slider.\+qml}
+\hypertarget{_imagine_2_range_slider_8qml_source}{}\label{_imagine_2_range_slider_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Imagine/RangeSlider.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Imagine/RangeSlider.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00006}00006\ import\ QtQuick.Controls.Imagine}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00007}00007\ import\ QtQuick.Controls.Imagine.impl}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00009}00009\ T.RangeSlider\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00010}00010\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00012}00012\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ first.implicitHandleWidth\ +\ leftPadding\ +\ rightPadding,}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ second.implicitHandleWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00015}00015\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ first.implicitHandleHeight\ +\ topPadding\ +\ bottomPadding,}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ second.implicitHandleHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00019}00019\ \ \ \ \ topPadding:\ background\ ?\ background.topPadding\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00020}00020\ \ \ \ \ leftPadding:\ background\ ?\ background.leftPadding\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00021}00021\ \ \ \ \ rightPadding:\ background\ ?\ background.rightPadding\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00022}00022\ \ \ \ \ bottomPadding:\ background\ ?\ background.bottomPadding\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00024}00024\ \ \ \ \ topInset:\ background\ ?\ -\/background.topInset\ ||\ 0\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00025}00025\ \ \ \ \ leftInset:\ background\ ?\ -\/background.leftInset\ ||\ 0\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00026}00026\ \ \ \ \ rightInset:\ background\ ?\ -\/background.rightInset\ ||\ 0\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00027}00027\ \ \ \ \ bottomInset:\ background\ ?\ -\/background.bottomInset\ ||\ 0\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00029}00029\ \ \ \ \ first.handle:\ Image\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ x:\ control.leftPadding\ +\ (control.horizontal\ ?\ control.first.visualPosition\ *\ (control.availableWidth\ -\/\ width)\ :\ (control.availableWidth\ -\/\ width)\ /\ 2)}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ y:\ control.topPadding\ +\ (control.horizontal\ ?\ (control.availableHeight\ -\/\ height)\ /\ 2\ :\ control.first.visualPosition\ *\ (control.availableHeight\ -\/\ height))}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ source:\ control.Imagine.url\ +\ "{}rangeslider-\/handle"{}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ ImageSelector\ on\ source\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ states:\ [}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}first"{}:\ true\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}vertical"{}:\ control.vertical\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}horizontal"{}:\ control.horizontal\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}disabled"{}:\ !control.enabled\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}pressed"{}:\ control.first.pressed\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}focused"{}:\ control.first.handle?.activeFocus\ ??\ false\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}mirrored"{}:\ control.mirrored\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}hovered"{}:\ control.first.hovered\}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00048}00048\ \ \ \ \ second.handle:\ Image\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ x:\ control.leftPadding\ +\ (control.horizontal\ ?\ control.second.visualPosition\ *\ (control.availableWidth\ -\/\ width)\ :\ (control.availableWidth\ -\/\ width)\ /\ 2)}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ y:\ control.topPadding\ +\ (control.horizontal\ ?\ (control.availableHeight\ -\/\ height)\ /\ 2\ :\ control.second.visualPosition\ *\ (control.availableHeight\ -\/\ height))}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ source:\ control.Imagine.url\ +\ "{}rangeslider-\/handle"{}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ ImageSelector\ on\ source\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ states:\ [}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}second"{}:\ true\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}vertical"{}:\ control.vertical\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}horizontal"{}:\ control.horizontal\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}disabled"{}:\ !control.enabled\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}pressed"{}:\ control.second.pressed\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}focused"{}:\ control.second.handle?.activeFocus\ ??\ false\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}mirrored"{}:\ control.mirrored\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}hovered"{}:\ control.second.hovered\}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00067}00067\ \ \ \ \ background:\ NinePatchImage\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00068}00068\ \ \ \ \ \ \ \ \ scale:\ control.horizontal\ \&\&\ control.mirrored\ ?\ -\/1\ :\ 1}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00070}00070\ \ \ \ \ \ \ \ \ source:\ control.Imagine.url\ +\ "{}rangeslider-\/background"{}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00071}00071\ \ \ \ \ \ \ \ \ NinePatchImageSelector\ on\ source\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ states:\ [}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}vertical"{}:\ control.vertical\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}horizontal"{}:\ control.horizontal\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}disabled"{}:\ !control.enabled\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}focused"{}:\ control.visualFocus\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}mirrored"{}:\ control.mirrored\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}hovered"{}:\ control.enabled\ \&\&\ control.hovered\}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00080}00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00082}00082\ \ \ \ \ \ \ \ \ NinePatchImage\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ readonly\ property\ real\ handleWidth:\ control.first.handle\ ?\ control.first.handle.width\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ readonly\ property\ real\ handleHeight:\ control.first.handle\ ?\ control.first.handle.height\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ control.horizontal\ ?\ handleWidth\ /\ 2\ +\ control.first.position\ *\ (parent.width\ -\/\ handleWidth)\ :\ (parent.width\ -\/\ width)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ y:\ control.horizontal\ ?\ (parent.height\ -\/\ height)\ /\ 2\ :\ handleHeight\ /\ 2\ +\ control.second.visualPosition\ *\ (parent.height\ -\/\ handleHeight)}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ control.horizontal\ ?\ control.second.position\ *\ (parent.width\ -\/\ handleWidth)\ -\/\ control.first.position\ *\ (parent.width\ -\/\ handleWidth)\ :\ parent.width}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ control.vertical\ ?\ control.second.position\ *\ (parent.height\ -\/\ handleHeight)\ -\/\ control.first.position\ *\ (parent.height\ -\/\ handleHeight):\ parent.height}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ source:\ control.Imagine.url\ +\ "{}rangeslider-\/progress"{}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ NinePatchImageSelector\ on\ source\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ states:\ [}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}vertical"{}:\ control.vertical\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}horizontal"{}:\ control.horizontal\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}disabled"{}:\ !control.enabled\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}focused"{}:\ control.visualFocus\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}mirrored"{}:\ control.mirrored\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}hovered"{}:\ control.enabled\ \&\&\ control.hovered\}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00102}00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_range_slider_8qml_source_l00104}00104\ \}}
+
+\end{DoxyCode}

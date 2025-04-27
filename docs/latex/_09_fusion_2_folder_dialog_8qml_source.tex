@@ -1,0 +1,143 @@
+\doxysection{Folder\+Dialog.\+qml}
+\hypertarget{_09_fusion_2_folder_dialog_8qml_source}{}\label{_09_fusion_2_folder_dialog_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Dialogs/quickimpl/qml/+Fusion/FolderDialog.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Dialogs/quickimpl/qml/+Fusion/FolderDialog.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2021\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00004}00004\ import\ Qt.labs.folderlistmodel}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00005}00005\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00006}00006\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00007}00007\ import\ QtQuick.Controls.Fusion}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00008}00008\ import\ QtQuick.Controls.Fusion.impl}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00009}00009\ import\ QtQuick.Dialogs}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00010}00010\ import\ QtQuick.Dialogs.quickimpl}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00011}00011\ import\ QtQuick.Layouts}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00012}00012\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00014}00014\ import\ "{}."{}\ as\ DialogsImpl}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00016}00016\ FolderDialogImpl\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00017}00017\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00019}00019\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding,}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitHeaderWidth,}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitFooterWidth)}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00023}00023\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (implicitHeaderHeight\ >\ 0\ ?\ implicitHeaderHeight\ +\ spacing\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (implicitFooterHeight\ >\ 0\ ?\ implicitFooterHeight\ +\ spacing\ :\ 0))}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00028}00028\ \ \ \ \ padding:\ 6}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00029}00029\ \ \ \ \ horizontalPadding:\ 12}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00031}00031\ \ \ \ \ standardButtons:\ T.Dialog.Open\ |\ T.Dialog.Cancel}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00033}00033\ \ \ \ \ FolderDialogImpl.folderDialogListView:\ folderDialogListView}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00034}00034\ \ \ \ \ FolderDialogImpl.breadcrumbBar:\ breadcrumbBar}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00036}00036\ \ \ \ \ background:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ implicitWidth:\ 600}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ implicitHeight:\ 400}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ color:\ control.palette.window}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ border.color:\ control.palette.mid}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ radius:\ 2}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ z:\ -\/1}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ 1}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ y:\ 1}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ parent.width}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ parent.height}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.palette.shadow}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ opacity:\ 0.2}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ radius:\ 2}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00055}00055\ \ \ \ \ header:\ ColumnLayout\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ spacing:\ 0}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ Label\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ objectName:\ "{}dialogTitleBarLabel"{}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ text:\ control.title}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ horizontalAlignment:\ Label.AlignHCenter}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ elide:\ Label.ElideRight}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ font.bold:\ true}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ padding:\ 6}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ visible:\ parent.parent?.parent\ ===\ Overlay.overlay}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.fillWidth:\ true}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.leftMargin:\ 12}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.rightMargin:\ 12}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.topMargin:\ control.title.length\ >\ 0\ ?\ 0\ :\ 12}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.preferredHeight:\ control.title.length\ >\ 0\ ?\ implicitHeight\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00072}00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00074}00074\ \ \ \ \ \ \ \ \ DialogsImpl.FolderBreadcrumbBar\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ id:\ breadcrumbBar}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ dialog:\ control}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.topMargin:\ parent.parent?.parent\ ===\ Overlay.overlay\ ?\ 0\ :\ 12}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.fillWidth:\ true}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.leftMargin:\ 12}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.rightMargin:\ 12}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ KeyNavigation.tab:\ folderDialogListView}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00087}00087\ \ \ \ \ contentItem:\ Frame\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00088}00088\ \ \ \ \ \ \ \ \ padding:\ 0}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00089}00089\ \ \ \ \ \ \ \ \ verticalPadding:\ 1}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00091}00091\ \ \ \ \ \ \ \ \ ListView\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ id:\ folderDialogListView}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ objectName:\ "{}fileDialogListView"{}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ anchors.fill:\ parent}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ clip:\ true}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ focus:\ true}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ boundsBehavior:\ Flickable.StopAtBounds}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ ScrollBar.vertical:\ ScrollBar\ \{\}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ model:\ FolderListModel\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ folder:\ control.currentFolder}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ showFiles:\ false}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sortCaseSensitive:\ false}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ delegate:\ DialogsImpl.FolderDialogDelegate\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ objectName:\ "{}folderDialogDelegate"{}\ +\ index}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x:\ 1}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width:\ ListView.view.width\ -\/\ 2}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ highlighted:\ ListView.isCurrentItem}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dialog:\ control}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ KeyNavigation.backtab:\ breadcrumbBar}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ KeyNavigation.tab:\ control.footer}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00116}00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00119}00119\ \ \ \ \ footer:\ DialogButtonBox\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00120}00120\ \ \ \ \ \ \ \ \ id:\ buttonBox}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00121}00121\ \ \ \ \ \ \ \ \ standardButtons:\ control.standardButtons}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00122}00122\ \ \ \ \ \ \ \ \ spacing:\ 6}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00123}00123\ \ \ \ \ \ \ \ \ leftPadding:\ 0}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00124}00124\ \ \ \ \ \ \ \ \ rightPadding:\ 12}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00125}00125\ \ \ \ \ \ \ \ \ topPadding:\ 0}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00126}00126\ \ \ \ \ \ \ \ \ bottomPadding:\ 12}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00127}00127\ \ \ \ \ \ \ \ \ background:\ null}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00128}00128\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00130}00130\ \ \ \ \ T.Overlay.modal:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00131}00131\ \ \ \ \ \ \ \ \ color:\ Fusion.topShadow}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00132}00132\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00134}00134\ \ \ \ \ T.Overlay.modeless:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00135}00135\ \ \ \ \ \ \ \ \ color:\ Fusion.topShadow}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00136}00136\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_folder_dialog_8qml_source_l00137}00137\ \}}
+
+\end{DoxyCode}

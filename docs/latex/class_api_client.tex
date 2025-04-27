@@ -1,0 +1,208 @@
+\doxysection{Api\+Client Class Reference}
+\hypertarget{class_api_client}{}\label{class_api_client}\index{ApiClient@{ApiClient}}
+
+
+Klasa odpowiedzialna za komunikację z API GIOŚ.  
+
+
+
+
+{\ttfamily \#include $<$api\+\_\+client.\+h$>$}
+
+Inheritance diagram for Api\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_api_client}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_api_client_a364d1d611a212837c985986a82b5ea61}{stations\+Ready}} (QJson\+Array stations)
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany po pomyślnym pobraniu listy stacji. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_client_a7e9ff3fc3bb6e23a426d788f6edcc6aa}{sensors\+Ready}} (QJson\+Array sensors)
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany po pomyślnym pobraniu listy czujników. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_client_ac26492a438b75829ef1dc3294036aa8b}{sensor\+Data\+Ready}} (QJson\+Array values)
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany po pomyślnym pobraniu danych z czujnika. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_api_client_a9ff5389548d177bceea7cb05f3d9eaaa}{error\+Occurred}} (QString message)
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany w przypadku błędu podczas komunikacji z API. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_api_client_a7ac17ab761c4ee56fa63802573b343e3}{Api\+Client}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{class_api_client}{Api\+Client}. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{class_api_client_ae81dff8f0fb995816b7ee6c4071ee439}{fetch\+Stations}} ()
+\begin{DoxyCompactList}\small\item\em Pobiera listę stacji pomiarowych z API. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{class_api_client_ad7d84fea01915462dfefadd62ad98d79}{fetch\+Sensors}} (int station\+Id)
+\begin{DoxyCompactList}\small\item\em Pobiera listę czujników dla wybranej stacji. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{class_api_client_a4bdea3687c8e0d9d1b2b55acb470ff59}{fetch\+Sensor\+Data}} (int sensor\+Id)
+\begin{DoxyCompactList}\small\item\em Pobiera dane z wybranego czujnika. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa odpowiedzialna za komunikację z API GIOŚ. 
+
+\doxylink{class_api_client}{Api\+Client} wykonuje zapytania HTTP do API GIOŚ, pobiera dane o stacjach, czujnikach i wartościach pomiarowych. 
+
+Definition at line \mbox{\hyperlink{api__client_8h_source_l00015}{15}} of file \mbox{\hyperlink{api__client_8h_source}{api\+\_\+client.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_api_client_a7ac17ab761c4ee56fa63802573b343e3}\index{ApiClient@{ApiClient}!ApiClient@{ApiClient}}
+\index{ApiClient@{ApiClient}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{ApiClient()}{ApiClient()}}
+{\footnotesize\ttfamily \label{class_api_client_a7ac17ab761c4ee56fa63802573b343e3} 
+Api\+Client\+::\+Api\+Client (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor klasy \doxylink{class_api_client}{Api\+Client}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Wskaźnik na obiekt nadrzędny (domyślnie nullptr). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{api__client_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{api__client_8cpp_source}{api\+\_\+client.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_api_client_a9ff5389548d177bceea7cb05f3d9eaaa}\index{ApiClient@{ApiClient}!errorOccurred@{errorOccurred}}
+\index{errorOccurred@{errorOccurred}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{errorOccurred}{errorOccurred}}
+{\footnotesize\ttfamily \label{class_api_client_a9ff5389548d177bceea7cb05f3d9eaaa} 
+void Api\+Client\+::error\+Occurred (\begin{DoxyParamCaption}\item[{QString}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Sygnał emitowany w przypadku błędu podczas komunikacji z API. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Komunikat błędu. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{moc__api__client_8cpp_source_l00181}{181}} of file \mbox{\hyperlink{moc__api__client_8cpp_source}{moc\+\_\+api\+\_\+client.\+cpp}}.
+
+\Hypertarget{class_api_client_a4bdea3687c8e0d9d1b2b55acb470ff59}\index{ApiClient@{ApiClient}!fetchSensorData@{fetchSensorData}}
+\index{fetchSensorData@{fetchSensorData}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{fetchSensorData()}{fetchSensorData()}}
+{\footnotesize\ttfamily \label{class_api_client_a4bdea3687c8e0d9d1b2b55acb470ff59} 
+void Api\+Client\+::fetch\+Sensor\+Data (\begin{DoxyParamCaption}\item[{int}]{sensor\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Pobiera dane z wybranego czujnika. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor\+Id} & Identyfikator czujnika. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{api__client_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{api__client_8cpp_source}{api\+\_\+client.\+cpp}}.
+
+\Hypertarget{class_api_client_ad7d84fea01915462dfefadd62ad98d79}\index{ApiClient@{ApiClient}!fetchSensors@{fetchSensors}}
+\index{fetchSensors@{fetchSensors}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{fetchSensors()}{fetchSensors()}}
+{\footnotesize\ttfamily \label{class_api_client_ad7d84fea01915462dfefadd62ad98d79} 
+void Api\+Client\+::fetch\+Sensors (\begin{DoxyParamCaption}\item[{int}]{station\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Pobiera listę czujników dla wybranej stacji. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em station\+Id} & Identyfikator stacji pomiarowej. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{api__client_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{api__client_8cpp_source}{api\+\_\+client.\+cpp}}.
+
+\Hypertarget{class_api_client_ae81dff8f0fb995816b7ee6c4071ee439}\index{ApiClient@{ApiClient}!fetchStations@{fetchStations}}
+\index{fetchStations@{fetchStations}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{fetchStations()}{fetchStations()}}
+{\footnotesize\ttfamily \label{class_api_client_ae81dff8f0fb995816b7ee6c4071ee439} 
+void Api\+Client\+::fetch\+Stations (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Pobiera listę stacji pomiarowych z API. 
+
+
+
+Definition at line \mbox{\hyperlink{api__client_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{api__client_8cpp_source}{api\+\_\+client.\+cpp}}.
+
+\Hypertarget{class_api_client_ac26492a438b75829ef1dc3294036aa8b}\index{ApiClient@{ApiClient}!sensorDataReady@{sensorDataReady}}
+\index{sensorDataReady@{sensorDataReady}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{sensorDataReady}{sensorDataReady}}
+{\footnotesize\ttfamily \label{class_api_client_ac26492a438b75829ef1dc3294036aa8b} 
+void Api\+Client\+::sensor\+Data\+Ready (\begin{DoxyParamCaption}\item[{QJson\+Array}]{values}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Sygnał emitowany po pomyślnym pobraniu danych z czujnika. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em values} & Tablica JSON z wartościami pomiarowymi. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{moc__api__client_8cpp_source_l00175}{175}} of file \mbox{\hyperlink{moc__api__client_8cpp_source}{moc\+\_\+api\+\_\+client.\+cpp}}.
+
+\Hypertarget{class_api_client_a7e9ff3fc3bb6e23a426d788f6edcc6aa}\index{ApiClient@{ApiClient}!sensorsReady@{sensorsReady}}
+\index{sensorsReady@{sensorsReady}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{sensorsReady}{sensorsReady}}
+{\footnotesize\ttfamily \label{class_api_client_a7e9ff3fc3bb6e23a426d788f6edcc6aa} 
+void Api\+Client\+::sensors\+Ready (\begin{DoxyParamCaption}\item[{QJson\+Array}]{sensors}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Sygnał emitowany po pomyślnym pobraniu listy czujników. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensors} & Tablica JSON z danymi czujników. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{moc__api__client_8cpp_source_l00169}{169}} of file \mbox{\hyperlink{moc__api__client_8cpp_source}{moc\+\_\+api\+\_\+client.\+cpp}}.
+
+\Hypertarget{class_api_client_a364d1d611a212837c985986a82b5ea61}\index{ApiClient@{ApiClient}!stationsReady@{stationsReady}}
+\index{stationsReady@{stationsReady}!ApiClient@{ApiClient}}
+\doxysubsubsection{\texorpdfstring{stationsReady}{stationsReady}}
+{\footnotesize\ttfamily \label{class_api_client_a364d1d611a212837c985986a82b5ea61} 
+void Api\+Client\+::stations\+Ready (\begin{DoxyParamCaption}\item[{QJson\+Array}]{stations}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Sygnał emitowany po pomyślnym pobraniu listy stacji. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stations} & Tablica JSON z danymi stacji. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{moc__api__client_8cpp_source_l00163}{163}} of file \mbox{\hyperlink{moc__api__client_8cpp_source}{moc\+\_\+api\+\_\+client.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+api\+\_\+client.\+h\item 
+api\+\_\+client.\+cpp\item 
+build/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+9\+\_\+0\+\_\+\+Min\+GW\+\_\+64\+\_\+bit-\/\+Debug/appjpo\+PRO\+\_\+autogen/\+EWIEGA46\+WW/moc\+\_\+api\+\_\+client.\+cpp\end{DoxyCompactItemize}

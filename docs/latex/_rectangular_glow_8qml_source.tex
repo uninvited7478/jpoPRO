@@ -1,0 +1,213 @@
+\doxysection{Rectangular\+Glow.\+qml}
+\hypertarget{_rectangular_glow_8qml_source}{}\label{_rectangular_glow_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/impl/RectangularGlow.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/impl/RectangularGlow.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00006}00006\ /*}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00007}00007\ \ \ \ A\ cross-\/graphics\ API\ implementation\ of\ QtGraphicalEffects'\ RectangularGlow.}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00008}00008\ \ */}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00009}00009\ Item\ \{}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00010}00010\ \ \ \ \ id:\ rootItem}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00012}00012\ \ \ \ \ /*}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00013}00013\ \ \ \ \ \ \ \ \ This\ property\ defines\ how\ many\ pixels\ outside\ the\ item\ area\ are\ reached}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00014}00014\ \ \ \ \ \ \ \ \ by\ the\ glow.}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00016}00016\ \ \ \ \ \ \ \ \ The\ value\ ranges\ from\ 0.0\ (no\ glow)\ to\ inf\ (infinite\ glow).\ By\ default,}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ the\ property\ is\ set\ to\ \(\backslash\)c\ 0.0.}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00019}00019\ \ \ \ \ \ \ \ \ \(\backslash\)table}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00020}00020\ \ \ \ \ \ \ \ \ \(\backslash\)header}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00021}00021\ \ \ \ \ \ \ \ \ \(\backslash\)li\ Output\ examples\ with\ different\ glowRadius\ values}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00022}00022\ \ \ \ \ \ \ \ \ \(\backslash\)li}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00023}00023\ \ \ \ \ \ \ \ \ \(\backslash\)li}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00024}00024\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)image\ RectangularGlow\_glowRadius1.png}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)image\ RectangularGlow\_glowRadius2.png}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)image\ RectangularGlow\_glowRadius3.png}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)b\ \{\ glowRadius:\ 10\ \}}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)b\ \{\ glowRadius:\ 20\ \}}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)b\ \{\ glowRadius:\ 40\ \}}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ spread:\ 0}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ spread:\ 0}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ spread:\ 0}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ color:\ \#ffffff}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ color:\ \#ffffff}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ color:\ \#ffffff}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ cornerRadius:\ 25}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ cornerRadius:\ 25}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ cornerRadius:\ 25}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ \(\backslash\)endtable}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00046}00046\ \ \ \ \ */}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00047}00047\ \ \ \ \ property\ real\ glowRadius:\ 0.0}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00049}00049\ \ \ \ \ /*}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ This\ property\ defines\ how\ large\ part\ of\ the\ glow\ color\ is\ strenghtened}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ near\ the\ source\ edges.}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ The\ value\ ranges\ from\ 0.0\ (no\ strenght\ increase)\ to\ 1.0\ (maximum}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ strenght\ increase).\ By\ default,\ the\ property\ is\ set\ to\ \(\backslash\)c\ 0.0.}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ \(\backslash\)table}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ \(\backslash\)header}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ \(\backslash\)li\ Output\ examples\ with\ different\ spread\ values}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ \(\backslash\)li}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ \(\backslash\)li}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)image\ RectangularGlow\_spread1.png}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)image\ RectangularGlow\_spread2.png}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)image\ RectangularGlow\_spread3.png}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00065}00065\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)b\ \{\ spread:\ 0.0\ \}}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)b\ \{\ spread:\ 0.5\ \}}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)b\ \{\ spread:\ 1.0\ \}}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00069}00069\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ glowRadius:\ 20}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ glowRadius:\ 20}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ glowRadius:\ 20}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00073}00073\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ color:\ \#ffffff}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ color:\ \#ffffff}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ color:\ \#ffffff}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00077}00077\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ cornerRadius:\ 25}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ cornerRadius:\ 25}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ cornerRadius:\ 25}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00081}00081\ \ \ \ \ \ \ \ \ \(\backslash\)endtable}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00082}00082\ \ \ \ \ */}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00083}00083\ \ \ \ \ property\ real\ spread:\ 0.0}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00085}00085\ \ \ \ \ /*}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00086}00086\ \ \ \ \ \ \ \ \ This\ property\ defines\ the\ RGBA\ color\ value\ which\ is\ used\ for\ the\ glow.}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00088}00088\ \ \ \ \ \ \ \ \ By\ default,\ the\ property\ is\ set\ to\ \(\backslash\)c\ "{}white"{}.}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00090}00090\ \ \ \ \ \ \ \ \ \(\backslash\)table}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00091}00091\ \ \ \ \ \ \ \ \ \(\backslash\)header}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00092}00092\ \ \ \ \ \ \ \ \ \(\backslash\)li\ Output\ examples\ with\ different\ color\ values}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00093}00093\ \ \ \ \ \ \ \ \ \(\backslash\)li}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00094}00094\ \ \ \ \ \ \ \ \ \(\backslash\)li}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00095}00095\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)image\ RectangularGlow\_color1.png}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)image\ RectangularGlow\_color2.png}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)image\ RectangularGlow\_color3.png}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00099}00099\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)b\ \{\ color:\ \#ffffff\ \}}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)b\ \{\ color:\ \#55ff55\ \}}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)b\ \{\ color:\ \#5555ff\ \}}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00103}00103\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ glowRadius:\ 20}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ glowRadius:\ 20}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ glowRadius:\ 20}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00107}00107\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ spread:\ 0}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ spread:\ 0}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ spread:\ 0}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00111}00111\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ cornerRadius:\ 25}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ cornerRadius:\ 25}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ cornerRadius:\ 25}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00115}00115\ \ \ \ \ \ \ \ \ \(\backslash\)endtable}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00116}00116\ \ \ \ \ */}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00117}00117\ \ \ \ \ property\ color\ color:\ "{}white"{}}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00119}00119\ \ \ \ \ /*}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00120}00120\ \ \ \ \ \ \ \ \ This\ property\ defines\ the\ corner\ radius\ that\ is\ used\ to\ draw\ a\ glow\ with}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00121}00121\ \ \ \ \ \ \ \ \ rounded\ corners.}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00123}00123\ \ \ \ \ \ \ \ \ The\ value\ ranges\ from\ 0.0\ to\ half\ of\ the\ effective\ width\ or\ height\ of}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00124}00124\ \ \ \ \ \ \ \ \ the\ glow,\ whichever\ is\ smaller.\ This\ can\ be\ calculated\ with:\ \(\backslash\)c\{}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00125}00125\ \ \ \ \ \ \ \ \ min(width,\ height)\ /\ 2.0\ +\ glowRadius\}}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00127}00127\ \ \ \ \ \ \ \ \ By\ default,\ the\ property\ is\ bound\ to\ glowRadius\ property.\ The\ glow}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00128}00128\ \ \ \ \ \ \ \ \ behaves\ as\ if\ the\ rectangle\ was\ blurred\ when\ adjusting\ the\ glowRadius}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00129}00129\ \ \ \ \ \ \ \ \ property.}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00131}00131\ \ \ \ \ \ \ \ \ \(\backslash\)table}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00132}00132\ \ \ \ \ \ \ \ \ \(\backslash\)header}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00133}00133\ \ \ \ \ \ \ \ \ \(\backslash\)li\ Output\ examples\ with\ different\ cornerRadius\ values}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00134}00134\ \ \ \ \ \ \ \ \ \(\backslash\)li}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00135}00135\ \ \ \ \ \ \ \ \ \(\backslash\)li}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00136}00136\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)image\ RectangularGlow\_cornerRadius1.png}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)image\ RectangularGlow\_cornerRadius2.png}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)image\ RectangularGlow\_cornerRadius3.png}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00140}00140\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)b\ \{\ cornerRadius:\ 0\ \}}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)b\ \{\ cornerRadius:\ 25\ \}}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)b\ \{\ cornerRadius:\ 50\ \}}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00144}00144\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ glowRadius:\ 20}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ glowRadius:\ 20}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ glowRadius:\ 20}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00148}00148\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ spread:\ 0}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ spread:\ 0}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ spread:\ 0}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00152}00152\ \ \ \ \ \ \ \ \ \(\backslash\)row}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ color:\ \#ffffff}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ color:\ \#ffffff}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)li\ \(\backslash\)l\ color:\ \#ffffff}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00156}00156\ \ \ \ \ \ \ \ \ \(\backslash\)endtable}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00157}00157\ \ \ \ \ */}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00158}00158\ \ \ \ \ property\ real\ cornerRadius:\ glowRadius}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00160}00160\ \ \ \ \ /*}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00161}00161\ \ \ \ \ \ \ \ \ This\ property\ allows\ the\ effect\ output\ pixels\ to\ be\ cached\ in\ order\ to}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00162}00162\ \ \ \ \ \ \ \ \ improve\ the\ rendering\ performance.}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00164}00164\ \ \ \ \ \ \ \ \ Every\ time\ the\ source\ or\ effect\ properties\ are\ changed,\ the\ pixels\ in}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00165}00165\ \ \ \ \ \ \ \ \ the\ cache\ must\ be\ updated.\ Memory\ consumption\ is\ increased,\ because\ an}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00166}00166\ \ \ \ \ \ \ \ \ extra\ buffer\ of\ memory\ is\ required\ for\ storing\ the\ effect\ output.}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00168}00168\ \ \ \ \ \ \ \ \ It\ is\ recommended\ to\ disable\ the\ cache\ when\ the\ source\ or\ the\ effect}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00169}00169\ \ \ \ \ \ \ \ \ properties\ are\ animated.}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00171}00171\ \ \ \ \ \ \ \ \ By\ default,\ the\ property\ is\ set\ to\ \(\backslash\)c\ false.}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00172}00172\ \ \ \ \ */}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00173}00173\ \ \ \ \ property\ bool\ cached:\ false}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00175}00175\ \ \ \ \ ShaderEffectSource\ \{}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00176}00176\ \ \ \ \ \ \ \ \ \ id:\ cacheItem}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00177}00177\ \ \ \ \ \ \ \ \ \ anchors.fill:\ shaderItem}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00178}00178\ \ \ \ \ \ \ \ \ \ visible:\ rootItem.cached}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00179}00179\ \ \ \ \ \ \ \ \ \ smooth:\ true}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00180}00180\ \ \ \ \ \ \ \ \ \ sourceItem:\ shaderItem}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00181}00181\ \ \ \ \ \ \ \ \ \ live:\ true}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00182}00182\ \ \ \ \ \ \ \ \ \ hideSource:\ visible}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00183}00183\ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00185}00185\ \ \ \ \ ShaderEffect\ \{}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00186}00186\ \ \ \ \ \ \ \ \ id:\ shaderItem}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00188}00188\ \ \ \ \ \ \ \ \ x:\ (parent.width\ -\/\ width)\ /\ 2.0}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00189}00189\ \ \ \ \ \ \ \ \ y:\ (parent.height\ -\/\ height)\ /\ 2.0}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00190}00190\ \ \ \ \ \ \ \ \ width:\ parent.width\ +\ rootItem.glowRadius\ *\ 2\ +\ cornerRadius\ *\ 2}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00191}00191\ \ \ \ \ \ \ \ \ height:\ parent.height\ +\ rootItem.glowRadius\ *\ 2\ +\ cornerRadius\ *\ 2}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00193}00193\ \ \ \ \ \ \ \ \ function\ clampedCornerRadius()\ \{}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ var\ maxCornerRadius\ =\ Math.min(rootItem.width,\ rootItem.height)\ /\ 2\ +\ rootItem.glowRadius;}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ return\ Math.max(0,\ Math.min(rootItem.cornerRadius,\ maxCornerRadius))}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00196}00196\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00198}00198\ \ \ \ \ \ \ \ \ property\ color\ color:\ rootItem.color}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00199}00199\ \ \ \ \ \ \ \ \ property\ real\ inverseSpread:\ 1.0\ -\/\ rootItem.spread}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00200}00200\ \ \ \ \ \ \ \ \ property\ real\ relativeSizeX:\ ((inverseSpread\ *\ inverseSpread)\ *\ rootItem.glowRadius\ +\ cornerRadius\ *\ 2.0)\ /\ width}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00201}00201\ \ \ \ \ \ \ \ \ property\ real\ relativeSizeY:\ relativeSizeX\ *\ (width\ /\ height)}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00202}00202\ \ \ \ \ \ \ \ \ property\ real\ spread:\ rootItem.spread\ /\ 2.0}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00203}00203\ \ \ \ \ \ \ \ \ property\ real\ cornerRadius:\ clampedCornerRadius()}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00205}00205\ \ \ \ \ \ \ \ \ fragmentShader:\ "{}qrc:/qt-\/project.org/imports/QtQuick/Controls/Material/shaders/RectangularGlow.frag.qsb"{}}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00206}00206\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_rectangular_glow_8qml_source_l00207}00207\ \}}
+
+\end{DoxyCode}

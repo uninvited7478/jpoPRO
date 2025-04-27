@@ -1,0 +1,131 @@
+\doxysection{Combo\+Box.\+qml}
+\hypertarget{_material_2_combo_box_8qml_source}{}\label{_material_2_combo_box_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/ComboBox.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/ComboBox.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00004}00004\ pragma\ ComponentBehavior:\ Bound}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00006}00006\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00007}00007\ import\ QtQuick.Window}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00008}00008\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00009}00009\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00010}00010\ import\ QtQuick.Controls.Material}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00011}00011\ import\ QtQuick.Controls.Material.impl}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00013}00013\ T.ComboBox\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00014}00014\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00016}00016\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00018}00018\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding,}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitIndicatorHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00022}00022\ \ \ \ \ leftPadding:\ padding\ +\ (!control.mirrored\ ||\ !indicator\ ||\ !indicator.visible\ ?\ 0\ :\ indicator.width\ +\ spacing)}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00023}00023\ \ \ \ \ rightPadding:\ padding\ +\ (control.mirrored\ ||\ !indicator\ ||\ !indicator.visible\ ?\ 0\ :\ indicator.width\ +\ spacing)}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00025}00025\ \ \ \ \ Material.background:\ flat\ ?\ "{}transparent"{}\ :\ undefined}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00026}00026\ \ \ \ \ Material.foreground:\ flat\ ?\ undefined\ :\ Material.primaryTextColor}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00028}00028\ \ \ \ \ delegate:\ MenuItem\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00029}00029\ \ \ \ \ \ \ \ \ required\ property\ var\ model}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ required\ property\ int\ index}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ width:\ ListView.view.width}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ text:\ model[control.textRole]}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ Material.foreground:\ control.currentIndex\ ===\ index\ ?\ ListView.view.contentItem.Material.accent\ :\ ListView.view.contentItem.Material.foreground}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ highlighted:\ control.highlightedIndex\ ===\ index}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ hoverEnabled:\ control.hoverEnabled}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00039}00039\ \ \ \ \ indicator:\ ColorImage\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ x:\ control.mirrored\ ?\ control.padding\ :\ control.width\ -\/\ width\ -\/\ control.padding}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ y:\ control.topPadding\ +\ (control.availableHeight\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ color:\ control.enabled\ ?\ control.Material.foreground\ :\ control.Material.hintTextColor}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ source:\ "{}qrc:/qt-\/project.org/imports/QtQuick/Controls/Material/images/drop-\/indicator.png"{}}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00046}00046\ \ \ \ \ contentItem:\ T.TextField\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ leftPadding:\ Material.textFieldHorizontalPadding}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ topPadding:\ Material.textFieldVerticalPadding}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ bottomPadding:\ Material.textFieldVerticalPadding}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ text:\ control.editable\ ?\ control.editText\ :\ control.displayText}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ enabled:\ control.editable}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ autoScroll:\ control.editable}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ readOnly:\ control.down}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ inputMethodHints:\ control.inputMethodHints}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ validator:\ control.validator}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ selectByMouse:\ control.selectTextByMouse}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ color:\ control.enabled\ ?\ control.Material.foreground\ :\ control.Material.hintTextColor}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ selectionColor:\ control.Material.accentColor}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ selectedTextColor:\ control.Material.primaryHighlightedTextColor}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00063}00063\ \ \ \ \ \ \ \ \ verticalAlignment:\ Text.AlignVCenter}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00065}00065\ \ \ \ \ \ \ \ \ cursorDelegate:\ CursorDelegate\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00068}00068\ \ \ \ \ background:\ MaterialTextContainer\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00069}00069\ \ \ \ \ \ \ \ \ implicitWidth:\ 120}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00070}00070\ \ \ \ \ \ \ \ \ implicitHeight:\ control.Material.textFieldHeight}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00072}00072\ \ \ \ \ \ \ \ \ outlineColor:\ (enabled\ \&\&\ control.hovered)\ ?\ control.Material.primaryTextColor\ :\ control.Material.hintTextColor}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00073}00073\ \ \ \ \ \ \ \ \ focusedOutlineColor:\ control.Material.accentColor}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00074}00074\ \ \ \ \ \ \ \ \ controlHasActiveFocus:\ control.activeFocus}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00075}00075\ \ \ \ \ \ \ \ \ controlHasText:\ true}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00076}00076\ \ \ \ \ \ \ \ \ horizontalPadding:\ control.Material.textFieldHorizontalPadding}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00079}00079\ \ \ \ \ popup:\ T.Popup\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00080}00080\ \ \ \ \ \ \ \ \ y:\ control.editable\ ?\ control.height\ -\/\ 5\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00081}00081\ \ \ \ \ \ \ \ \ width:\ control.width}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00082}00082\ \ \ \ \ \ \ \ \ height:\ Math.min(contentItem.implicitHeight\ +\ verticalPadding\ *\ 2,\ control.Window.height\ -\/\ topMargin\ -\/\ bottomMargin)}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00083}00083\ \ \ \ \ \ \ \ \ transformOrigin:\ Item.Top}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00084}00084\ \ \ \ \ \ \ \ \ topMargin:\ 12}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00085}00085\ \ \ \ \ \ \ \ \ bottomMargin:\ 12}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00086}00086\ \ \ \ \ \ \ \ \ verticalPadding:\ 8}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00088}00088\ \ \ \ \ \ \ \ \ Material.theme:\ control.Material.theme}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00089}00089\ \ \ \ \ \ \ \ \ Material.accent:\ control.Material.accent}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00090}00090\ \ \ \ \ \ \ \ \ Material.primary:\ control.Material.primary}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00092}00092\ \ \ \ \ \ \ \ \ enter:\ Transition\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ //\ grow\_fade\_in}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ NumberAnimation\ \{\ property:\ "{}scale"{};\ from:\ 0.9;\ easing.type:\ Easing.OutQuint;\ duration:\ 220\ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ NumberAnimation\ \{\ property:\ "{}opacity"{};\ from:\ 0.0;\ easing.type:\ Easing.OutCubic;\ duration:\ 150\ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00098}00098\ \ \ \ \ \ \ \ \ exit:\ Transition\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ //\ shrink\_fade\_out}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ NumberAnimation\ \{\ property:\ "{}scale"{};\ to:\ 0.9;\ easing.type:\ Easing.OutQuint;\ duration:\ 220\ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ NumberAnimation\ \{\ property:\ "{}opacity"{};\ to:\ 0.0;\ easing.type:\ Easing.OutCubic;\ duration:\ 150\ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00102}00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00104}00104\ \ \ \ \ \ \ \ \ contentItem:\ ListView\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ clip:\ true}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ implicitHeight:\ contentHeight}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ model:\ control.delegateModel}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ currentIndex:\ control.highlightedIndex}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ highlightMoveDuration:\ 0}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ T.ScrollIndicator.vertical:\ ScrollIndicator\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00112}00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00114}00114\ \ \ \ \ \ \ \ \ background:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ radius:\ 4}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ parent.Material.dialogColor}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ layer.enabled:\ control.enabled}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ layer.effect:\ RoundedElevationEffect\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ elevation:\ 4}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ roundedScale:\ Material.ExtraSmallScale}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00123}00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00124}00124\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_combo_box_8qml_source_l00125}00125\ \}}
+
+\end{DoxyCode}

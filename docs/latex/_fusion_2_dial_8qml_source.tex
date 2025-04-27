@@ -1,0 +1,47 @@
+\doxysection{Dial.\+qml}
+\hypertarget{_fusion_2_dial_8qml_source}{}\label{_fusion_2_dial_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Fusion/Dial.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Fusion/Dial.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00006}00006\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00007}00007\ import\ QtQuick.Controls.Fusion}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00008}00008\ import\ QtQuick.Controls.Fusion.impl}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00010}00010\ T.Dial\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00011}00011\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00013}00013\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00015}00015\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00018}00018\ \ \ \ \ background:\ DialImpl\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00019}00019\ \ \ \ \ \ \ \ \ implicitWidth:\ 100}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00020}00020\ \ \ \ \ \ \ \ \ implicitHeight:\ 100}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00021}00021\ \ \ \ \ \ \ \ \ highlight:\ control.visualFocus}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00024}00024\ \ \ \ \ handle:\ KnobImpl\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ x:\ control.background.x\ +\ control.background.width\ /\ 2\ -\/\ width\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ y:\ control.background.y\ +\ control.background.height\ /\ 2\ -\/\ height\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ width:\ control.width\ /\ 7}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ height:\ control.height\ /\ 7}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00029}00029\ \ \ \ \ \ \ \ \ transform:\ [}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ Translate\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y:\ -\/Math.min(control.background.width,\ control.background.height)\ *\ 0.35}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (control.handle\ ?\ control.handle.height\ /\ 2\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ Rotation\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ angle:\ control.angle}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ origin.x:\ control.handle\ ?\ control.handle.width\ /\ 2\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ origin.y:\ control.handle\ ?\ control.handle.height\ /\ 2\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_dial_8qml_source_l00041}00041\ \}}
+
+\end{DoxyCode}

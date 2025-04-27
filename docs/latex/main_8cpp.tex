@@ -1,0 +1,58 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Główny plik aplikacji Qt/\+QML do monitorowania jakości powietrza.  
+
+
+{\ttfamily \#include $<$QGui\+Application$>$}\newline
+{\ttfamily \#include $<$QQml\+Application\+Engine$>$}\newline
+{\ttfamily \#include $<$QQml\+Context$>$}\newline
+{\ttfamily \#include "{}api\+\_\+client.\+h"{}}\newline
+{\ttfamily \#include "{}data\+\_\+manager.\+h"{}}\newline
+{\ttfamily \#include "{}network\+\_\+checker.\+h"{}}\newline
+{\ttfamily \#include "{}network\+\_\+status.\+h"{}}\newline
+{\ttfamily \#include $<$QThread$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Funkcja główna aplikacji. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Główny plik aplikacji Qt/\+QML do monitorowania jakości powietrza. 
+
+Ten plik zawiera punkt wejścia aplikacji, konfigurację QML oraz zarządzanie wątkami dla \doxylink{class_network_checker}{Network\+Checker}. 
+
+Definition in file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Funkcja główna aplikacji. 
+
+Inicjalizuje aplikację Qt/\+QML, rejestruje obiekty w kontekście QML, konfiguruje wątek dla \doxylink{class_network_checker}{Network\+Checker} i ładuje główny plik QML.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Liczba argumentów wiersza poleceń. \\
+\hline
+{\em argv} & Tablica argumentów wiersza poleceń. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Kod wyjścia aplikacji (0 w przypadku sukcesu, -\/1 w przypadku błędu). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+

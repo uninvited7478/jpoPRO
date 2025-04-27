@@ -1,0 +1,27 @@
+\doxysection{Check\+Indicator.\+qml}
+\hypertarget{_windows_2impl_2_check_indicator_8qml_source}{}\label{_windows_2impl_2_check_indicator_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Windows/impl/CheckIndicator.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Windows/impl/CheckIndicator.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2024\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00005}00005\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00007}00007\ Item\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00008}00008\ \ \ \ \ id:\ indicator}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00009}00009\ \ \ \ \ implicitWidth:\ 14}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00010}00010\ \ \ \ \ implicitHeight:\ 10}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00012}00012\ \ \ \ \ property\ Item\ control}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00014}00014\ \ \ \ \ ColorImage\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00015}00015\ \ \ \ \ \ \ \ \ y:\ (parent.height\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00016}00016\ \ \ \ \ \ \ \ \ color:\ control.palette.text}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ source:\ "{}qrc:/qt-\/project.org/imports/QtQuick/Controls/Windows/images/checkmark.png"{}}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00018}00018\ \ \ \ \ \ \ \ \ visible:\ indicator.control.checkState\ ===\ Qt.Checked}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ (indicator.control.checked\ \&\&\ indicator.control.checkState\ ===\ undefined)}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_check_indicator_8qml_source_l00021}00021\ \}}
+
+\end{DoxyCode}

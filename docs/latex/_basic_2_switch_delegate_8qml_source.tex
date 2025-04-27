@@ -1,0 +1,81 @@
+\doxysection{Switch\+Delegate.\+qml}
+\hypertarget{_basic_2_switch_delegate_8qml_source}{}\label{_basic_2_switch_delegate_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Basic/SwitchDelegate.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Basic/SwitchDelegate.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00006}00006\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00008}00008\ T.SwitchDelegate\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00009}00009\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00011}00011\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00013}00013\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding,}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitIndicatorHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00017}00017\ \ \ \ \ padding:\ 12}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00018}00018\ \ \ \ \ spacing:\ 12}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00020}00020\ \ \ \ \ icon.width:\ 24}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00021}00021\ \ \ \ \ icon.height:\ 24}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00022}00022\ \ \ \ \ icon.color:\ control.palette.text}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00024}00024\ \ \ \ \ indicator:\ PaddedRectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ implicitWidth:\ 56}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ implicitHeight:\ 28}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ x:\ control.text\ ?\ (control.mirrored\ ?\ control.leftPadding\ :\ control.width\ -\/\ width\ -\/\ control.rightPadding)\ :\ control.leftPadding\ +\ (control.availableWidth\ -\/\ width)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00029}00029\ \ \ \ \ \ \ \ \ y:\ control.topPadding\ +\ (control.availableHeight\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ radius:\ 8}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ leftPadding:\ 0}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ rightPadding:\ 0}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ padding:\ (height\ -\/\ 16)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ color:\ control.checked\ ?\ control.palette.dark\ :\ control.palette.midlight}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ Math.max(0,\ Math.min(parent.width\ -\/\ width,\ control.visualPosition\ *\ parent.width\ -\/\ (width\ /\ 2)))}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ y:\ (parent.height\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ 28}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ 28}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ radius:\ 16}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.down\ ?\ control.palette.light\ :\ control.palette.window}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ border.width:\ control.visualFocus\ ?\ 2\ :\ 1}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ border.color:\ control.visualFocus\ ?\ control.palette.highlight\ :\ control.enabled\ ?\ control.palette.mid\ :\ control.palette.midlight}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ Behavior\ on\ x\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enabled:\ !control.down}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SmoothedAnimation\ \{\ velocity:\ 200\ \}}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00054}00054\ \ \ \ \ contentItem:\ IconLabel\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ leftPadding:\ control.mirrored\ ?\ control.indicator.width\ +\ control.spacing\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ rightPadding:\ !control.mirrored\ ?\ control.indicator.width\ +\ control.spacing\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ spacing:\ control.spacing}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ mirrored:\ control.mirrored}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ display:\ control.display}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ alignment:\ control.display\ ===\ IconLabel.IconOnly\ ||\ control.display\ ===\ IconLabel.TextUnderIcon\ ?\ Qt.AlignCenter\ :\ Qt.AlignLeft}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00063}00063\ \ \ \ \ \ \ \ \ icon:\ control.icon}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00064}00064\ \ \ \ \ \ \ \ \ text:\ control.text}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00065}00065\ \ \ \ \ \ \ \ \ font:\ control.font}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00066}00066\ \ \ \ \ \ \ \ \ color:\ control.palette.text}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00069}00069\ \ \ \ \ background:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00070}00070\ \ \ \ \ \ \ \ \ implicitWidth:\ 100}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00071}00071\ \ \ \ \ \ \ \ \ implicitHeight:\ 40}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00072}00072\ \ \ \ \ \ \ \ \ visible:\ control.down\ ||\ control.highlighted}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00073}00073\ \ \ \ \ \ \ \ \ color:\ control.down\ ?\ control.palette.midlight\ :\ control.palette.light}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_2_switch_delegate_8qml_source_l00075}00075\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,53 @@
+\doxysection{Tumbler.\+qml}
+\hypertarget{_universal_2_tumbler_8qml_source}{}\label{_universal_2_tumbler_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Universal/Tumbler.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Universal/Tumbler.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00006}00006\ import\ QtQuick.Controls.Universal}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00007}00007\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00009}00009\ T.Tumbler\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00010}00010\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00012}00012\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00014}00014\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00017}00017\ \ \ \ \ readonly\ property\ real\ \_\_delegateHeight:\ availableHeight\ /\ visibleItemCount}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00019}00019\ \ \ \ \ delegate:\ Text\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00020}00020\ \ \ \ \ \ \ \ \ text:\ modelData}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00021}00021\ \ \ \ \ \ \ \ \ font:\ control.font}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00022}00022\ \ \ \ \ \ \ \ \ color:\ control.Universal.foreground}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00023}00023\ \ \ \ \ \ \ \ \ opacity:\ (1.0\ -\/\ Math.abs(Tumbler.displacement)\ /\ (control.visibleItemCount\ /\ 2))\ *\ (control.enabled\ ?\ 1\ :\ 0.6)}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00024}00024\ \ \ \ \ \ \ \ \ horizontalAlignment:\ Text.AlignHCenter}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ verticalAlignment:\ Text.AlignVCenter}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ required\ property\ var\ modelData}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ required\ property\ int\ index}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00031}00031\ \ \ \ \ contentItem:\ TumblerView\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ implicitWidth:\ 60}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ implicitHeight:\ 200}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ model:\ control.model}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ delegate:\ control.delegate}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ path:\ Path\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ startX:\ control.contentItem.width\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ startY:\ -\/control.\_\_delegateHeight\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ PathLine\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x:\ control.contentItem.width\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y:\ (control.visibleItemCount\ +\ 1)\ *\ control.\_\_delegateHeight\ -\/\ control.\_\_delegateHeight\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ property\ real\ delegateHeight:\ control.availableHeight\ /\ control.visibleItemCount}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_universal_2_tumbler_8qml_source_l00047}00047\ \}}
+
+\end{DoxyCode}

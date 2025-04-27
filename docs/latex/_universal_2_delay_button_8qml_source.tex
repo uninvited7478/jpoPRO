@@ -1,0 +1,67 @@
+\doxysection{Delay\+Button.\+qml}
+\hypertarget{_universal_2_delay_button_8qml_source}{}\label{_universal_2_delay_button_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Universal/DelayButton.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Universal/DelayButton.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00006}00006\ import\ QtQuick.Controls.Universal}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00008}00008\ T.DelayButton\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00009}00009\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00011}00011\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00013}00013\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00016}00016\ \ \ \ \ padding:\ 8}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00017}00017\ \ \ \ \ verticalPadding:\ padding\ -\/\ 4}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00019}00019\ \ \ \ \ property\ bool\ useSystemFocusVisuals:\ true}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00021}00021\ \ \ \ \ transition:\ Transition\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00022}00022\ \ \ \ \ \ \ \ \ NumberAnimation\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ duration:\ control.delay\ *\ (control.pressed\ ?\ 1.0\ -\/\ control.progress\ :\ 0.3\ *\ control.progress)}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00024}00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00027}00027\ \ \ \ \ contentItem:\ Text\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ text:\ control.text}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00029}00029\ \ \ \ \ \ \ \ \ font:\ control.font}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ elide:\ Text.ElideRight}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ horizontalAlignment:\ Text.AlignHCenter}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ verticalAlignment:\ Text.AlignVCenter}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ opacity:\ enabled\ ?\ 1.0\ :\ 0.2}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ color:\ control.Universal.foreground}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00038}00038\ \ \ \ \ background:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ implicitWidth:\ 32}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ implicitHeight:\ 32}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ color:\ control.down\ ?\ control.Universal.baseMediumLowColor\ :}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ control.enabled\ \&\&\ control.checked\ ?\ control.Universal.accent\ :\ control.Universal.baseLowColor}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ visible:\ !control.checked}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ parent.width\ *\ control.progress}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ parent.height}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.Universal.accent}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ parent.width}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ parent.height}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ "{}transparent"{}}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ visible:\ enabled\ \&\&\ control.hovered}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ border.width:\ 2\ //\ ButtonBorderThemeThickness}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ border.color:\ control.Universal.baseMediumLowColor}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_universal_2_delay_button_8qml_source_l00061}00061\ \}}
+
+\end{DoxyCode}

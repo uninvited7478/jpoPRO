@@ -1,0 +1,85 @@
+\doxysection{Check\+Box.\+qml}
+\hypertarget{_windows_2_check_box_8qml_source}{}\label{_windows_2_check_box_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Windows/CheckBox.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Windows/CheckBox.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2020\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00006}00006\ import\ QtQuick.Controls}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00007}00007\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00008}00008\ import\ QtQuick.NativeStyle\ as\ NativeStyle}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00010}00010\ T.CheckBox\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00011}00011\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00013}00013\ \ \ \ \ readonly\ property\ bool\ nativeIndicator:\ indicator\ instanceof\ NativeStyle.StyleItem}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00014}00014\ \ \ \ \ readonly\ property\ bool\ \_\_notCustomizable:\ true}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00016}00016\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00018}00018\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding,}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitIndicatorHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00022}00022\ \ \ \ \ spacing:\ nativeIndicator\ ?\ 0\ :\ 6}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00023}00023\ \ \ \ \ padding:\ nativeIndicator\ ?\ 0\ :\ 6}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00025}00025\ \ \ \ \ indicator:\ NativeStyle.CheckBox\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ control:\ control}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ y:\ control.topPadding\ +\ (control.availableHeight\ -\/\ height)\ >>\ 1}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ contentWidth:\ contentItem.implicitWidth}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00029}00029\ \ \ \ \ \ \ \ \ contentHeight:\ contentItem.implicitHeight}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ useNinePatchImage:\ false}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ overrideState:\ NativeStyle.StyleItem.NeverHovered}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ readonly\ property\ bool\ \_\_ignoreNotCustomizable:\ true}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00036}00036\ \ \ \ \ NativeStyle.CheckBox\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ id:\ hoverCheckBox}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ control:\ control}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ x:\ indicator.x}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ y:\ indicator.y}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ z:\ 99\ \ \ //\ Needs\ to\ be\ above\ the\ "{}unhovered"{}\ indicator}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ width:\ indicator.width}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ height:\ indicator.height}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ useNinePatchImage:\ false}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ overrideState:\ NativeStyle.StyleItem.AlwaysHovered}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ opacity:\ control.hovered\ ?\ 1\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ visible:\ opacity\ !==\ 0}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ Behavior\ on\ opacity\ \{\ NumberAnimation\ \{\ duration:\ hoverCheckBox.transitionDuration\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00051}00051\ \ \ \ \ contentItem:\ CheckLabel\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ text:\ control.text}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ font:\ control.font}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ color:\ control.palette.windowText}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ //\ For\ some\ reason,\ the\ other\ styles\ set\ padding\ here\ (in\ the\ delegate),\ instead\ of\ in}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ //\ the\ control\ above.\ And\ they\ also\ adjust\ the\ indicator\ position\ by\ setting\ x\ and\ y}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ //\ explicitly\ (instead\ of\ using\ insets).\ So\ we\ follow\ the\ same\ pattern\ to\ ensure\ that}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ //\ setting\ a\ custom\ contentItem\ delegate\ from\ the\ app\ will\ end\ up\ looking\ the\ same\ for}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ //\ all\ styles.\ But\ this\ should\ probably\ be\ fixed\ for\ all\ styles\ (to\ make\ them\ work\ the}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ //\ same\ way\ as\ e.g\ Buttons).}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ leftPadding:\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (nativeIndicator)}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indicator.contentPadding.left}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ else}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indicator\ \&\&\ !mirrored\ ?\ indicator.width\ +\ spacing\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00069}00069\ \ \ \ \ \ \ \ \ topPadding:\ nativeIndicator\ ?\ indicator.contentPadding.top\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00070}00070\ \ \ \ \ \ \ \ \ rightPadding:\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (nativeIndicator)}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indicator.contentPadding.right}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ else}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indicator\ \&\&\ mirrored\ ?\ indicator.width\ +\ spacing\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00075}00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00077}00077\ \ \ \ \ \ \ \ \ readonly\ property\ bool\ \_\_ignoreNotCustomizable:\ true}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_check_box_8qml_source_l00079}00079\ \}}
+
+\end{DoxyCode}

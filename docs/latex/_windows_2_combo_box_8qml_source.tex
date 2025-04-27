@@ -1,0 +1,110 @@
+\doxysection{Combo\+Box.\+qml}
+\hypertarget{_windows_2_combo_box_8qml_source}{}\label{_windows_2_combo_box_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Windows/ComboBox.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Windows/ComboBox.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2020\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00004}00004\ pragma\ ComponentBehavior:\ Bound}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00006}00006\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00007}00007\ import\ QtQuick.Window}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00008}00008\ import\ QtQuick.Controls}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00009}00009\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00010}00010\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00011}00011\ import\ QtQuick.NativeStyle\ as\ NativeStyle}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00013}00013\ T.ComboBox\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00014}00014\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00016}00016\ \ \ \ \ readonly\ property\ bool\ \_\_nativeBackground:\ background\ instanceof\ NativeStyle.StyleItem}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00017}00017\ \ \ \ \ readonly\ property\ bool\ \_\_notCustomizable:\ true}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00019}00019\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding,}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 90\ /*\ minimum\ */\ )}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00022}00022\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding,}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitIndicatorHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00026}00026\ \ \ \ \ leftPadding:\ \_\_nativeBackground\ ?\ background.contentPadding.left\ :\ 5}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00027}00027\ \ \ \ \ rightPadding:\ \_\_nativeBackground\ ?\ background.contentPadding.right\ :\ 5}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00028}00028\ \ \ \ \ topPadding:\ \_\_nativeBackground\ ?\ background.contentPadding.top\ :\ 5}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00029}00029\ \ \ \ \ bottomPadding:\ \_\_nativeBackground\ ?\ background.contentPadding.bottom\ :\ 5}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00031}00031\ \ \ \ \ contentItem:\ T.TextField\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ implicitWidth:\ contentWidth}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ implicitHeight:\ contentHeight}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ text:\ control.editable\ ?\ control.editText\ :\ control.displayText}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ enabled:\ control.editable}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ autoScroll:\ control.editable}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ readOnly:\ control.down}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ inputMethodHints:\ control.inputMethodHints}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ validator:\ control.validator}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ selectByMouse:\ control.selectTextByMouse}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ color:\ control.editable\ ?\ control.palette.text\ :\ control.palette.buttonText}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ selectionColor:\ control.palette.highlight}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ selectedTextColor:\ control.palette.highlightedText}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ verticalAlignment:\ Text.AlignVCenter}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ readonly\ property\ bool\ \_\_ignoreNotCustomizable:\ true}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00051}00051\ \ \ \ \ background:\ NativeStyle.ComboBox\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ control:\ control}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ contentWidth:\ contentItem.implicitWidth}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ contentHeight:\ contentItem.implicitHeight}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ useNinePatchImage:\ false}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ readonly\ property\ bool\ \_\_ignoreNotCustomizable:\ true}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00060}00060\ \ \ \ \ delegate:\ ItemDelegate\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ required\ property\ var\ model}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ required\ property\ int\ index}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00064}00064\ \ \ \ \ \ \ \ \ width:\ ListView.view.width}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00065}00065\ \ \ \ \ \ \ \ \ text:\ model[control.textRole]}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00066}00066\ \ \ \ \ \ \ \ \ palette.text:\ control.palette.text}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00067}00067\ \ \ \ \ \ \ \ \ palette.highlightedText:\ control.palette.highlightedText}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00068}00068\ \ \ \ \ \ \ \ \ font.weight:\ control.currentIndex\ ===\ index\ ?\ Font.DemiBold\ :\ Font.Normal}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00069}00069\ \ \ \ \ \ \ \ \ highlighted:\ control.highlightedIndex\ ===\ index}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00070}00070\ \ \ \ \ \ \ \ \ hoverEnabled:\ control.hoverEnabled}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00073}00073\ \ \ \ \ popup:\ T.Popup\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00074}00074\ \ \ \ \ \ \ \ \ readonly\ property\ var\ layoutMargins:\ control.\_\_nativeBackground\ ?\ control.background.layoutMargins\ :\ null}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00075}00075\ \ \ \ \ \ \ \ \ x:\ layoutMargins\ ?\ layoutMargins.left\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00076}00076\ \ \ \ \ \ \ \ \ y:\ control.height\ -\/\ (layoutMargins\ ?\ layoutMargins.bottom\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00077}00077\ \ \ \ \ \ \ \ \ width:\ control.width\ -\/\ (layoutMargins\ ?\ layoutMargins.left\ +\ layoutMargins.right\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00078}00078\ \ \ \ \ \ \ \ \ height:\ Math.min(contentItem.implicitHeight,\ control.Window.height\ -\/\ topMargin\ -\/\ bottomMargin)}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00079}00079\ \ \ \ \ \ \ \ \ topMargin:\ 6}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00080}00080\ \ \ \ \ \ \ \ \ bottomMargin:\ 6}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00082}00082\ \ \ \ \ \ \ \ \ contentItem:\ ListView\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ clip:\ true}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ implicitHeight:\ contentHeight}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ model:\ control.delegateModel}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ currentIndex:\ control.highlightedIndex}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ highlightMoveDuration:\ 0}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z:\ 10}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width:\ parent.width}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ height:\ parent.height}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color:\ "{}transparent"{}}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ border.color:\ control.palette.mid}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ T.ScrollIndicator.vertical:\ ScrollIndicator\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00098}00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00100}00100\ \ \ \ \ \ \ \ \ background:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.palette.window}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00102}00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_combo_box_8qml_source_l00104}00104\ \}}
+
+\end{DoxyCode}

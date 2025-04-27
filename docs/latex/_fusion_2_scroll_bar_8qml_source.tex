@@ -1,0 +1,50 @@
+\doxysection{Scroll\+Bar.\+qml}
+\hypertarget{_fusion_2_scroll_bar_8qml_source}{}\label{_fusion_2_scroll_bar_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Fusion/ScrollBar.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Fusion/ScrollBar.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00006}00006\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00007}00007\ import\ QtQuick.Controls.Fusion}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00008}00008\ import\ QtQuick.Controls.Fusion.impl}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00010}00010\ T.ScrollBar\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00011}00011\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00013}00013\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00015}00015\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00018}00018\ \ \ \ \ padding:\ 2}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00019}00019\ \ \ \ \ visible:\ control.policy\ !==\ T.ScrollBar.AlwaysOff}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00020}00020\ \ \ \ \ minimumSize:\ orientation\ ===\ Qt.Horizontal\ ?\ height\ /\ width\ :\ width\ /\ height}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00022}00022\ \ \ \ \ contentItem:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00023}00023\ \ \ \ \ \ \ \ \ implicitWidth:\ control.interactive\ ?\ 6\ :\ 2}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00024}00024\ \ \ \ \ \ \ \ \ implicitHeight:\ control.interactive\ ?\ 6\ :\ 2}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ radius:\ width\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ color:\ control.pressed\ ?\ control.palette.dark\ :\ control.palette.mid}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ opacity:\ 0.0}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ states:\ State\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ name:\ "{}active"{}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ when:\ control.policy\ ===\ T.ScrollBar.AlwaysOn\ ||\ (control.active\ \&\&\ control.size\ <\ 1.0)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ PropertyChanges\ \{\ control.contentItem.opacity:\ 0.75\ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ transitions:\ Transition\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ from:\ "{}active"{}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ SequentialAnimation\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PauseAnimation\ \{\ duration:\ 450\ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NumberAnimation\ \{\ target:\ control.contentItem;\ duration:\ 200;\ property:\ "{}opacity"{};\ to:\ 0.0\ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_scroll_bar_8qml_source_l00044}00044\ \}}
+
+\end{DoxyCode}

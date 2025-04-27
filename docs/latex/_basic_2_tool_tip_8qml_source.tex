@@ -1,0 +1,41 @@
+\doxysection{Tool\+Tip.\+qml}
+\hypertarget{_basic_2_tool_tip_8qml_source}{}\label{_basic_2_tool_tip_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Basic/ToolTip.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Basic/ToolTip.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00005}00005\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00006}00006\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00008}00008\ T.ToolTip\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00009}00009\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00011}00011\ \ \ \ \ x:\ parent\ ?\ (parent.width\ -\/\ implicitWidth)\ /\ 2\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00012}00012\ \ \ \ \ y:\ -\/implicitHeight\ -\/\ 3}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00014}00014\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00016}00016\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00019}00019\ \ \ \ \ margins:\ 6}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00020}00020\ \ \ \ \ padding:\ 6}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00022}00022\ \ \ \ \ closePolicy:\ T.Popup.CloseOnEscape\ |\ T.Popup.CloseOnPressOutsideParent\ |\ T.Popup.CloseOnReleaseOutsideParent}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00024}00024\ \ \ \ \ contentItem:\ Text\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ text:\ control.text}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ font:\ control.font}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ wrapMode:\ Text.Wrap}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ color:\ control.palette.toolTipText}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00031}00031\ \ \ \ \ background:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ border.color:\ control.palette.dark}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ color:\ control.palette.toolTipBase}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_basic_2_tool_tip_8qml_source_l00035}00035\ \}}
+
+\end{DoxyCode}

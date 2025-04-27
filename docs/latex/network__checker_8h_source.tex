@@ -1,0 +1,35 @@
+\doxysection{network\+\_\+checker.\+h}
+\hypertarget{network__checker_8h_source}{}\label{network__checker_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ NETWORK\_CHECKER\_H}}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ NETWORK\_CHECKER\_H}}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <QNetworkAccessManager>}}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <QNetworkReply>}}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00015}\mbox{\hyperlink{class_network_checker}{00015}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_network_checker_a233cdfa40771a65aa92b2448a9a76da1}{NetworkChecker}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00017}00017\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00018}00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_network_checker_a233cdfa40771a65aa92b2448a9a76da1}{NetworkChecker}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00025}00025\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_checker_a58c44d1829507400ed48b2b92400e378}{startChecking}}();}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_checker_a07b75c27282c43e6f260de5aa190564a}{stopChecking}}();}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_checker_ab8cb53d9615e718cafb5302dbb79500c}{checkInternet}}();}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00041}00041\ signals:}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_checker_a5e6f469cee40d653196155c5be80e7fd}{internetStatusChanged}}(\textcolor{keywordtype}{bool}\ connected);}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00046}00046\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00047}00047\ \ \ \ \ QTimer\ *timer;\ }
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00048}00048\ \ \ \ \ QNetworkAccessManager\ manager;\ }
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00049}00049\ \};}
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{network__checker_8h_source_l00051}00051\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NETWORK\_CHECKER\_H}}
+
+\end{DoxyCode}

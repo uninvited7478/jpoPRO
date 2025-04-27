@@ -1,0 +1,69 @@
+\doxysection{Drawer.\+qml}
+\hypertarget{_imagine_2_drawer_8qml_source}{}\label{_imagine_2_drawer_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Imagine/Drawer.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Imagine/Drawer.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00006}00006\ import\ QtQuick.Controls.Imagine}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00007}00007\ import\ QtQuick.Controls.Imagine.impl}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00009}00009\ T.Drawer\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00010}00010\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00012}00012\ \ \ \ \ parent:\ T.Overlay.overlay}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00014}00014\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00016}00016\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00019}00019\ \ \ \ \ topPadding:\ SafeArea.margins.top\ +\ (background\ ?\ background.topPadding\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00020}00020\ \ \ \ \ leftPadding:\ SafeArea.margins.left\ +\ (background\ ?\ background.leftPadding\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00021}00021\ \ \ \ \ rightPadding:\ SafeArea.margins.right\ +\ (background\ ?\ background.rightPadding\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00022}00022\ \ \ \ \ bottomPadding:\ SafeArea.margins.bottom\ +\ (background\ ?\ background.bottomPadding\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00024}00024\ \ \ \ \ topInset:\ background\ ?\ -\/background.topInset\ ||\ 0\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00025}00025\ \ \ \ \ leftInset:\ background\ ?\ -\/background.leftInset\ ||\ 0\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00026}00026\ \ \ \ \ rightInset:\ background\ ?\ -\/background.rightInset\ ||\ 0\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00027}00027\ \ \ \ \ bottomInset:\ background\ ?\ -\/background.bottomInset\ ||\ 0\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00029}00029\ \ \ \ \ enter:\ Transition\ \{\ SmoothedAnimation\ \{\ velocity:\ 5\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00030}00030\ \ \ \ \ exit:\ Transition\ \{\ SmoothedAnimation\ \{\ velocity:\ 5\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00032}00032\ \ \ \ \ background:\ NinePatchImage\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ source:\ Imagine.url\ +\ "{}drawer-\/background"{}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ NinePatchImageSelector\ on\ source\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ states:\ [}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}modal"{}:\ control.modal\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}dim"{}:\ control.dim\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}top"{}:\ control.edge\ ===\ Qt.TopEdge\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}left"{}:\ control.edge\ ===\ Qt.LeftEdge\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}right"{}:\ control.edge\ ===\ Qt.RightEdge\},}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}bottom"{}:\ control.edge\ ===\ Qt.BottomEdge\}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00046}00046\ \ \ \ \ T.Overlay.modal:\ NinePatchImage\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ source:\ Imagine.url\ +\ "{}drawer-\/overlay"{}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ NinePatchImageSelector\ on\ source\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ states:\ [}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}modal"{}:\ true\}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00055}00055\ \ \ \ \ T.Overlay.modeless:\ NinePatchImage\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ source:\ Imagine.url\ +\ "{}drawer-\/overlay"{}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ NinePatchImageSelector\ on\ source\ \{}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ states:\ [}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}modal"{}:\ false\}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_imagine_2_drawer_8qml_source_l00063}00063\ \}}
+
+\end{DoxyCode}

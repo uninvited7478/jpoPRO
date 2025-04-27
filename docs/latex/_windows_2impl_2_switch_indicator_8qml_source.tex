@@ -1,0 +1,65 @@
+\doxysection{Switch\+Indicator.\+qml}
+\hypertarget{_windows_2impl_2_switch_indicator_8qml_source}{}\label{_windows_2impl_2_switch_indicator_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Windows/impl/SwitchIndicator.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Windows/impl/SwitchIndicator.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2023\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00007}00007\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00008}00008\ \ \ \ \ id:\ root}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00009}00009\ \ \ \ \ x:\ control.text\ ?\ (control.mirrored}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00010}00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ control.width\ -\/\ width\ -\/\ control.rightPadding\ :\ control.leftPadding)}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00011}00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ control.leftPadding\ +\ (control.availableWidth\ -\/\ width)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00012}00012\ \ \ \ \ y:\ control.topPadding\ +\ (control.availableHeight\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00013}00013\ \ \ \ \ implicitWidth:\ 40}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00014}00014\ \ \ \ \ implicitHeight:\ 16}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00015}00015\ \ \ \ \ radius:\ 3}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00016}00016\ \ \ \ \ color:\ Qt.darker(control.palette.button,\ control.down\ ?\ 1.2\ :\ 1.1)}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00017}00017\ \ \ \ \ border.color:\ Qt.darker(control.palette.window,\ 1.4)}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00019}00019\ \ \ \ \ readonly\ property\ bool\ \_\_ignoreNotCustomizable:\ true}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00020}00020\ \ \ \ \ readonly\ property\ real\ \_\_focusFrameRadius:\ 2}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00021}00021\ \ \ \ \ readonly\ property\ T.AbstractButton\ control:\ parent\ as\ T.AbstractButton}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00023}00023\ \ \ \ \ //\ Checked\ indicator.}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00024}00024\ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ x:\ root.control.mirrored\ ?\ parent.children[1].x\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ width:\ root.control.mirrored}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ ?\ parent.width\ -\/\ parent.children[1].x\ :\ parent.children[1].x\ +\ parent.children[1].width}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ height:\ parent.height}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00029}00029\ \ \ \ \ \ \ \ \ radius:\ 3}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ color:\ Qt.darker(root.control.palette.highlight,\ root.control.down\ ?\ 1.1\ :\ 1)}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ border.color:\ Qt.darker(root.control.palette.highlight,\ 1.35)}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ border.width:\ root.control.enabled\ ?\ 1\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ opacity:\ root.control.checked\ ?\ 1\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ Behavior\ on\ opacity\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ enabled:\ !root.control.down}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ NumberAnimation\ \{\ duration:\ 80\ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00041}00041\ \ \ \ \ //\ Handle.}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00042}00042\ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ x:\ Math.max(0,\ Math.min(parent.width\ -\/\ width,}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ root.control.visualPosition\ *\ parent.width\ -\/\ (width\ /\ 2)))}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ y:\ (parent.height\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ width:\ 20}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ height:\ 16}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ radius:\ 3}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ color:\ Qt.lighter(root.control.palette.button,\ root.control.down}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ ?\ 1\ :\ (root.control.hovered\ ?\ 1.07\ :\ 1.045))}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ border.width:\ 1}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ border.color:\ Qt.darker(root.control.palette.window,\ 1.4)}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ Behavior\ on\ x\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ enabled:\ !root.control.down}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ SmoothedAnimation\ \{\ velocity:\ 200\ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2impl_2_switch_indicator_8qml_source_l00059}00059\ \}}
+
+\end{DoxyCode}

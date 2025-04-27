@@ -1,0 +1,267 @@
+\doxysection{Color\+Dialog.\+qml}
+\hypertarget{_color_dialog_8qml_source}{}\label{_color_dialog_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Dialogs/quickimpl/qml/ColorDialog.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Dialogs/quickimpl/qml/ColorDialog.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2022\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00005}00005\ import\ QtQuick.Controls.Basic}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00006}00006\ import\ QtQuick.Controls.Basic.impl}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00007}00007\ import\ QtQuick.Dialogs}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00008}00008\ import\ QtQuick.Dialogs.quickimpl}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00009}00009\ import\ QtQuick.Layouts}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00010}00010\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00012}00012\ ColorDialogImpl\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00013}00013\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00015}00015\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding,}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitHeaderWidth,}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitFooterWidth)}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00019}00019\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (implicitHeaderHeight\ >\ 0\ ?\ implicitHeaderHeight\ +\ spacing\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (implicitFooterHeight\ >\ 0\ ?\ implicitFooterHeight\ +\ spacing\ :\ 0))}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00024}00024\ \ \ \ \ leftPadding:\ 6}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00025}00025\ \ \ \ \ rightPadding:\ 6}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00027}00027\ \ \ \ \ //\ Ensure\ that\ the\ background's\ border\ is\ visible.}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00028}00028\ \ \ \ \ leftInset:\ -\/1}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00029}00029\ \ \ \ \ rightInset:\ -\/1}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00030}00030\ \ \ \ \ topInset:\ -\/1}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00031}00031\ \ \ \ \ bottomInset:\ -\/1}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00033}00033\ \ \ \ \ standardButtons:\ T.Dialog.Ok\ |\ T.Dialog.Cancel}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00035}00035\ \ \ \ \ isHsl:\ true}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00037}00037\ \ \ \ \ ColorDialogImpl.eyeDropperButton:\ eyeDropperButton}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00038}00038\ \ \ \ \ ColorDialogImpl.buttonBox:\ buttonBox}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00039}00039\ \ \ \ \ ColorDialogImpl.colorPicker:\ colorPicker}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00040}00040\ \ \ \ \ ColorDialogImpl.colorInputs:\ inputs}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00041}00041\ \ \ \ \ ColorDialogImpl.alphaSlider:\ alphaSlider}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00043}00043\ \ \ \ \ background:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ implicitWidth:\ 200}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ implicitHeight:\ 600}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ color:\ control.palette.window}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ border.color:\ control.palette.dark}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00050}00050\ \ \ \ \ header:\ Pane\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ palette.window:\ control.palette.light}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ padding:\ 20}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ contentItem:\ RowLayout\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ Label\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ objectName:\ "{}titleLabel"{}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text:\ control.title}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ elide:\ Label.ElideRight}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ font.bold:\ true}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ visible:\ parent.parent?.parent?.parent\ ===\ Overlay.overlay}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Layout.preferredWidth:\ control.title.length\ >\ 0\ ?\ implicitWidth\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Layout.preferredHeight:\ control.title.length\ >\ 0\ ?\ implicitHeight\ :\ 15}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Layout.leftMargin:\ 12}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Layout.alignment:\ Qt.AlignLeft}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ Button\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ id:\ eyeDropperButton}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ objectName:\ "{}eyeDropperButton"{}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ icon.source:\ "{}qrc:/qt-\/project.org/imports/QtQuick/Dialogs/quickimpl/images/eye-\/dropper.png"{}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flat:\ true}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ visible:\ false}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Layout.preferredWidth:\ implicitHeight}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Layout.alignment:\ Qt.AlignRight}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Layout.rightMargin:\ 6}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00081}00081\ \ \ \ \ contentItem:\ ColumnLayout\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00082}00082\ \ \ \ \ \ \ \ \ spacing:\ 12}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00083}00083\ \ \ \ \ \ \ \ \ SaturationLightnessPicker\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ id:\ colorPicker}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ objectName:\ "{}colorPicker"{}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.color}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.fillWidth:\ true}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.fillHeight:\ true}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00090}00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00092}00092\ \ \ \ \ \ \ \ \ Slider\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ id:\ hueSlider}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ objectName:\ "{}hueSlider"{}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ orientation:\ Qt.Horizontal}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ value:\ control.hue}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ implicitHeight:\ 20}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ onMoved:\ function()\ \{\ control.hue\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ handle:\ PickerHandle\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x:\ hueSlider.leftPadding\ +\ (hueSlider.horizontal}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ hueSlider.visualPosition\ *\ (hueSlider.availableWidth\ -\/\ width)}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (hueSlider.availableWidth\ -\/\ width)\ /\ 2)}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y:\ hueSlider.topPadding\ +\ (hueSlider.horizontal}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ (hueSlider.availableHeight\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ hueSlider.visualPosition\ *\ (hueSlider.availableHeight\ -\/\ height))}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ picker:\ hueSlider}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ background:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anchors.fill:\ parent}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anchors.leftMargin:\ hueSlider.handle.width\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anchors.rightMargin:\ hueSlider.handle.width\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ border.width:\ 2}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ border.color:\ control.palette.dark}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ radius:\ 10}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color:\ "{}transparent"{}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anchors.fill:\ parent}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anchors.margins:\ 4}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ radius:\ 10}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gradient:\ HueGradient\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ orientation:\ Gradient.Horizontal}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.fillWidth:\ true}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.leftMargin:\ 12}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.rightMargin:\ 12}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00129}00129\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00131}00131\ \ \ \ \ \ \ \ \ Slider\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ id:\ alphaSlider}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ objectName:\ "{}alphaSlider"{}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ orientation:\ Qt.Horizontal}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ value:\ control.alpha}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ implicitHeight:\ 20}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ handle:\ PickerHandle\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x:\ alphaSlider.leftPadding\ +\ (alphaSlider.horizontal}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ alphaSlider.visualPosition\ *\ (alphaSlider.availableWidth\ -\/\ width)}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (alphaSlider.availableWidth\ -\/\ width)\ /\ 2)}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y:\ alphaSlider.topPadding\ +\ (alphaSlider.horizontal}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ (alphaSlider.availableHeight\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ alphaSlider.visualPosition\ *\ (alphaSlider.availableHeight\ -\/\ height))}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ picker:\ alphaSlider}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ background:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anchors.fill:\ parent}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anchors.leftMargin:\ parent.handle.width\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anchors.rightMargin:\ parent.handle.width\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ border.width:\ 2}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ border.color:\ control.palette.dark}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ radius:\ 10}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color:\ "{}transparent"{}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Image\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anchors.fill:\ alphaSliderGradient}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ source:\ "{}qrc:/qt-\/project.org/imports/QtQuick/Dialogs/quickimpl/images/checkers.png"{}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fillMode:\ Image.Tile}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ id:\ alphaSliderGradient}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anchors.fill:\ parent}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anchors.margins:\ 4}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ radius:\ 10}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gradient:\ Gradient\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ orientation:\ Gradient.Horizontal}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GradientStop\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position:\ 0}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color:\ "{}transparent"{}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GradientStop\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position:\ 1}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color:\ Qt.rgba(control.color.r,}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ control.color.g,}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ control.color.b,}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1)}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.fillWidth:\ true}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.leftMargin:\ 12}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.rightMargin:\ 12}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00186}00186\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00188}00188\ \ \ \ \ \ \ \ \ ColorInputs\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ id:\ inputs}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.color}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.fillWidth:\ true}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.leftMargin:\ 12}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.rightMargin:\ 12}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.bottomMargin:\ 12}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00195}00195\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00196}00196\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00198}00198\ \ \ \ \ footer:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00199}00199\ \ \ \ \ \ \ \ \ color:\ control.palette.light}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00200}00200\ \ \ \ \ \ \ \ \ implicitWidth:\ rowLayout.implicitWidth}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00201}00201\ \ \ \ \ \ \ \ \ implicitHeight:\ rowLayout.implicitHeight}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00203}00203\ \ \ \ \ \ \ \ \ RowLayout\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ id:\ rowLayout}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ parent.width}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ parent.height}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ spacing:\ 20}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ Label\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text:\ qsTr("{}Color"{})}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Layout.leftMargin:\ 20}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitWidth:\ 32}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitHeight:\ 32}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ border.width:\ 2}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ border.color:\ control.palette.dark}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color:\ "{}transparent"{}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Image\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anchors.fill:\ parent}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anchors.margins:\ 4}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ source:\ "{}qrc:/qt-\/project.org/imports/QtQuick/Dialogs/quickimpl/images/checkers.png"{}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fillMode:\ Image.Tile}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anchors.fill:\ parent}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anchors.margins:\ 4}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.color}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ Item\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ empty\ space\ filler}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Layout.fillWidth:\ true}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ DialogButtonBox\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ id:\ buttonBox}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ standardButtons:\ control.standardButtons}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ palette.window:\ control.palette.light}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ spacing:\ 12}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ horizontalPadding:\ 0}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ verticalPadding:\ 20}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Layout.rightMargin:\ 20}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00251}00251\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00252}00252\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00254}00254\ \ \ \ \ Overlay.modal:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00255}00255\ \ \ \ \ \ \ \ \ color:\ Color.transparent(control.palette.shadow,\ 0.5)}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00256}00256\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00258}00258\ \ \ \ \ Overlay.modeless:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00259}00259\ \ \ \ \ \ \ \ \ color:\ Color.transparent(control.palette.shadow,\ 0.12)}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00260}00260\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_color_dialog_8qml_source_l00261}00261\ \}}
+
+\end{DoxyCode}

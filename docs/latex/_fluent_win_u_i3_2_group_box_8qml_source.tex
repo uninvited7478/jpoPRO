@@ -1,0 +1,71 @@
+\doxysection{Group\+Box.\+qml}
+\hypertarget{_fluent_win_u_i3_2_group_box_8qml_source}{}\label{_fluent_win_u_i3_2_group_box_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/FluentWinUI3/GroupBox.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/FluentWinUI3/GroupBox.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2024\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00005}00005\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00006}00006\ import\ QtQuick.Controls.FluentWinUI3.impl\ as\ Impl}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00007}00007\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00009}00009\ T.GroupBox\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00010}00010\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00012}00012\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding,}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitLabelWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00015}00015\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00018}00018\ \ \ \ \ readonly\ property\ real\ \_\_deltaY:\ (config.background.y\ -\/\ config.label.y)\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00019}00019\ \ \ \ \ readonly\ property\ real\ \_\_deltaX:\ (config.background.x\ -\/\ config.label.x)\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00020}00020\ \ \ \ \ spacing:\ (\_\_deltaY\ -\/\ config.label.height)\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00022}00022\ \ \ \ \ topPadding:\ (config.topPadding\ ||\ 0)\ +\ (spacing\ >=\ 0\ ?\ (label.height\ +\ spacing)\ :\ \_\_deltaY)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00023}00023\ \ \ \ \ bottomPadding:\ config.bottomPadding\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00024}00024\ \ \ \ \ leftPadding:\ (config.leftPadding\ ||\ 0)\ +\ (\_\_deltaX\ >=\ 0\ ?\ \_\_deltaX\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00025}00025\ \ \ \ \ rightPadding:\ config.rightPadding\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00027}00027\ \ \ \ \ topInset:\ \_\_deltaY\ >\ 0\ ?\ \_\_deltaY\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00028}00028\ \ \ \ \ bottomInset:\ -\/config.bottomInset\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00029}00029\ \ \ \ \ leftInset:\ \_\_deltaX\ >\ 0\ ?\ \_\_deltaX\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00030}00030\ \ \ \ \ rightInset:\ -\/config.rightInset\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00032}00032\ \ \ \ \ readonly\ property\ string\ \_\_currentState:\ [}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ !control.enabled\ \&\&\ "{}disabled"{},}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ control.enabled\ \&\&\ control.hovered\ \&\&\ "{}hovered"{},}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00035}00035\ \ \ \ \ ].filter(Boolean).join("{}\_"{})\ ||\ "{}normal"{}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00036}00036\ \ \ \ \ readonly\ property\ var\ config:\ Config.controls.groupbox[\_\_currentState]\ ||\ \{\}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00038}00038\ \ \ \ \ label:\ T.Label\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ x:\ control.\_\_deltaX\ >\ 0\ ?\ 0\ :\ -\/\_\_deltaX}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ y:\ control.\_\_deltaY\ >\ 0\ ?\ 0\ :\ -\/\_\_deltaY}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ topPadding:\ control.config.label\_contentItem.topPadding\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ leftPadding:\ control.config.label\_contentItem.leftPadding\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ rightPadding:\ control.config.label\_contentItem.rightPadding\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ bottomPadding:\ control.config.label\_contentItem.bottomPadding\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ height:\ Math.max(implicitHeight,\ config.label.height)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ text:\ control.title}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ font:\ control.font}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ color:\ control.palette.windowText}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ elide:\ Text.ElideRight}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ horizontalAlignment:\ control.config.label\_text.textHAlignment}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ verticalAlignment:\ control.config.label\_text.textVAlignment}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ background:\ Impl.StyleImage\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ imageConfig:\ control.config.label\_background}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00061}00061\ \ \ \ \ background:\ Impl.StyleImage\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ imageConfig:\ control.config.background.filePath\ ?\ control.config.background\ :\ Config.controls.frame["{}normal"{}].background\ //\ fallback\ to\ regular\ frame\ background}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00063}00063\ \ \ \ \ \ \ \ \ height:\ parent.height\ -\/\ control.topPadding\ +\ control.bottomPadding}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_group_box_8qml_source_l00065}00065\ \}}
+
+\end{DoxyCode}

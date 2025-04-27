@@ -1,0 +1,102 @@
+\doxysection{Spin\+Box.\+qml}
+\hypertarget{_windows_2_spin_box_8qml_source}{}\label{_windows_2_spin_box_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Windows/SpinBox.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Windows/SpinBox.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2020\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00006}00006\ import\ QtQuick.NativeStyle\ as\ NativeStyle}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00008}00008\ T.SpinBox\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00009}00009\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00011}00011\ \ \ \ \ property\ bool\ nativeIndicators:\ up.indicator.hasOwnProperty("{}\_qt\_default"{})}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ down.indicator.hasOwnProperty("{}\_qt\_default"{})}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00013}00013\ \ \ \ \ readonly\ property\ bool\ \_\_notCustomizable:\ true}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00015}00015\ \ \ \ \ //\ Note:\ the\ indicators\ are\ inside\ the\ contentItem}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00016}00016\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ contentItem.implicitWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00018}00018\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding,}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ up.implicitIndicatorHeight\ +\ down.implicitIndicatorHeight)}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00022}00022\ \ \ \ \ spacing:\ 2}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00024}00024\ \ \ \ \ validator:\ IntValidator\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ locale:\ control.locale.name}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ bottom:\ Math.min(control.from,\ control.to)}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ top:\ Math.max(control.from,\ control.to)}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00030}00030\ \ \ \ \ contentItem:\ TextField\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ text:\ control.displayText}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ font:\ control.font}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ color:\ control.palette.text}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ selectionColor:\ control.palette.highlight}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ selectedTextColor:\ control.palette.highlightedText}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ horizontalAlignment:\ Qt.AlignLeft}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ verticalAlignment:\ Qt.AlignVCenter}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ implicitWidth:\ Math.max(90\ /*\ minimum\ */,\ contentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ topPadding:\ 0}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ bottomPadding:\ 0}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ leftPadding:\ 10}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ rightPadding:\ up.indicator.width\ +\ 10}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ readOnly:\ !control.editable}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ validator:\ control.validator}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ inputMethodHints:\ control.inputMethodHints}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ clip:\ width\ <\ implicitWidth}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ readonly\ property\ bool\ \_\_ignoreNotCustomizable:\ true}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ //\ Since\ the\ indicators\ are\ embedded\ inside\ the\ TextField\ we\ need\ to\ avoid\ that}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ //\ the\ TextField\ consumes\ mouse\ events\ for\ that\ area.}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ //\ We\ achieve\ that\ by\ setting\ a\ containmentMask}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ containmentMask:\ Item\ \{\ height:\ contentItem.height;\ width:\ contentItem.width\ -\/\ upAndDown.width\ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00059}00059\ \ \ \ \ NativeStyle.SpinBox\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ id:\ upAndDown}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ control:\ control}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ subControl:\ NativeStyle.SpinBox.Up}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00063}00063\ \ \ \ \ \ \ \ \ visible:\ nativeIndicators}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00064}00064\ \ \ \ \ \ \ \ \ x:\ up.indicator.x}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00065}00065\ \ \ \ \ \ \ \ \ y:\ up.indicator.y}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00066}00066\ \ \ \ \ \ \ \ \ //implicitHeight:\ contentItem.implicitHeight-\/2}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00067}00067\ \ \ \ \ \ \ \ \ height:\ parent.height-\/2}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00068}00068\ \ \ \ \ \ \ \ \ useNinePatchImage:\ false}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00069}00069\ \ \ \ \ \ \ \ \ z:99}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00072}00072\ \ \ \ \ up.indicator:\ Item\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00073}00073\ \ \ \ \ \ \ \ \ x:\ control.width\ -\/\ width\ -\/\ 2}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00074}00074\ \ \ \ \ \ \ \ \ y:\ 1}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00075}00075\ \ \ \ \ \ \ \ \ height:\ upAndDown.height\ >>\ 1}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00076}00076\ \ \ \ \ \ \ \ \ implicitWidth:\ upAndDown.implicitWidth}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00077}00077\ \ \ \ \ \ \ \ \ implicitHeight:\ (upAndDown.implicitHeight\ >>\ 1)}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00078}00078\ \ \ \ \ \ \ \ \ property\ bool\ \_qt\_default}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00079}00079\ \ \ \ \ \ \ \ \ readonly\ property\ bool\ \_\_ignoreNotCustomizable:\ true}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00082}00082\ \ \ \ \ down.indicator:\ Item\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00083}00083\ \ \ \ \ \ \ \ \ x:\ control.width\ -\/\ width\ -\/\ 2}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00084}00084\ \ \ \ \ \ \ \ \ y:\ up.indicator.y\ +\ (upAndDown.height\ >>\ 1)}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00085}00085\ \ \ \ \ \ \ \ \ height:\ upAndDown.height\ -\/\ up.indicator.height}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00086}00086\ \ \ \ \ \ \ \ \ implicitWidth:\ upAndDown.implicitWidth}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00087}00087\ \ \ \ \ \ \ \ \ implicitHeight:\ upAndDown.implicitHeight\ >>\ 1}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00088}00088\ \ \ \ \ \ \ \ \ property\ bool\ \_qt\_default}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00089}00089\ \ \ \ \ \ \ \ \ readonly\ property\ bool\ \_\_ignoreNotCustomizable:\ true}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00092}00092\ \ \ \ \ //\ No\ background,\ the\ TextField\ will\ cover\ the\ whole\ control}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00093}00093\ \ \ \ \ background:\ Item\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00094}00094\ \ \ \ \ \ \ \ \ readonly\ property\ bool\ \_\_ignoreNotCustomizable:\ true}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00095}00095\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_spin_box_8qml_source_l00096}00096\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,50 @@
+\doxysection{Horizontal\+Header\+View.\+qml}
+\hypertarget{_material_2_horizontal_header_view_8qml_source}{}\label{_material_2_horizontal_header_view_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/HorizontalHeaderView.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/HorizontalHeaderView.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2020\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00004}00004\ pragma\ ComponentBehavior:\ Bound}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00006}00006\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00007}00007\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00008}00008\ import\ QtQuick.Controls.Material}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00009}00009\ import\ QtQuick.Controls.Material.impl}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00011}00011\ T.HorizontalHeaderView\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00012}00012\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00014}00014\ \ \ \ \ implicitWidth:\ syncView\ ?\ syncView.width\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00015}00015\ \ \ \ \ //\ The\ contentHeight\ of\ TableView\ will\ be\ zero\ at\ start-\/up,\ until\ the\ delegate}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00016}00016\ \ \ \ \ //\ items\ have\ been\ loaded.\ This\ means\ that\ even\ if\ the\ implicit\ height\ of}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00017}00017\ \ \ \ \ //\ HorizontalHeaderView\ should\ be\ the\ same\ as\ the\ content\ height\ in\ the\ end,\ we}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00018}00018\ \ \ \ \ //\ need\ to\ ensure\ that\ it\ has\ at\ least\ a\ height\ of\ 1\ at\ start-\/up,\ otherwise}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00019}00019\ \ \ \ \ //\ TableView\ won't\ bother\ loading\ any\ delegates\ at\ all.}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00020}00020\ \ \ \ \ implicitHeight:\ Math.max(1,\ contentHeight)}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00022}00022\ \ \ \ \ delegate:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00023}00023\ \ \ \ \ \ \ \ \ id:\ delegate}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ required\ property\ var\ model}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ //\ Qt6:\ add\ cellPadding\ (and\ font\ etc)\ as\ public\ API\ in\ headerview}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ readonly\ property\ real\ cellPadding:\ 8}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ implicitWidth:\ text.implicitWidth\ +\ (cellPadding\ *\ 2)}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ implicitHeight:\ Math.max(control.height,\ text.implicitHeight\ +\ (cellPadding\ *\ 2))}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ color:\ control.Material.backgroundColor}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ Label\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ id:\ text}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ text:\ delegate.model[control.textRole]}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ delegate.width}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ delegate.height}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ horizontalAlignment:\ Text.AlignHCenter}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ verticalAlignment:\ Text.AlignVCenter}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ enabled\ ?\ control.Material.foreground\ :\ control.Material.hintTextColor}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_horizontal_header_view_8qml_source_l00044}00044\ \}}
+
+\end{DoxyCode}

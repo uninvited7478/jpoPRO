@@ -1,0 +1,30 @@
+\doxysection{Cut\+Action.\+qml}
+\hypertarget{impl_2_cut_action_8qml_source}{}\label{impl_2_cut_action_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/impl/CutAction.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/impl/CutAction.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2025\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00007}00007\ T.Action\ \{}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00008}00008\ \ \ \ \ text:\ qsTr("{}Cut"{})}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00009}00009\ \ \ \ \ icon.name:\ "{}edit-\/cut"{}}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00010}00010\ \ \ \ \ //\ A\ few\ styles\ use\ these\ values,\ so\ set\ them\ as\ our\ default}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00011}00011\ \ \ \ \ //\ so\ that\ they\ can\ simply\ use\ us\ instead\ of\ defining\ their\ own\ actions.}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00012}00012\ \ \ \ \ icon.width:\ 24}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00013}00013\ \ \ \ \ icon.height:\ 24}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00014}00014\ \ \ \ \ //\ This\ ensures\ that\ QIOSMenu::filterFirstResponderActions\ filters\ out\ any}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00015}00015\ \ \ \ \ //\ duplicate\ actions\ (at\ least\ when\ QT\_NO\_SHORTCUT\ is\ not\ defined).}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00016}00016\ \ \ \ \ shortcut:\ StandardKey.Cut}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00017}00017\ \ \ \ \ //\ If\ the\ control\ has\ no\ cut\ property,\ Qt\ was\ built\ without\ clipboard\ support.}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00018}00018\ \ \ \ \ enabled:\ !control.readOnly\ \&\&\ control.selectedText.length\ >\ 0\ \&\&\ control.hasOwnProperty("{}cut"{})}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00019}00019\ \ \ \ \ onTriggered:\ control.cut()}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00021}00021\ \ \ \ \ //\ Can't\ be\ T.Control\ because\ otherwise\ it\ would\ fail\ to\ assign\ TextField/TextArea\ to\ it,}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00022}00022\ \ \ \ \ //\ and\ we'd\ need\ TextFieldCutAction\ and\ TextAreaCutAction.}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00023}00023\ \ \ \ \ required\ property\ var\ control}
+\DoxyCodeLine{\Hypertarget{impl_2_cut_action_8qml_source_l00024}00024\ \}}
+
+\end{DoxyCode}

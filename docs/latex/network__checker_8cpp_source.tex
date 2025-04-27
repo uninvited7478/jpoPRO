@@ -1,0 +1,39 @@
+\doxysection{network\+\_\+checker.\+cpp}
+\hypertarget{network__checker_8cpp_source}{}\label{network__checker_8cpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}network\_checker.h"{}}}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <QNetworkReply>}}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <Qthread>}}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00006}\mbox{\hyperlink{class_network_checker_a233cdfa40771a65aa92b2448a9a76da1}{00006}}\ \mbox{\hyperlink{class_network_checker_a233cdfa40771a65aa92b2448a9a76da1}{NetworkChecker::NetworkChecker}}(QObject\ *parent)\ :\ QObject(parent)\ \{}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00007}00007\ \ \ \ \ timer\ =\ \textcolor{keyword}{new}\ QTimer(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00008}00008\ \ \ \ \ connect(timer,\ \&QTimer::timeout,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_network_checker_ab8cb53d9615e718cafb5302dbb79500c}{NetworkChecker::checkInternet}});}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00011}\mbox{\hyperlink{class_network_checker_a58c44d1829507400ed48b2b92400e378}{00011}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_checker_a58c44d1829507400ed48b2b92400e378}{NetworkChecker::startChecking}}()\ \{}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00012}00012\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}NetworkChecker:\ Started\ checking\ connection\ in\ thread:"{}}\ <<\ QThread::currentThreadId();}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00013}00013\ \ \ \ \ timer-\/>start(10000);\ \textcolor{comment}{//\ 10\ sekund}}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{class_network_checker_ab8cb53d9615e718cafb5302dbb79500c}{checkInternet}}();\ \textcolor{comment}{//\ Natychmiastowe\ sprawdzenie}}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00017}\mbox{\hyperlink{class_network_checker_a07b75c27282c43e6f260de5aa190564a}{00017}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_checker_a07b75c27282c43e6f260de5aa190564a}{NetworkChecker::stopChecking}}()\ \{}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (timer-\/>isActive())\ \{}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ timer-\/>stop();}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}NetworkChecker:\ Stopped\ checking\ connection\ in\ thread:"{}}\ <<\ QThread::currentThreadId();}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00024}\mbox{\hyperlink{class_network_checker_ab8cb53d9615e718cafb5302dbb79500c}{00024}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_network_checker_ab8cb53d9615e718cafb5302dbb79500c}{NetworkChecker::checkInternet}}()\ \{}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00025}00025\ \ \ \ \ QNetworkRequest\ request(QUrl(\textcolor{stringliteral}{"{}https://api.gios.gov.pl/pjp-\/api/rest/station/findAll"{}}));}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00026}00026\ \ \ \ \ QNetworkReply\ *reply\ =\ manager.get(request);}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00028}00028\ \ \ \ \ connect(reply,\ \&QNetworkReply::finished,\ \textcolor{keyword}{this},\ [=]()\ \{}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ success\ =\ (reply-\/>error()\ ==\ QNetworkReply::NoError);}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}NetworkChecker:\ Connection\ status\ -\/"{}}\ <<\ (success\ ?\ \textcolor{stringliteral}{"{}OK"{}}\ :\ reply-\/>errorString())\ <<\ \textcolor{stringliteral}{"{}in\ thread:"{}}\ <<\ QThread::currentThreadId();}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ emit\ \mbox{\hyperlink{class_network_checker_a5e6f469cee40d653196155c5be80e7fd}{internetStatusChanged}}(success);}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ reply-\/>deleteLater();}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00033}00033\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{network__checker_8cpp_source_l00034}00034\ \}}
+
+\end{DoxyCode}

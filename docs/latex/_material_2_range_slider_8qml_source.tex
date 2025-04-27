@@ -1,0 +1,104 @@
+\doxysection{Range\+Slider.\+qml}
+\hypertarget{_material_2_range_slider_8qml_source}{}\label{_material_2_range_slider_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/RangeSlider.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/RangeSlider.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2022\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00006}00006\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00007}00007\ import\ QtQuick.Controls.Material}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00008}00008\ import\ QtQuick.Controls.Material.impl}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00010}00010\ T.RangeSlider\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00011}00011\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00013}00013\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ first.implicitHandleWidth\ +\ leftPadding\ +\ rightPadding,}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ second.implicitHandleWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00016}00016\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ first.implicitHandleHeight\ +\ topPadding\ +\ bottomPadding,}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ second.implicitHandleHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00020}00020\ \ \ \ \ padding:\ 6}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00022}00022\ \ \ \ \ //\ The\ RangeSlider\ is\ discrete\ if\ all\ of\ the\ following\ requirements\ are\ met:}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00023}00023\ \ \ \ \ //\ *\ stepSize\ is\ positive}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00024}00024\ \ \ \ \ //\ *\ snapMode\ is\ set\ to\ SnapAlways}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00025}00025\ \ \ \ \ //\ *\ the\ difference\ between\ to\ and\ from\ is\ cleanly\ divisible\ by\ the\ stepSize}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00026}00026\ \ \ \ \ //\ *\ the\ number\ of\ tick\ marks\ intended\ to\ be\ rendered\ is\ less\ than\ the\ width\ to\ height\ ratio,\ or\ vice\ versa\ for\ vertical\ sliders.}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00027}00027\ \ \ \ \ readonly\ property\ real\ \_\_steps:\ Math.abs(to\ -\/\ from)\ /\ stepSize}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00028}00028\ \ \ \ \ readonly\ property\ bool\ \_\_isDiscrete:\ stepSize\ >=\ Number.EPSILON}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00029}00029\ \ \ \ \ \ \ \ \ \&\&\ snapMode\ ===\ Slider.SnapAlways}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ \&\&\ Math.abs(Math.round(\_\_steps)\ -\/\ \_\_steps)\ <\ Number.EPSILON}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ \&\&\ Math.floor(\_\_steps)\ <\ (horizontal\ ?\ background.width\ /\ background.height\ :\ background.height\ /\ background.width)}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00033}00033\ \ \ \ \ first.handle:\ SliderHandle\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ x:\ control.leftPadding\ +\ (control.horizontal\ ?\ control.first.visualPosition\ *\ (control.availableWidth\ -\/\ width)\ :\ (control.availableWidth\ -\/\ width)\ /\ 2)}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ y:\ control.topPadding\ +\ (control.horizontal\ ?\ (control.availableHeight\ -\/\ height)\ /\ 2\ :\ control.first.visualPosition\ *\ (control.availableHeight\ -\/\ height))}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ value:\ control.first.value}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ handleHasFocus:\ activeFocus}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ handlePressed:\ control.first.pressed}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ handleHovered:\ control.first.hovered}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00042}00042\ \ \ \ \ second.handle:\ SliderHandle\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ x:\ control.leftPadding\ +\ (control.horizontal\ ?\ control.second.visualPosition\ *\ (control.availableWidth\ -\/\ width)\ :\ (control.availableWidth\ -\/\ width)\ /\ 2)}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ y:\ control.topPadding\ +\ (control.horizontal\ ?\ (control.availableHeight\ -\/\ height)\ /\ 2\ :\ control.second.visualPosition\ *\ (control.availableHeight\ -\/\ height))}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ value:\ control.second.value}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ handleHasFocus:\ activeFocus}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ handlePressed:\ control.second.pressed}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ handleHovered:\ control.second.hovered}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00051}00051\ \ \ \ \ background:\ Item\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ x:\ control.leftPadding\ +\ (control.horizontal\ ?\ 0\ :\ (control.availableWidth\ -\/\ width)\ /\ 2)}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ y:\ control.topPadding\ +\ (control.horizontal\ ?\ (control.availableHeight\ -\/\ height)\ /\ 2\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ implicitWidth:\ control.horizontal\ ?\ 200\ :\ 48}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ implicitHeight:\ control.horizontal\ ?\ 48\ :\ 200}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ width:\ control.horizontal\ ?\ control.availableWidth\ :\ 4}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ height:\ control.horizontal\ ?\ 4\ :\ control.availableHeight}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ (control.horizontal\ ?\ (control.first.implicitHandleWidth\ /\ 2)\ -\/\ (control.\_\_isDiscrete\ ?\ 2\ :\ 0)\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ y:\ (control.horizontal\ ?\ 0\ :\ (control.first.implicitHandleHeight\ /\ 2)\ -\/\ (control.\_\_isDiscrete\ ?\ 2\ :\ 0))}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ parent.width\ -\/\ (control.horizontal\ ?\ (control.first.implicitHandleWidth\ -\/\ (control.\_\_isDiscrete\ ?\ 4\ :\ 0))\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ parent.height\ -\/\ (control.horizontal\ ?\ 0\ :\ (control.first.implicitHandleHeight\ -\/\ (control.\_\_isDiscrete\ ?\ 4\ :\ 0)))}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ scale:\ control.horizontal\ \&\&\ control.mirrored\ ?\ -\/1\ :\ 1}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ radius:\ Math.min(width,\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.enabled\ ?\ Color.transparent(control.Material.accentColor,\ 0.33)\ :\ control.Material.sliderDisabledColor}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x:\ control.horizontal\ ?\ control.first.position\ *\ parent.width\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y:\ control.horizontal\ ?\ 0\ :\ control.second.visualPosition\ *\ parent.height}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width:\ control.horizontal\ ?\ control.second.position\ *\ parent.width\ -\/\ control.first.position\ *\ parent.width\ :\ 4}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ height:\ control.horizontal\ ?\ 4\ :\ control.second.position\ *\ parent.height\ -\/\ control.first.position\ *\ parent.height}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ radius:\ Math.min(width,\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.enabled\ ?\ control.Material.accentColor\ :\ control.Material.sliderDisabledColor}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ //\ Declaring\ this\ as\ a\ property\ (in\ combination\ with\ the\ parent\ binding\ below)\ avoids\ ids,}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ //\ which\ prevent\ deferred\ execution.}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ property\ Repeater\ repeater:\ Repeater\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parent:\ control.background.children[0]}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ model:\ control.\_\_isDiscrete\ ?\ Math.floor(control.\_\_steps)\ +\ 1\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ delegate:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width:\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ height:\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ radius:\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x:\ control.horizontal\ ?\ (parent.width\ -\/\ width\ *\ 2)\ *\ currentPosition\ +\ (width\ /\ 2)\ :\ (parent.width\ -\/\ width)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y:\ control.horizontal\ ?\ (parent.height\ -\/\ height)\ /\ 2\ :\ (parent.height\ -\/\ height\ *\ 2)\ *\ currentPosition\ +\ (height\ /\ 2)}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color:\ (control.horizontal\ \&\&\ control.first.visualPosition\ <\ currentPosition\ \&\&\ control.second.visualPosition\ >\ currentPosition)}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ (!control.horizontal\ \&\&\ control.first.visualPosition\ >\ currentPosition\ \&\&\ control.second.visualPosition\ <\ currentPosition)}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ control.Material.primaryHighlightedTextColor\ :\ control.Material.accentColor}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ required\ property\ int\ index}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ readonly\ property\ real\ currentPosition:\ index\ /\ (parent.repeater.count\ -\/\ 1)}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_range_slider_8qml_source_l00098}00098\ \}}
+
+\end{DoxyCode}

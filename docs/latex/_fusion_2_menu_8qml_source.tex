@@ -1,0 +1,67 @@
+\doxysection{Menu.\+qml}
+\hypertarget{_fusion_2_menu_8qml_source}{}\label{_fusion_2_menu_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Fusion/Menu.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Fusion/Menu.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00006}00006\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00007}00007\ import\ QtQuick.Controls.Fusion}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00008}00008\ import\ QtQuick.Controls.Fusion.impl}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00009}00009\ import\ QtQuick.Window}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00011}00011\ T.Menu\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00012}00012\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00014}00014\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00016}00016\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00019}00019\ \ \ \ \ margins:\ 0}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00020}00020\ \ \ \ \ padding:\ 1}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00021}00021\ \ \ \ \ overlap:\ 2}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00023}00023\ \ \ \ \ delegate:\ MenuItem\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00025}00025\ \ \ \ \ contentItem:\ ListView\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ implicitHeight:\ contentHeight}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ model:\ control.contentModel}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ interactive:\ Window.window}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ contentHeight\ +\ control.topPadding\ +\ control.bottomPadding\ >\ control.height}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ false}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ clip:\ true}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ currentIndex:\ control.currentIndex}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ ScrollIndicator.vertical:\ ScrollIndicator\ \{\}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00037}00037\ \ \ \ \ background:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ implicitWidth:\ 200}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ implicitHeight:\ 20}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ color:\ control.palette.base}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ border.color:\ Fusion.outline(control.palette)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ z:\ -\/1}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ 1;\ y:\ 1}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ parent.width}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ parent.height}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.palette.shadow}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ opacity:\ 0.2}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00054}00054\ \ \ \ \ T.Overlay.modal:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ color:\ Fusion.topShadow}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00058}00058\ \ \ \ \ T.Overlay.modeless:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ color:\ Fusion.topShadow}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_menu_8qml_source_l00061}00061\ \}}
+
+\end{DoxyCode}

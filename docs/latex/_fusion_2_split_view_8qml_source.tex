@@ -1,0 +1,28 @@
+\doxysection{Split\+View.\+qml}
+\hypertarget{_fusion_2_split_view_8qml_source}{}\label{_fusion_2_split_view_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Fusion/SplitView.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Fusion/SplitView.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2018\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00006}00006\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00007}00007\ import\ QtQuick.Controls.Fusion}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00009}00009\ T.SplitView\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00010}00010\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00011}00011\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00013}00013\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00016}00016\ \ \ \ \ handle:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ implicitWidth:\ control.orientation\ ===\ Qt.Horizontal\ ?\ 2\ :\ control.width}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00018}00018\ \ \ \ \ \ \ \ \ implicitHeight:\ control.orientation\ ===\ Qt.Horizontal\ ?\ control.height\ :\ 2}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00019}00019\ \ \ \ \ \ \ \ \ color:\ T.SplitHandle.pressed\ ?\ control.palette.dark}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ :\ (enabled\ \&\&\ T.SplitHandle.hovered\ ?\ control.palette.midlight\ :\ control.palette.mid)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_split_view_8qml_source_l00022}00022\ \}}
+
+\end{DoxyCode}

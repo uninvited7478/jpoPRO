@@ -1,0 +1,112 @@
+\doxysection{Delay\+Button.\+qml}
+\hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source}{}\label{_fluent_win_u_i3_2_delay_button_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/FluentWinUI3/DelayButton.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/FluentWinUI3/DelayButton.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2024\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00006}00006\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00007}00007\ import\ QtQuick.Controls.FluentWinUI3.impl}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00009}00009\ T.DelayButton\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00010}00010\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00012}00012\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00014}00014\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00017}00017\ \ \ \ \ spacing:\ config.spacing\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00019}00019\ \ \ \ \ topPadding:\ config.topPadding\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00020}00020\ \ \ \ \ bottomPadding:\ config.bottomPadding\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00021}00021\ \ \ \ \ leftPadding:\ config.leftPadding\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00022}00022\ \ \ \ \ rightPadding:\ config.rightPadding\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00024}00024\ \ \ \ \ icon.width:\ config.icon.width}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00025}00025\ \ \ \ \ icon.height:\ config.icon.height}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00026}00026\ \ \ \ \ icon.color:\ \_\_buttonText}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00028}00028\ \ \ \ \ readonly\ property\ color\ \_\_buttonText:\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00029}00029\ \ \ \ \ \ \ \ \ if\ (control.down)\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ return\ (control.checked)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ Application.styleHints.colorScheme\ ==\ Qt.Light}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ Color.transparent("{}white"{},\ 0.7)\ :\ Color.transparent("{}black"{},\ 0.5)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (Application.styleHints.colorScheme\ ===\ Qt.Light}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ Color.transparent(control.palette.buttonText,\ 0.62)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Color.transparent(control.palette.buttonText,\ 0.7725))}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ \}\ else\ if\ (control.checked)\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ return\ (Application.styleHints.colorScheme\ ===\ Qt.Dark\ \&\&\ !control.enabled)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ Color.transparent("{}white"{},\ 0.5302)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (Application.styleHints.colorScheme\ ===\ Qt.Dark\ ?\ "{}black"{}\ :\ "{}white"{})}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ \}\ else\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ return\ control.palette.buttonText}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00045}00045\ \ \ \ \ readonly\ property\ string\ \_\_currentState:\ [}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ control.checked\ \&\&\ "{}checked"{},}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ !control.enabled\ \&\&\ "{}disabled"{},}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ control.enabled\ \&\&\ !control.down\ \&\&\ control.hovered\ \&\&\ "{}hovered"{},}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ control.down\ \&\&\ "{}pressed"{}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00050}00050\ \ \ \ \ ].filter(Boolean).join("{}\_"{})\ ||\ "{}normal"{}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00051}00051\ \ \ \ \ readonly\ property\ var\ config:\ Config.controls.button[\_\_currentState]\ ||\ \{\}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00053}00053\ \ \ \ \ readonly\ property\ Item\ \_\_focusFrameTarget:\ control}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00055}00055\ \ \ \ \ transition:\ Transition\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ NumberAnimation\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ duration:\ control.delay\ *\ (control.pressed\ ?\ 1.0\ -\/\ control.progress\ :\ 0.3\ *\ control.progress)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00061}00061\ \ \ \ \ contentItem:\ ItemGroup\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ ClippedText\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ clip:\ control.progress\ >\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ clipX:\ -\/control.leftPadding\ +\ control.progress\ *\ control.width}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ clipWidth:\ (1.0\ -\/\ control.progress)\ *\ control.width}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ visible:\ control.progress\ <\ 1}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ text:\ control.text}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ font:\ control.font}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.palette.buttonText}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ horizontalAlignment:\ Text.AlignHCenter}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ verticalAlignment:\ Text.AlignVCenter}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ elide:\ Text.ElideRight}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00076}00076\ \ \ \ \ \ \ \ \ ClippedText\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ clip:\ control.progress\ >\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ clipX:\ -\/control.leftPadding}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ clipWidth:\ control.progress\ *\ control.width}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ visible:\ control.progress\ >\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ text:\ control.text}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ font:\ control.font}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.palette.brightText}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ horizontalAlignment:\ Text.AlignHCenter}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ verticalAlignment:\ Text.AlignVCenter}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ elide:\ Text.ElideRight}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00088}00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00091}00091\ \ \ \ \ background:\ ButtonBackground\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00092}00092\ \ \ \ \ \ \ \ \ control:\ control}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00093}00093\ \ \ \ \ \ \ \ \ implicitHeight:\ control.config.background.height}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00094}00094\ \ \ \ \ \ \ \ \ implicitWidth:\ control.config.background.width}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00095}00095\ \ \ \ \ \ \ \ \ radius:\ control.config.background.topOffset}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00096}00096\ \ \ \ \ \ \ \ \ subtle:\ false}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00098}00098\ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ control.progress\ *\ parent.width}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ parent.height}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ radius:\ parent.radius}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.down\ ?\ control.palette.accent\ :\ "{}transparent"{}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ visible:\ !control.checked\ \&\&\ control.enabled}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00104}00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00105}00105\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_delay_button_8qml_source_l00106}00106\ \}}
+
+\end{DoxyCode}

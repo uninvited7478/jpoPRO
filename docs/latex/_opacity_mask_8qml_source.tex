@@ -1,0 +1,41 @@
+\doxysection{Opacity\+Mask.\+qml}
+\hypertarget{_opacity_mask_8qml_source}{}\label{_opacity_mask_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Imagine/impl/OpacityMask.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Imagine/impl/OpacityMask.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2020\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00006}00006\ /*}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00007}00007\ \ \ \ A\ cross-\/graphics\ API\ implementation\ of\ QtGraphicalEffects'\ OpacityMask.}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00008}00008\ \ */}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00009}00009\ Item\ \{}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00010}00010\ \ \ \ \ id:\ rootItem}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00012}00012\ \ \ \ \ property\ variant\ source}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00013}00013\ \ \ \ \ property\ variant\ maskSource}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00014}00014\ \ \ \ \ property\ bool\ cached:\ false}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00016}00016\ \ \ \ \ ShaderEffectSource\ \{}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ id:\ cacheItem}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00018}00018\ \ \ \ \ \ \ \ \ anchors.fill:\ parent}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00019}00019\ \ \ \ \ \ \ \ \ visible:\ rootItem.cached}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00020}00020\ \ \ \ \ \ \ \ \ smooth:\ true}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00021}00021\ \ \ \ \ \ \ \ \ sourceItem:\ shaderItem}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00022}00022\ \ \ \ \ \ \ \ \ live:\ true}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00023}00023\ \ \ \ \ \ \ \ \ hideSource:\ visible}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00026}00026\ \ \ \ \ ShaderEffect\ \{}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ id:\ shaderItem}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ property\ variant\ source:\ rootItem.source}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00029}00029\ \ \ \ \ \ \ \ \ property\ variant\ maskSource:\ rootItem.maskSource}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ anchors.fill:\ parent}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ fragmentShader:\ "{}qrc:/qt-\/project.org/imports/QtQuick/Controls/Imagine/impl/shaders/OpacityMask.frag.qsb"{}}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_opacity_mask_8qml_source_l00035}00035\ \}}
+
+\end{DoxyCode}

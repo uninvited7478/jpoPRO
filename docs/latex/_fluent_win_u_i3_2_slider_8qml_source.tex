@@ -1,0 +1,155 @@
+\doxysection{Slider.\+qml}
+\hypertarget{_fluent_win_u_i3_2_slider_8qml_source}{}\label{_fluent_win_u_i3_2_slider_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/FluentWinUI3/Slider.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/FluentWinUI3/Slider.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2024\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00005}00005\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00006}00006\ import\ QtQuick.Controls.FluentWinUI3.impl\ as\ Impl}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00007}00007\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00009}00009\ T.Slider\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00010}00010\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00012}00012\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitHandleWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00014}00014\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitHandleHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00017}00017\ \ \ \ \ topPadding:\ horizontal\ ?\ config.topPadding\ :\ config.leftPadding\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00018}00018\ \ \ \ \ leftPadding:\ horizontal\ ?\ config.leftPadding\ :\ config.bottomPadding\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00019}00019\ \ \ \ \ rightPadding:\ horizontal\ ?\ config.rightPadding\ :\ config.topPadding\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00020}00020\ \ \ \ \ bottomPadding:\ horizontal\ ?\ config.bottomPadding\ :\ config.rightPadding\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00022}00022\ \ \ \ \ readonly\ property\ string\ \_\_currentState:\ [}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00023}00023\ \ \ \ \ \ \ \ \ !control.enabled\ \&\&\ "{}disabled"{},}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00024}00024\ \ \ \ \ \ \ \ \ control.enabled\ \&\&\ !control.pressed\ \&\&\ control.hovered\ \&\&\ "{}hovered"{},}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ control.pressed\ \&\&\ "{}pressed"{}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00026}00026\ \ \ \ \ ].filter(Boolean).join("{}\_"{})\ ||\ "{}normal"{}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00027}00027\ \ \ \ \ readonly\ property\ var\ config:\ Config.controls.slider[\_\_currentState]\ ||\ \{\}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00029}00029\ \ \ \ \ readonly\ property\ Item\ \_\_focusFrameTarget:\ control}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00031}00031\ \ \ \ \ readonly\ property\ real\ \_\_steps:\ Math.abs(to\ -\/\ from)\ /\ stepSize}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00032}00032\ \ \ \ \ readonly\ property\ bool\ \_\_isDiscrete:\ stepSize\ >=\ Number.EPSILON}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ \&\&\ Math.abs(Math.round(\_\_steps)\ -\/\ \_\_steps)\ <\ Number.EPSILON}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00035}00035\ \ \ \ \ handle:\ Impl.StyleImage\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ x:\ Math.round(control.leftPadding\ +\ (control.horizontal}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ ?\ control.visualPosition\ *\ (control.availableWidth\ -\/\ width)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ :\ (control.availableWidth\ -\/\ width)\ /\ 2))}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ y:\ Math.round(control.topPadding\ +\ (control.horizontal}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ ?\ (control.availableHeight\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ :\ control.visualPosition\ *\ (control.availableHeight\ -\/\ height)))}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ imageConfig:\ control.config.handle}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ property\ Rectangle\ indicator:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ property\ real\ diameter:\ !control.enabled\ ?\ 10\ :\ control.pressed\ ?\ 8\ :\ control.hovered\ ?\ 14\ :\ 10}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ parent:\ control.handle}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ diameter}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ diameter}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ radius:\ diameter\ *\ 0.5}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ (control.config.handle.width\ -\/\ width)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ y:\ (control.config.handle.height\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.enabled\ ?\ (control.hovered\ ?\ Qt.rgba(control.palette.accent.r,\ control.palette.accent.g,\ control.palette.accent.b,\ 0.9020)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ control.pressed\ ?\ Qt.rgba(control.palette.accent.r,\ control.palette.accent.g,\ control.palette.accent.b,\ 0.8)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ control.palette.accent)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ control.palette.accent}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ Behavior\ on\ diameter\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ From\ WindowsUI\ 3\ Animation\ Values}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NumberAnimation\{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ duration:\ 167}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ easing.type:\ Easing.OutCubic}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00068}00068\ \ \ \ \ background:\ Item\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00069}00069\ \ \ \ \ \ \ \ \ implicitWidth:\ control.horizontal}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ ?\ (\_background.implicitWidth\ ||\ \_background.groove.implicitWidth)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ :\ (\_background.implicitHeight\ ||\ \_background.groove.implicitHeight)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00072}00072\ \ \ \ \ \ \ \ \ implicitHeight:\ control.horizontal}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ ?\ (\_background.implicitHeight\ ||\ \_background.groove.implicitHeight)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ :\ (\_background.implicitWidth\ ||\ \_background.groove.implicitWidth)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00076}00076\ \ \ \ \ \ \ \ \ property\ Item\ \_background:\ Impl.StyleImage\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ parent:\ control.background}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ parent.width}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ parent.height}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ imageConfig:\ control.config.background}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ property\ Item\ groove:\ Impl.StyleImage\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parent:\ control.background.\_background}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x:\ control.leftPadding\ -\/\ control.leftInset\ +\ (control.horizontal}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ control.config.handle.width\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (control.availableWidth\ -\/\ width)\ /\ 2)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y:\ control.topPadding\ -\/\ control.topInset\ +\ (control.horizontal}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ ((control.availableHeight\ -\/\ height)\ /\ 2)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ control.config.handle.height\ /\ 2)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width:\ control.horizontal}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ control.availableWidth\ -\/\ control.config.handle.width}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ implicitWidth}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ height:\ control.horizontal}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ implicitHeight}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ control.availableHeight\ -\/\ control.config.handle.width}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageConfig:\ control.config.groove}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ horizontal:\ control.horizontal}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ property\ Rectangle\ track:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parent:\ control.background.\_background.groove}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y:\ control.horizontal\ ?\ 0\ :\ parent.height\ -\/\ (parent.height\ *\ control.position)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitWidth:\ control.horizontal\ ?\ control.config.track.width\ :\ control.config.track.height}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitHeight:\ control.horizontal\ ?\ control.config.track.height\ :\ control.config.track.width}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width:\ control.horizontal\ ?\ parent.width\ *\ control.position\ :\ parent.width}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ height:\ control.horizontal\ ?\ parent.height\ :\ parent.height\ *\ control.position}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ radius:\ control.config.track.height\ *\ 0.5}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.palette.accent}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ property\ Repeater\ ticksTop:\ Repeater\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parent:\ control.background.\_background.groove}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ model:\ control.\_\_isDiscrete\ ?\ Math.floor(control.\_\_steps)\ +\ 1\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ delegate:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width:\ control.horizontal\ ?\ 1\ :\ 4}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ height:\ control.horizontal\ ?\ 4\ :\ 1}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x:\ control.horizontal}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ 6\ +\ index\ *\ (parent.width\ -\/\ 2\ *\ 6\ -\/\ width)\ /\ (control.background.\_background.ticksTop.model\ -\/\ 1)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ -\/4\ -\/\ width}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y:\ control.horizontal}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ -\/4\ -\/\ height}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ 6\ +\ index\ *\ (parent.height\ -\/\ 2\ *\ 6\ -\/\ height)\ /\ (control.background.\_background.ticksTop.model\ -\/\ 1)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color:\ Application.styleHints.colorScheme\ ==\ Qt.Light\ ?\ "{}\#9C000000"{}\ :\ "{}\#9AFFFFFF"{}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ required\ property\ int\ index}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ property\ Repeater\ ticksBottom:\ Repeater\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parent:\ control.background.\_background.groove}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ model:\ control.\_\_isDiscrete\ ?\ Math.floor(control.\_\_steps)\ +\ 1\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ delegate:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width:\ control.horizontal\ ?\ 1\ :\ 4}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ height:\ control.horizontal\ ?\ 4\ :\ 1}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x:\ control.horizontal}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ 6\ +\ index\ *\ (parent.width\ -\/\ 2\ *\ 6\ -\/\ width)\ /\ (control.background.\_background.ticksBottom.model\ -\/\ 1)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ parent.width\ +\ 4}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y:\ control.horizontal}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ parent.height\ +\ 4}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ 6\ +\ index\ *\ (parent.height\ -\/\ 2\ *\ 6\ -\/\ height)\ /\ (control.background.\_background.ticksBottom.model\ -\/\ 1)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color:\ Application.styleHints.colorScheme\ ==\ Qt.Light\ ?\ "{}\#9C000000"{}\ :\ "{}\#9AFFFFFF"{}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ required\ property\ int\ index}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00147}00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00148}00148\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_slider_8qml_source_l00149}00149\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,111 @@
+\doxysection{Network\+Status Class Reference}
+\hypertarget{class_network_status}{}\label{class_network_status}\index{NetworkStatus@{NetworkStatus}}
+
+
+Klasa zarządzająca stanem połączenia internetowego.  
+
+
+
+
+{\ttfamily \#include $<$network\+\_\+status.\+h$>$}
+
+Inheritance diagram for Network\+Status\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_network_status}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_network_status_a65059c7251b90563660c039ced61f785}{on\+Internet\+Status\+Changed}} (bool connected)
+\begin{DoxyCompactList}\small\item\em Slot wywoływany, gdy zmieni się stan połączenia internetowego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_network_status_ad640a62fe4b7e2e19d7299b5f2ce85c7}{internet\+Status\+Changed}} (bool connected)
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany, gdy zmienia się stan połączenia internetowego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_network_status_abdf55f37c8ade8236863667d49d4488a}{Network\+Status}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{class_network_status}{Network\+Status}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa zarządzająca stanem połączenia internetowego. 
+
+\doxylink{class_network_status}{Network\+Status} odbiera informacje o stanie połączenia od \doxylink{class_network_checker}{Network\+Checker} i emituje sygnały, które są wykorzystywane w QML do aktualizacji interfejsu użytkownika. 
+
+Definition at line \mbox{\hyperlink{network__status_8h_source_l00013}{13}} of file \mbox{\hyperlink{network__status_8h_source}{network\+\_\+status.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_network_status_abdf55f37c8ade8236863667d49d4488a}\index{NetworkStatus@{NetworkStatus}!NetworkStatus@{NetworkStatus}}
+\index{NetworkStatus@{NetworkStatus}!NetworkStatus@{NetworkStatus}}
+\doxysubsubsection{\texorpdfstring{NetworkStatus()}{NetworkStatus()}}
+{\footnotesize\ttfamily \label{class_network_status_abdf55f37c8ade8236863667d49d4488a} 
+Network\+Status\+::\+Network\+Status (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor klasy \doxylink{class_network_status}{Network\+Status}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Wskaźnik na obiekt nadrzędny (domyślnie nullptr). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{network__status_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{network__status_8cpp_source}{network\+\_\+status.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_network_status_ad640a62fe4b7e2e19d7299b5f2ce85c7}\index{NetworkStatus@{NetworkStatus}!internetStatusChanged@{internetStatusChanged}}
+\index{internetStatusChanged@{internetStatusChanged}!NetworkStatus@{NetworkStatus}}
+\doxysubsubsection{\texorpdfstring{internetStatusChanged}{internetStatusChanged}}
+{\footnotesize\ttfamily \label{class_network_status_ad640a62fe4b7e2e19d7299b5f2ce85c7} 
+void Network\+Status\+::internet\+Status\+Changed (\begin{DoxyParamCaption}\item[{bool}]{connected}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Sygnał emitowany, gdy zmienia się stan połączenia internetowego. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connected} & True, jeśli internet jest dostępny, false w przeciwnym razie. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{moc__network__status_8cpp_source_l00123}{123}} of file \mbox{\hyperlink{moc__network__status_8cpp_source}{moc\+\_\+network\+\_\+status.\+cpp}}.
+
+\Hypertarget{class_network_status_a65059c7251b90563660c039ced61f785}\index{NetworkStatus@{NetworkStatus}!onInternetStatusChanged@{onInternetStatusChanged}}
+\index{onInternetStatusChanged@{onInternetStatusChanged}!NetworkStatus@{NetworkStatus}}
+\doxysubsubsection{\texorpdfstring{onInternetStatusChanged}{onInternetStatusChanged}}
+{\footnotesize\ttfamily \label{class_network_status_a65059c7251b90563660c039ced61f785} 
+void Network\+Status\+::on\+Internet\+Status\+Changed (\begin{DoxyParamCaption}\item[{bool}]{connected}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Slot wywoływany, gdy zmieni się stan połączenia internetowego. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connected} & True, jeśli internet jest dostępny, false w przeciwnym razie. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{network__status_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{network__status_8cpp_source}{network\+\_\+status.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+network\+\_\+status.\+h\item 
+build/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+9\+\_\+0\+\_\+\+Min\+GW\+\_\+64\+\_\+bit-\/\+Debug/appjpo\+PRO\+\_\+autogen/\+EWIEGA46\+WW/moc\+\_\+network\+\_\+status.\+cpp\item 
+network\+\_\+status.\+cpp\end{DoxyCompactItemize}

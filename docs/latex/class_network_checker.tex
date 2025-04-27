@@ -1,0 +1,138 @@
+\doxysection{Network\+Checker Class Reference}
+\hypertarget{class_network_checker}{}\label{class_network_checker}\index{NetworkChecker@{NetworkChecker}}
+
+
+Klasa odpowiedzialna za cykliczne sprawdzanie dostępności internetu.  
+
+
+
+
+{\ttfamily \#include $<$network\+\_\+checker.\+h$>$}
+
+Inheritance diagram for Network\+Checker\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_network_checker}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_network_checker_a58c44d1829507400ed48b2b92400e378}{start\+Checking}} ()
+\begin{DoxyCompactList}\small\item\em Rozpoczyna cykliczne sprawdzanie dostępności internetu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_network_checker_a07b75c27282c43e6f260de5aa190564a}{stop\+Checking}} ()
+\begin{DoxyCompactList}\small\item\em Zatrzymuje sprawdzanie dostępności internetu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_network_checker_ab8cb53d9615e718cafb5302dbb79500c}{check\+Internet}} ()
+\begin{DoxyCompactList}\small\item\em Wykonuje jednorazowe sprawdzenie dostępności internetu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_network_checker_a5e6f469cee40d653196155c5be80e7fd}{internet\+Status\+Changed}} (bool connected)
+\begin{DoxyCompactList}\small\item\em Sygnał emitowany, gdy zmienia się stan połączenia internetowego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_network_checker_a233cdfa40771a65aa92b2448a9a76da1}{Network\+Checker}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{class_network_checker}{Network\+Checker}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa odpowiedzialna za cykliczne sprawdzanie dostępności internetu. 
+
+\doxylink{class_network_checker}{Network\+Checker} co określony czas sprawdza połączenie z internetem i emituje sygnały informujące o zmianie stanu. 
+
+Definition at line \mbox{\hyperlink{network__checker_8h_source_l00015}{15}} of file \mbox{\hyperlink{network__checker_8h_source}{network\+\_\+checker.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_network_checker_a233cdfa40771a65aa92b2448a9a76da1}\index{NetworkChecker@{NetworkChecker}!NetworkChecker@{NetworkChecker}}
+\index{NetworkChecker@{NetworkChecker}!NetworkChecker@{NetworkChecker}}
+\doxysubsubsection{\texorpdfstring{NetworkChecker()}{NetworkChecker()}}
+{\footnotesize\ttfamily \label{class_network_checker_a233cdfa40771a65aa92b2448a9a76da1} 
+Network\+Checker\+::\+Network\+Checker (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor klasy \doxylink{class_network_checker}{Network\+Checker}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Wskaźnik na obiekt nadrzędny (domyślnie nullptr). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{network__checker_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{network__checker_8cpp_source}{network\+\_\+checker.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_network_checker_ab8cb53d9615e718cafb5302dbb79500c}\index{NetworkChecker@{NetworkChecker}!checkInternet@{checkInternet}}
+\index{checkInternet@{checkInternet}!NetworkChecker@{NetworkChecker}}
+\doxysubsubsection{\texorpdfstring{checkInternet}{checkInternet}}
+{\footnotesize\ttfamily \label{class_network_checker_ab8cb53d9615e718cafb5302dbb79500c} 
+void Network\+Checker\+::check\+Internet (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Wykonuje jednorazowe sprawdzenie dostępności internetu. 
+
+
+
+Definition at line \mbox{\hyperlink{network__checker_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{network__checker_8cpp_source}{network\+\_\+checker.\+cpp}}.
+
+\Hypertarget{class_network_checker_a5e6f469cee40d653196155c5be80e7fd}\index{NetworkChecker@{NetworkChecker}!internetStatusChanged@{internetStatusChanged}}
+\index{internetStatusChanged@{internetStatusChanged}!NetworkChecker@{NetworkChecker}}
+\doxysubsubsection{\texorpdfstring{internetStatusChanged}{internetStatusChanged}}
+{\footnotesize\ttfamily \label{class_network_checker_a5e6f469cee40d653196155c5be80e7fd} 
+void Network\+Checker\+::internet\+Status\+Changed (\begin{DoxyParamCaption}\item[{bool}]{connected}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Sygnał emitowany, gdy zmienia się stan połączenia internetowego. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connected} & True, jeśli internet jest dostępny, false w przeciwnym razie. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{moc__network__checker_8cpp_source_l00130}{130}} of file \mbox{\hyperlink{moc__network__checker_8cpp_source}{moc\+\_\+network\+\_\+checker.\+cpp}}.
+
+\Hypertarget{class_network_checker_a58c44d1829507400ed48b2b92400e378}\index{NetworkChecker@{NetworkChecker}!startChecking@{startChecking}}
+\index{startChecking@{startChecking}!NetworkChecker@{NetworkChecker}}
+\doxysubsubsection{\texorpdfstring{startChecking}{startChecking}}
+{\footnotesize\ttfamily \label{class_network_checker_a58c44d1829507400ed48b2b92400e378} 
+void Network\+Checker\+::start\+Checking (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Rozpoczyna cykliczne sprawdzanie dostępności internetu. 
+
+
+
+Definition at line \mbox{\hyperlink{network__checker_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{network__checker_8cpp_source}{network\+\_\+checker.\+cpp}}.
+
+\Hypertarget{class_network_checker_a07b75c27282c43e6f260de5aa190564a}\index{NetworkChecker@{NetworkChecker}!stopChecking@{stopChecking}}
+\index{stopChecking@{stopChecking}!NetworkChecker@{NetworkChecker}}
+\doxysubsubsection{\texorpdfstring{stopChecking}{stopChecking}}
+{\footnotesize\ttfamily \label{class_network_checker_a07b75c27282c43e6f260de5aa190564a} 
+void Network\+Checker\+::stop\+Checking (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Zatrzymuje sprawdzanie dostępności internetu. 
+
+
+
+Definition at line \mbox{\hyperlink{network__checker_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{network__checker_8cpp_source}{network\+\_\+checker.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+network\+\_\+checker.\+h\item 
+build/\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+9\+\_\+0\+\_\+\+Min\+GW\+\_\+64\+\_\+bit-\/\+Debug/appjpo\+PRO\+\_\+autogen/\+EWIEGA46\+WW/moc\+\_\+network\+\_\+checker.\+cpp\item 
+network\+\_\+checker.\+cpp\end{DoxyCompactItemize}

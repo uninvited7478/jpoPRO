@@ -1,0 +1,218 @@
+\doxysection{File\+Dialog.\+qml}
+\hypertarget{_09_material_2_file_dialog_8qml_source}{}\label{_09_material_2_file_dialog_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Dialogs/quickimpl/qml/+Material/FileDialog.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Dialogs/quickimpl/qml/+Material/FileDialog.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2021\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00004}00004\ import\ Qt.labs.folderlistmodel}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00005}00005\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00006}00006\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00007}00007\ import\ QtQuick.Controls.Material}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00008}00008\ import\ QtQuick.Controls.Material.impl}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00009}00009\ import\ QtQuick.Dialogs}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00010}00010\ import\ QtQuick.Dialogs.quickimpl}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00011}00011\ import\ QtQuick.Layouts}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00012}00012\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00014}00014\ import\ "{}."{}\ as\ DialogsImpl}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00016}00016\ FileDialogImpl\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00017}00017\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00019}00019\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding,}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitFooterWidth)}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00022}00022\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (implicitHeaderHeight\ >\ 0\ ?\ implicitHeaderHeight\ +\ spacing\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (implicitFooterHeight\ >\ 0\ ?\ implicitFooterHeight\ +\ spacing\ :\ 0))}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00027}00027\ \ \ \ \ leftPadding:\ 24}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00028}00028\ \ \ \ \ rightPadding:\ 24}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00030}00030\ \ \ \ \ standardButtons:\ T.Dialog.Open\ |\ T.Dialog.Cancel}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00032}00032\ \ \ \ \ Material.elevation:\ 24}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00034}00034\ \ \ \ \ Dialog\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ id:\ overwriteConfirmationDialog}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ objectName:\ "{}confirmationDialog"{}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ anchors.centerIn:\ parent}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ closePolicy:\ Popup.CloseOnEscape\ |\ Popup.CloseOnPressOutsideParent}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ dim:\ true}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ modal:\ true}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ title:\ qsTr("{}Overwrite\ file?"{})}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ clip:\ true}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ contentItem:\ ColumnLayout\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ overwriteConfirmationDialogLastTextLine.width}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ Label\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text:\ control.fileName\ +\ "{}\ already\ exists."{}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ Label\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ id:\ overwriteConfirmationDialogLastTextLine}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text:\ "{}Do\ you\ want\ to\ replace\ it?"{}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ footer:\ DialogButtonBox\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ alignment:\ Qt.AlignHCenter}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ standardButtons:\ DialogButtonBox.Yes\ |\ DialogButtonBox.No}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00061}00061\ \ \ \ \ FileDialogImpl.buttonBox:\ buttonBox}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00062}00062\ \ \ \ \ FileDialogImpl.nameFiltersComboBox:\ nameFiltersComboBox}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00063}00063\ \ \ \ \ FileDialogImpl.fileDialogListView:\ fileDialogListView}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00064}00064\ \ \ \ \ FileDialogImpl.breadcrumbBar:\ breadcrumbBar}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00065}00065\ \ \ \ \ FileDialogImpl.fileNameLabel:\ fileNameLabel}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00066}00066\ \ \ \ \ FileDialogImpl.fileNameTextField:\ fileNameTextField}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00067}00067\ \ \ \ \ FileDialogImpl.overwriteConfirmationDialog:\ overwriteConfirmationDialog}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00068}00068\ \ \ \ \ FileDialogImpl.sideBar:\ sideBar}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00070}00070\ \ \ \ \ background:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00071}00071\ \ \ \ \ \ \ \ \ implicitWidth:\ 600}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00072}00072\ \ \ \ \ \ \ \ \ implicitHeight:\ 400}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00073}00073\ \ \ \ \ \ \ \ \ radius:\ 2}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00074}00074\ \ \ \ \ \ \ \ \ color:\ control.Material.dialogColor}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00076}00076\ \ \ \ \ \ \ \ \ layer.enabled:\ control.Material.elevation\ >\ 0}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00077}00077\ \ \ \ \ \ \ \ \ layer.effect:\ ElevationEffect\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ elevation:\ control.Material.elevation}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00082}00082\ \ \ \ \ header:\ ColumnLayout\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00083}00083\ \ \ \ \ \ \ \ \ spacing:\ 12}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00085}00085\ \ \ \ \ \ \ \ \ Label\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ text:\ control.title}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ visible:\ parent.parent?.parent\ ===\ Overlay.overlay\ \&\&\ control.title.length\ >\ 0}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ elide:\ Label.ElideRight}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ font.bold:\ true}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ font.pixelSize:\ 16}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.leftMargin:\ 24}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.rightMargin:\ 24}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.topMargin:\ 24}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.fillWidth:\ true}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00098}00098\ \ \ \ \ \ \ \ \ DialogsImpl.FolderBreadcrumbBar\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ id:\ breadcrumbBar}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ dialog:\ control}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.topMargin:\ parent.parent?.parent\ !==\ Overlay.overlay\ ?\ 12\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.leftMargin:\ 24}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.rightMargin:\ 24}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.fillWidth:\ true}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.maximumWidth:\ parent.width\ -\/\ 48}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00107}00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00108}00108\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00110}00110\ \ \ \ \ contentItem:\ RowLayout\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00111}00111\ \ \ \ \ \ \ \ \ id:\ contentLayout}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00113}00113\ \ \ \ \ \ \ \ \ DialogsImpl.SideBar\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ id:\ sideBar}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ dialog:\ control}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.fillHeight:\ true}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ implicitWidth:\ 150}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00118}00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00120}00120\ \ \ \ \ \ \ \ \ ListView\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ id:\ fileDialogListView}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ objectName:\ "{}fileDialogListView"{}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.fillWidth:\ true}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.fillHeight:\ true}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ clip:\ true}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ ScrollBar.vertical:\ ScrollBar\ \{\}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ model:\ FolderListModel\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ folder:\ control.currentFolder}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nameFilters:\ control.selectedNameFilter.globs}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ showDirsFirst:\ PlatformTheme.themeHint(PlatformTheme.ShowDirectoriesFirst)}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sortCaseSensitive:\ false}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ delegate:\ DialogsImpl.FileDialogDelegate\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ objectName:\ "{}fileDialogDelegate"{}\ +\ index}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width:\ ListView.view.width}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ highlighted:\ ListView.isCurrentItem}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dialog:\ control}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fileDetailRowWidth:\ nameFiltersComboBox.width}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ KeyNavigation.backtab:\ breadcrumbBar}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ KeyNavigation.tab:\ fileNameTextField.visible\ ?\ fileNameTextField\ :\ nameFiltersComboBox}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00145}00145\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00146}00146\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00148}00148\ \ \ \ \ footer:\ GridLayout\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00149}00149\ \ \ \ \ \ \ \ \ columnSpacing:\ 20}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00150}00150\ \ \ \ \ \ \ \ \ columns:\ 3}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00152}00152\ \ \ \ \ \ \ \ \ Label\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ id:\ fileNameLabel}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ text:\ qsTr("{}File\ name"{})}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ visible:\ false}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.topMargin:\ 12}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.leftMargin:\ 20}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00159}00159\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00161}00161\ \ \ \ \ \ \ \ \ TextField\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ id:\ fileNameTextField}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ objectName:\ "{}fileNameTextField"{}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ visible:\ false}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.topMargin:\ 12}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.fillWidth:\ true}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00168}00168\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00170}00170\ \ \ \ \ \ \ \ \ Label\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ text:\ qsTr("{}Filter"{})}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.row:\ 1}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.topMargin:\ fileNameTextField.visible\ ?\ 0\ :\ 12}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.leftMargin:\ 20}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00176}00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00178}00178\ \ \ \ \ \ \ \ \ ComboBox\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ id:\ nameFiltersComboBox}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ model:\ control.nameFilters}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ flat:\ true}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ verticalPadding:\ 0}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ topInset:\ 0}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ bottomInset:\ 0}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.topMargin:\ fileNameTextField.visible\ ?\ 0\ :\ 12}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.fillWidth:\ true}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00188}00188\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00190}00190\ \ \ \ \ \ \ \ \ DialogButtonBox\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ id:\ buttonBox}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ standardButtons:\ control.standardButtons}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ spacing:\ 12}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ padding:\ 0}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ topInset:\ 0}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ bottomInset:\ 0}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.row:\ 1}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.column:\ 2}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.topMargin:\ fileNameTextField.visible\ ?\ 0\ :\ 12}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.rightMargin:\ 20}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00202}00202\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00203}00203\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00205}00205\ \ \ \ \ Overlay.modal:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00206}00206\ \ \ \ \ \ \ \ \ color:\ Color.transparent(control.palette.shadow,\ 0.5)}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00207}00207\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00209}00209\ \ \ \ \ Overlay.modeless:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00210}00210\ \ \ \ \ \ \ \ \ color:\ Color.transparent(control.palette.shadow,\ 0.12)}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00211}00211\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_material_2_file_dialog_8qml_source_l00212}00212\ \}}
+
+\end{DoxyCode}

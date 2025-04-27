@@ -1,0 +1,54 @@
+\doxysection{Box\+Shadow.\+qml}
+\hypertarget{_box_shadow_8qml_source}{}\label{_box_shadow_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/impl/BoxShadow.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/impl/BoxShadow.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00005}00005\ import\ QtQuick.Controls.Material}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00006}00006\ import\ QtQuick.Controls.Material.impl}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00008}00008\ /*}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00009}00009\ \ \ \ A\ implementation\ of\ CSS's\ box-\/shadow,\ used\ by\ ElevationEffect\ for\ a\ Material\ Design}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00010}00010\ \ \ \ elevation\ shadow\ effect.}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00011}00011\ \ */}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00012}00012\ RectangularGlow\ \{}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00013}00013\ \ \ \ \ //\ The\ 4\ properties\ from\ CSS\ box-\/shadow,\ plus\ the\ inherited\ color\ property}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00014}00014\ \ \ \ \ property\ int\ offsetX}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00015}00015\ \ \ \ \ property\ int\ offsetY}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00016}00016\ \ \ \ \ property\ int\ blurRadius}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00017}00017\ \ \ \ \ property\ int\ spreadRadius}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00019}00019\ \ \ \ \ //\ The\ strength\ of\ the\ shadow.\ We\ have\ this\ because\ RectangularGlow\ spreads}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00020}00020\ \ \ \ \ //\ out\ the\ shadow\ thinly,\ whereas\ lower\ elevation\ levels\ in\ Material\ 3}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00021}00021\ \ \ \ \ //\ are\ less\ spread\ out\ and\ stronger.\ This\ is\ only\ used\ for\ items\ with\ fully-\/rounded}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00022}00022\ \ \ \ \ //\ corners,\ like\ buttons.}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00023}00023\ \ \ \ \ property\ real\ strength}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00025}00025\ \ \ \ \ //\ The\ source\ item\ the\ shadow\ is\ being\ applied\ to,\ used\ for\ correctly}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00026}00026\ \ \ \ \ //\ calculating\ the\ corner\ radious}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00027}00027\ \ \ \ \ property\ Item\ source}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00029}00029\ \ \ \ \ property\ bool\ fullWidth}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00030}00030\ \ \ \ \ property\ bool\ fullHeight}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00032}00032\ \ \ \ \ //\ qmllint\ disable\ unqualified}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00033}00033\ \ \ \ \ //\ Intentionally\ duck-\/typed\ (QTBUG-\/94807)}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00034}00034\ \ \ \ \ readonly\ property\ real\ sourceRadius:\ source\ \&\&\ source.radius\ ||\ 0}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00036}00036\ \ \ \ \ x:\ (parent.width\ -\/\ width)/2\ +\ offsetX}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00037}00037\ \ \ \ \ y:\ (parent.height\ -\/\ height)/2\ +\ offsetY}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00039}00039\ \ \ \ \ implicitWidth:\ source\ ?\ source.width\ :\ parent.width}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00040}00040\ \ \ \ \ implicitHeight:\ source\ ?\ source.height\ :\ parent.height}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00042}00042\ \ \ \ \ width:\ implicitWidth\ +\ 2\ *\ spreadRadius\ +\ (fullWidth\ ?\ 2\ *\ cornerRadius\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00043}00043\ \ \ \ \ height:\ implicitHeight\ +\ 2\ *\ spreadRadius\ +\ (fullHeight\ ?\ 2\ *\ cornerRadius\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00044}00044\ \ \ \ \ glowRadius:\ blurRadius/2}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00045}00045\ \ \ \ \ spread:\ strength}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00047}00047\ \ \ \ \ cornerRadius:\ blurRadius\ +\ sourceRadius}
+\DoxyCodeLine{\Hypertarget{_box_shadow_8qml_source_l00048}00048\ \}}
+
+\end{DoxyCode}

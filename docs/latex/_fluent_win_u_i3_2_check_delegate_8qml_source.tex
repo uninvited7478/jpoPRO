@@ -1,0 +1,95 @@
+\doxysection{Check\+Delegate.\+qml}
+\hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source}{}\label{_fluent_win_u_i3_2_check_delegate_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/FluentWinUI3/CheckDelegate.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/FluentWinUI3/CheckDelegate.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2024\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00006}00006\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00007}00007\ import\ QtQuick.Controls.FluentWinUI3.impl\ as\ Impl}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00009}00009\ T.CheckDelegate\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00010}00010\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00012}00012\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00014}00014\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding,}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitIndicatorHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00018}00018\ \ \ \ \ spacing:\ 10}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00020}00020\ \ \ \ \ topPadding:\ config.topPadding\ ||\ 0\ +\ verticalOffset}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00021}00021\ \ \ \ \ leftPadding:\ config.leftPadding\ ||\ 0\ +\ \_\_horizontalOffset}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00022}00022\ \ \ \ \ rightPadding:\ config.rightPadding\ ||\ 0\ +\ \_\_horizontalOffset}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00023}00023\ \ \ \ \ bottomPadding:\ config.bottomPadding\ ||\ 0\ +\ \_\_verticalOffset}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00025}00025\ \ \ \ \ icon.width:\ 16}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00026}00026\ \ \ \ \ icon.height:\ 16}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00027}00027\ \ \ \ \ icon.color:\ control.down\ ?\ \_\_pressedText\ :\ control.palette.buttonText}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00029}00029\ \ \ \ \ readonly\ property\ int\ \_\_horizontalOffset:\ 4}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00030}00030\ \ \ \ \ readonly\ property\ int\ \_\_verticalOffset:\ 2}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00032}00032\ \ \ \ \ readonly\ property\ color\ \_\_pressedText:\ Application.styleHints.colorScheme\ ==\ Qt.Light}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ Qt.rgba(control.palette.buttonText.r,\ control.palette.buttonText.g,\ control.palette.buttonText.b,\ 0.62)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Qt.rgba(control.palette.buttonText.r,\ control.palette.buttonText.g,\ control.palette.buttonText.b,\ 0.7725)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00036}00036\ \ \ \ \ readonly\ property\ string\ \_\_currentState:\ [}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ !control.enabled\ \&\&\ "{}disabled"{},}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ control.highlighted\ \&\&\ "{}highlighted"{},}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ control.enabled\ \&\&\ !control.down\ \&\&\ control.hovered\ \&\&\ "{}hovered"{},}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ control.down\ \&\&\ "{}pressed"{}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00041}00041\ \ \ \ \ ].filter(Boolean).join("{}\_"{})\ ||\ "{}normal"{}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00042}00042\ \ \ \ \ readonly\ property\ var\ config:\ Config.controls.itemdelegate[\_\_currentState]\ ||\ \{\}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00044}00044\ \ \ \ \ readonly\ property\ Item\ \_\_focusFrameTarget:\ control}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00046}00046\ \ \ \ \ indicator:\ Impl.CheckIndicator\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ readonly\ property\ string\ currentState:\ [}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ control.checkState\ ===\ Qt.Checked\ \&\&\ "{}checked"{},}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ !control.enabled\ \&\&\ control.checkState\ !==\ Qt.Unchecked\ \&\&\ "{}disabled"{},}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ control.enabled\ \&\&\ control.checkState\ !==\ Qt.Unchecked\ \&\&\ !control.down\ \&\&\ control.hovered\ \&\&\ "{}hovered"{},}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ control.checkState\ ===\ Qt.PartiallyChecked\ \&\&\ "{}partiallyChecked"{},}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ control.checkState\ !==\ Qt.Unchecked\ \&\&\ control.down\ \&\&\ "{}pressed"{},}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ ].filter(Boolean).join("{}\_"{})\ ||\ "{}normal"{}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ readonly\ property\ var\ config:\ Config.controls.checkbox[currentState]\ ||\ \{\}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ x:\ control.text\ ?\ (control.mirrored\ ?\ control.leftPadding\ :\ control.width\ -\/\ width\ -\/\ control.rightPadding)\ :\ control.leftPadding\ +\ (control.availableWidth\ -\/\ width)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ y:\ control.topPadding\ +\ (control.availableHeight\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ control:\ control}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ filePath:\ Qt.resolvedUrl(config.indicator.filePath)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00062}00062\ \ \ \ \ contentItem:\ IconLabel\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00063}00063\ \ \ \ \ \ \ \ \ leftPadding:\ !control.mirrored\ ?\ 0\ :\ control.indicator.width\ +\ control.spacing}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00064}00064\ \ \ \ \ \ \ \ \ rightPadding:\ control.mirrored\ ?\ 0\ :\ control.indicator.width\ +\ control.spacing}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00066}00066\ \ \ \ \ \ \ \ \ spacing:\ control.spacing}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00067}00067\ \ \ \ \ \ \ \ \ mirrored:\ control.mirrored}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00068}00068\ \ \ \ \ \ \ \ \ display:\ control.display}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00069}00069\ \ \ \ \ \ \ \ \ alignment:\ control.display\ ===\ IconLabel.IconOnly\ ||\ control.display\ ===\ IconLabel.TextUnderIcon\ ?\ Qt.AlignCenter\ :\ Qt.AlignLeft}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00070}00070\ \ \ \ \ \ \ \ \ icon:\ control.icon}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00071}00071\ \ \ \ \ \ \ \ \ text:\ control.text}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00072}00072\ \ \ \ \ \ \ \ \ font:\ control.font}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00073}00073\ \ \ \ \ \ \ \ \ color:\ control.icon.color}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00076}00076\ \ \ \ \ background:\ Item\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00077}00077\ \ \ \ \ \ \ \ \ implicitWidth:\ 160}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00078}00078\ \ \ \ \ \ \ \ \ implicitHeight:\ 40}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00080}00080\ \ \ \ \ \ \ \ \ property\ Item\ backgroundImage:\ Impl.StyleImage\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ parent:\ control.background}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ imageConfig:\ control.config.background}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ implicitWidth:\ parent.width\ -\/\ control.\_\_horizontalOffset\ *\ 2}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ implicitHeight:\ parent.height\ -\/\ control.\_\_verticalOffset\ *\ 2}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ control.\_\_horizontalOffset}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ y:\ control.\_\_verticalOffset}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_check_delegate_8qml_source_l00089}00089\ \}}
+
+\end{DoxyCode}

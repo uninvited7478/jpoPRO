@@ -1,0 +1,263 @@
+\doxysection{Elevation\+Effect.\+qml}
+\hypertarget{_elevation_effect_8qml_source}{}\label{_elevation_effect_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/impl/ElevationEffect.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/impl/ElevationEffect.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00005}00005\ import\ QtQuick.Controls.Material}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00006}00006\ import\ QtQuick.Controls.Material.impl}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00008}00008\ /*}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00009}00009\ \ \ \ An\ effect\ for\ standard\ Material\ Design\ elevation\ shadows.\ Useful\ for\ using\ as\ \(\backslash\)c\ layer.effect.}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00010}00010\ \ */}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00011}00011\ Item\ \{}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00012}00012\ \ \ \ \ id:\ effect}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00014}00014\ \ \ \ \ /*}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00015}00015\ \ \ \ \ \ \ \ The\ source\ the\ effect\ is\ applied\ to.}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00016}00016\ \ \ \ \ \ */}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00017}00017\ \ \ \ \ property\ var\ source}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00019}00019\ \ \ \ \ /*}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00020}00020\ \ \ \ \ \ \ \ The\ elevation\ of\ the\ \(\backslash\)l\ source\ Item.}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00021}00021\ \ \ \ \ \ */}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00022}00022\ \ \ \ \ property\ int\ elevation:\ 0}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00024}00024\ \ \ \ \ /*}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00025}00025\ \ \ \ \ \ \ \ Set\ to\ \(\backslash\)c\ true\ if\ the\ \(\backslash\)l\ source\ Item\ is\ the\ same\ width\ as\ its\ parent\ and\ the\ shadow}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00026}00026\ \ \ \ \ \ \ \ should\ be\ full\ width\ instead\ of\ rounding\ around\ the\ corner\ of\ the\ Item.}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \(\backslash\)sa\ fullHeight}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00029}00029\ \ \ \ \ \ */}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00030}00030\ \ \ \ \ property\ bool\ fullWidth:\ false}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00032}00032\ \ \ \ \ /*}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00033}00033\ \ \ \ \ \ \ \ Set\ to\ \(\backslash\)c\ true\ if\ the\ \(\backslash\)l\ source\ Item\ is\ the\ same\ height\ as\ its\ parent\ and\ the\ shadow}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00034}00034\ \ \ \ \ \ \ \ should\ be\ full\ height\ instead\ of\ rounding\ around\ the\ corner\ of\ the\ Item.}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \(\backslash\)sa\ fullWidth}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00037}00037\ \ \ \ \ \ */}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00038}00038\ \ \ \ \ property\ bool\ fullHeight:\ false}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00040}00040\ \ \ \ \ /*}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \(\backslash\)internal}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00043}00043\ \ \ \ \ \ \ \ The\ actual\ source\ Item\ the\ effect\ is\ applied\ to.}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00044}00044\ \ \ \ \ \ */}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00045}00045\ \ \ \ \ readonly\ property\ Item\ sourceItem:\ source.sourceItem}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00047}00047\ \ \ \ \ /*}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00048}00048\ \ \ \ \ \ *\ The\ following\ shadow\ values\ are\ taken\ from\ Angular\ Material}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00049}00049\ \ \ \ \ \ *}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00050}00050\ \ \ \ \ \ *\ The\ MIT\ License\ (MIT)}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00051}00051\ \ \ \ \ \ *}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00052}00052\ \ \ \ \ \ *\ Copyright\ (c)\ 2014-\/2016\ Google,\ Inc.\ http://angularjs.org}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00053}00053\ \ \ \ \ \ *}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00054}00054\ \ \ \ \ \ *\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00055}00055\ \ \ \ \ \ *\ of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00056}00056\ \ \ \ \ \ *\ in\ the\ Software\ without\ restriction,\ including\ without\ limitation\ the\ rights}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00057}00057\ \ \ \ \ \ *\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00058}00058\ \ \ \ \ \ *\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00059}00059\ \ \ \ \ \ *\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00060}00060\ \ \ \ \ \ *}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00061}00061\ \ \ \ \ \ *\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00062}00062\ \ \ \ \ \ *\ copies\ or\ substantial\ portions\ of\ the\ Software.}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00063}00063\ \ \ \ \ \ *}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00064}00064\ \ \ \ \ \ *\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00065}00065\ \ \ \ \ \ *\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00066}00066\ \ \ \ \ \ *\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00067}00067\ \ \ \ \ \ *\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00068}00068\ \ \ \ \ \ *\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00069}00069\ \ \ \ \ \ *\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00070}00070\ \ \ \ \ \ *\ SOFTWARE.}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00071}00071\ \ \ \ \ \ */}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00072}00072\ \ \ \ \ /*}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00073}00073\ \ \ \ \ \ \ \ \(\backslash\)internal}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00075}00075\ \ \ \ \ \ \ \ The\ shadows\ to\ use\ for\ each\ possible\ elevation.\ There\ are\ three\ shadows\ that\ when\ combined}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00076}00076\ \ \ \ \ \ \ \ make\ up\ the\ elevation.}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00077}00077\ \ \ \ \ \ */}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00078}00078\ \ \ \ \ property\ var\ \_shadows:\ \_defaultShadows}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00080}00080\ \ \ \ \ readonly\ property\ var\ \_defaultShadows:\ [}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00081}00081\ \ \ \ \ \ \ \ \ \{\ //\ 0}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ angularValues:\ [}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 0,\ blur:\ 0,\ spread:\ 0\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 0,\ blur:\ 0,\ spread:\ 0\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 0,\ blur:\ 0,\ spread:\ 0\}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ strength:\ 0.05}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00088}00088\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00089}00089\ \ \ \ \ \ \ \ \ \{\ //\ 1}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ angularValues:\ [}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 1,\ blur:\ 3,\ spread:\ 0\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 1,\ blur:\ 1,\ spread:\ 0\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 2,\ blur:\ 1,\ spread:\ -\/1\}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ strength:\ 0.05}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00096}00096\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00097}00097\ \ \ \ \ \ \ \ \ \{\ //\ 2}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ angularValues:\ [}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 1,\ blur:\ 5,\ spread:\ 0\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 2,\ blur:\ 2,\ spread:\ 0\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 3,\ blur:\ 1,\ spread:\ -\/2\}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ strength:\ 0.05}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00104}00104\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00105}00105\ \ \ \ \ \ \ \ \ \{\ //\ 3}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ angularValues:\ [}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 1,\ blur:\ 8,\ spread:\ 0\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 3,\ blur:\ 4,\ spread:\ 0\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 3,\ blur:\ 3,\ spread:\ -\/2\}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ strength:\ 0.05}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00112}00112\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00113}00113\ \ \ \ \ \ \ \ \ \{\ //\ 4}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ angularValues:\ [}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 2,\ blur:\ 4,\ spread:\ -\/1\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 4,\ blur:\ 5,\ spread:\ 0\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 1,\ blur:\ 10,\ spread:\ 0\}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ strength:\ 0.05}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00120}00120\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00121}00121\ \ \ \ \ \ \ \ \ \{\ //\ 5}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ angularValues:\ [}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 3,\ blur:\ 5,\ spread:\ -\/1\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 5,\ blur:\ 8,\ spread:\ 0\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 1,\ blur:\ 14,\ spread:\ 0\}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ strength:\ 0.05}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00128}00128\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00129}00129\ \ \ \ \ \ \ \ \ \{\ //\ 6}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ angularValues:\ [}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 3,\ blur:\ 5,\ spread:\ -\/1\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 6,\ blur:\ 10,\ spread:\ 0\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 1,\ blur:\ 18,\ spread:\ 0\}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ strength:\ 0.05}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00136}00136\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00137}00137\ \ \ \ \ \ \ \ \ \{\ //\ 7}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ angularValues:\ [}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 4,\ blur:\ 5,\ spread:\ -\/2\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 7,\ blur:\ 10,\ spread:\ 1\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 2,\ blur:\ 16,\ spread:\ 1\}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ strength:\ 0.05}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00144}00144\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00145}00145\ \ \ \ \ \ \ \ \ \{\ //\ 8}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ angularValues:\ [}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 5,\ blur:\ 5,\ spread:\ -\/3\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 8,\ blur:\ 10,\ spread:\ 1\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 3,\ blur:\ 14,\ spread:\ 2\}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ strength:\ 0.05}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00152}00152\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00153}00153\ \ \ \ \ \ \ \ \ \{\ //\ 9}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ angularValues:\ [}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 5,\ blur:\ 6,\ spread:\ -\/3\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 9,\ blur:\ 12,\ spread:\ 1\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 3,\ blur:\ 16,\ spread:\ 2\}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ strength:\ 0.05}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00160}00160\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00161}00161\ \ \ \ \ \ \ \ \ \{\ //\ 10}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ angularValues:\ [}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 6,\ blur:\ 6,\ spread:\ -\/3\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 10,\ blur:\ 14,\ spread:\ 1\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 4,\ blur:\ 18,\ spread:\ 3\}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ strength:\ 0.05}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00168}00168\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00169}00169\ \ \ \ \ \ \ \ \ \{\ //\ 11}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ angularValues:\ [}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 6,\ blur:\ 7,\ spread:\ -\/4\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 11,\ blur:\ 15,\ spread:\ 1\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 4,\ blur:\ 20,\ spread:\ 3\}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ strength:\ 0.05}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00176}00176\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00177}00177\ \ \ \ \ \ \ \ \ \{\ //\ 12}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ angularValues:\ [}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 7,\ blur:\ 8,\ spread:\ -\/4\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 12,\ blur:\ 17,\ spread:\ 2\},}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{offset:\ 5,\ blur:\ 22,\ spread:\ 4\}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ ],}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ strength:\ 0.05}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00184}00184\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00185}00185\ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00187}00187\ \ \ \ \ /*}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00188}00188\ \ \ \ \ \ \ \ \(\backslash\)internal}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00190}00190\ \ \ \ \ \ \ \ The\ current\ shadow\ based\ on\ the\ elevation.}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00191}00191\ \ \ \ \ \ */}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00192}00192\ \ \ \ \ readonly\ property\ var\ \_shadow:\ \_shadows[Math.max(0,\ Math.min(elevation,\ \_shadows.length\ -\/\ 1))]}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00194}00194\ \ \ \ \ //\ Nest\ the\ shadows\ and\ source\ view\ in\ two\ items\ rendered\ as\ a\ layer}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00195}00195\ \ \ \ \ //\ so\ the\ shadow\ is\ not\ clipped\ by\ the\ bounds\ of\ the\ source\ view}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00196}00196\ \ \ \ \ Item\ \{}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00197}00197\ \ \ \ \ \ \ \ \ property\ int\ margin:\ -\/100}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00199}00199\ \ \ \ \ \ \ \ \ x:\ margin}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00200}00200\ \ \ \ \ \ \ \ \ y:\ margin}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00201}00201\ \ \ \ \ \ \ \ \ width:\ parent.width\ -\/\ 2\ *\ margin}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00202}00202\ \ \ \ \ \ \ \ \ height:\ parent.height\ -\/\ 2\ *\ margin}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00204}00204\ \ \ \ \ \ \ \ \ //\ By\ rendering\ as\ a\ layer,\ the\ shadow\ will\ never\ show\ through\ the\ source\ item,}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00205}00205\ \ \ \ \ \ \ \ \ //\ even\ when\ the\ source\ item's\ opacity\ is\ less\ than\ 1}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00206}00206\ \ \ \ \ \ \ \ \ layer.enabled:\ true}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00207}00207\ \ \ \ \ \ \ \ \ layer.smooth:\ true}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00209}00209\ \ \ \ \ \ \ \ \ //\ The\ box\ shadows\ automatically\ pick\ up\ the\ size\ of\ the\ source\ Item\ and\ not}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00210}00210\ \ \ \ \ \ \ \ \ //\ the\ size\ of\ the\ parent,\ so\ we\ don't\ need\ to\ worry\ about\ the\ extra\ padding}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00211}00211\ \ \ \ \ \ \ \ \ //\ in\ the\ parent\ Item}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00212}00212\ \ \ \ \ \ \ \ \ BoxShadow\ \{}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ offsetY:\ effect.\_shadow.angularValues[0].offset}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ blurRadius:\ effect.\_shadow.angularValues[0].blur}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ spreadRadius:\ effect.\_shadow.angularValues[0].spread}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ strength:\ effect.\_shadow.strength}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ Qt.rgba(0,0,0,\ 0.2)}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ fullWidth:\ effect.fullWidth}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ fullHeight:\ effect.fullHeight}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ source:\ effect.sourceItem}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00222}00222\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00224}00224\ \ \ \ \ \ \ \ \ BoxShadow\ \{}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ offsetY:\ effect.\_shadow.angularValues[1].offset}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ blurRadius:\ effect.\_shadow.angularValues[1].blur}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ spreadRadius:\ effect.\_shadow.angularValues[1].spread}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ strength:\ effect.\_shadow.strength}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ Qt.rgba(0,0,0,\ 0.14)}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00230}00230\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ fullWidth:\ effect.fullWidth}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ fullHeight:\ effect.fullHeight}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ source:\ effect.sourceItem}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00234}00234\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00236}00236\ \ \ \ \ \ \ \ \ BoxShadow\ \{}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ offsetY:\ effect.\_shadow.angularValues[2].offset}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ blurRadius:\ effect.\_shadow.angularValues[2].blur}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ spreadRadius:\ effect.\_shadow.angularValues[2].spread}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ strength:\ effect.\_shadow.strength}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ Qt.rgba(0,0,0,\ 0.12)}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ fullWidth:\ effect.fullWidth}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ fullHeight:\ effect.fullHeight}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ source:\ effect.sourceItem}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00246}00246\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00247}00247\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00248}00248\ \ \ \ \ \ \ \ \ ShaderEffect\ \{}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ property\ alias\ source:\ effect.source}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ (parent.width\ -\/\ width)/2}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ y:\ (parent.height\ -\/\ height)/2}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ effect.sourceItem.width}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ effect.sourceItem.height}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00255}00255\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00256}00256\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_elevation_effect_8qml_source_l00257}00257\ \}}
+
+\end{DoxyCode}

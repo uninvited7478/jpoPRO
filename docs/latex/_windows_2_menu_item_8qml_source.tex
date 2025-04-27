@@ -1,0 +1,81 @@
+\doxysection{Menu\+Item.\+qml}
+\hypertarget{_windows_2_menu_item_8qml_source}{}\label{_windows_2_menu_item_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Windows/MenuItem.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Windows/MenuItem.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2024\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00006}00006\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00007}00007\ import\ QtQuick.Controls.Windows.impl}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00009}00009\ T.MenuItem\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00010}00010\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00012}00012\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00014}00014\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding,}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitIndicatorHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00018}00018\ \ \ \ \ leftPadding:\ 10}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00019}00019\ \ \ \ \ rightPadding:\ 10}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00020}00020\ \ \ \ \ topPadding:\ 3}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00021}00021\ \ \ \ \ bottomPadding:\ 3}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00022}00022\ \ \ \ \ spacing:\ 6}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00024}00024\ \ \ \ \ icon.width:\ 16}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00025}00025\ \ \ \ \ icon.height:\ 16}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00027}00027\ \ \ \ \ implicitTextPadding:\ control.checkable\ \&\&\ control.indicator\ ?\ control.indicator.width\ +\ control.spacing\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00029}00029\ \ \ \ \ contentItem:\ IconLabel\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ readonly\ property\ real\ arrowPadding:\ control.subMenu\ \&\&\ control.arrow\ ?\ control.arrow.width\ +\ control.spacing\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ leftPadding:\ !control.mirrored\ ?\ control.textPadding\ :\ arrowPadding}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ rightPadding:\ control.mirrored\ ?\ control.textPadding\ :\ arrowPadding}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ spacing:\ control.spacing}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ mirrored:\ control.mirrored}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ display:\ control.display}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ alignment:\ Qt.AlignLeft}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ icon:\ control.icon}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ text:\ control.text}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ font:\ control.font}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ color:\ control.palette.text}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00045}00045\ \ \ \ \ arrow:\ ColorImage\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ x:\ control.mirrored\ ?\ control.padding\ :\ control.width\ -\/\ width\ -\/\ control.padding}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ y:\ control.topPadding\ +\ (control.availableHeight\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ width:\ 20}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ visible:\ control.subMenu}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ rotation:\ control.mirrored\ ?\ -\/180\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ color:\ control.palette.text}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ source:\ "{}qrc:/qt-\/project.org/imports/QtQuick/Controls/Windows/images/menuarrow.png"{}}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ fillMode:\ Image.Pad}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00057}00057\ \ \ \ \ indicator:\ CheckIndicator\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ x:\ control.mirrored\ ?\ control.width\ -\/\ width\ -\/\ control.rightPadding\ :\ control.leftPadding}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ y:\ control.topPadding\ +\ (control.availableHeight\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ control:\ control}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ visible:\ control.checkable}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00065}00065\ \ \ \ \ background:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00066}00066\ \ \ \ \ \ \ \ \ implicitWidth:\ 200}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00067}00067\ \ \ \ \ \ \ \ \ implicitHeight:\ 30}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00068}00068\ \ \ \ \ \ \ \ \ radius:\ 4}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00070}00070\ \ \ \ \ \ \ \ \ readonly\ property\ real\ alpha:\ control.down\ ?\ 0.0241\ :\ control.hovered\ ?\ 0.0373\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00072}00072\ \ \ \ \ \ \ \ \ color:\ Qt.rgba(0,\ 0,\ 0,\ alpha)}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00073}00073\ \ \ \ \ \ \ \ \ visible:\ control.down\ ||\ control.highlighted}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_windows_2_menu_item_8qml_source_l00075}00075\ \}}
+
+\end{DoxyCode}

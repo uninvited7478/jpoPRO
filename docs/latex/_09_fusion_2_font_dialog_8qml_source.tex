@@ -1,0 +1,125 @@
+\doxysection{Font\+Dialog.\+qml}
+\hypertarget{_09_fusion_2_font_dialog_8qml_source}{}\label{_09_fusion_2_font_dialog_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Dialogs/quickimpl/qml/+Fusion/FontDialog.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Dialogs/quickimpl/qml/+Fusion/FontDialog.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2021\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00005}00005\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00006}00006\ import\ QtQuick.Controls.Fusion}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00007}00007\ import\ QtQuick.Controls.Fusion.impl}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00008}00008\ import\ QtQuick.Dialogs}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00009}00009\ import\ QtQuick.Dialogs.quickimpl}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00010}00010\ import\ QtQuick.Layouts}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00011}00011\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00013}00013\ FontDialogImpl\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00014}00014\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00016}00016\ \ \ \ \ implicitWidth:\ Math.max(control.implicitBackgroundWidth\ +\ control.leftInset\ +\ control.rightInset,}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ control.implicitContentWidth\ +\ control.leftPadding\ +\ control.rightPadding,}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ control.implicitHeaderWidth,}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ control.implicitFooterWidth)}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00020}00020\ \ \ \ \ implicitHeight:\ Math.max(control.implicitBackgroundHeight\ +\ control.topInset\ +\ control.bottomInset,}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ control.implicitContentHeight\ +\ control.topPadding\ +\ control.bottomPadding}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (control.implicitHeaderHeight\ >\ 0\ ?\ control.implicitHeaderHeight\ +\ control.spacing\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (control.implicitFooterHeight\ >\ 0\ ?\ control.implicitFooterHeight\ +\ control.spacing\ :\ 0))}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00025}00025\ \ \ \ \ leftPadding:\ 20}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00026}00026\ \ \ \ \ rightPadding:\ 20}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00027}00027\ \ \ \ \ //\ Ensure\ that\ the\ background's\ border\ is\ visible.}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00028}00028\ \ \ \ \ leftInset:\ -\/1}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00029}00029\ \ \ \ \ rightInset:\ -\/1}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00030}00030\ \ \ \ \ topInset:\ -\/1}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00031}00031\ \ \ \ \ bottomInset:\ -\/1}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00033}00033\ \ \ \ \ standardButtons:\ T.Dialog.Ok\ |\ T.Dialog.Cancel}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00035}00035\ \ \ \ \ FontDialogImpl.buttonBox:\ buttonBox}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00036}00036\ \ \ \ \ FontDialogImpl.familyListView:\ content.familyListView}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00037}00037\ \ \ \ \ FontDialogImpl.styleListView:\ content.styleListView}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00038}00038\ \ \ \ \ FontDialogImpl.sizeListView:\ content.sizeListView}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00039}00039\ \ \ \ \ FontDialogImpl.sampleEdit:\ content.sampleEdit}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00040}00040\ \ \ \ \ FontDialogImpl.writingSystemComboBox:\ writingSystemComboBox}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00041}00041\ \ \ \ \ FontDialogImpl.underlineCheckBox:\ content.underline}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00042}00042\ \ \ \ \ FontDialogImpl.strikeoutCheckBox:\ content.strikeout}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00043}00043\ \ \ \ \ FontDialogImpl.familyEdit:\ content.familyEdit}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00044}00044\ \ \ \ \ FontDialogImpl.styleEdit:\ content.styleEdit}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00045}00045\ \ \ \ \ FontDialogImpl.sizeEdit:\ content.sizeEdit}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00047}00047\ \ \ \ \ background:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ implicitWidth:\ 600}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ implicitHeight:\ 400}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ color:\ control.palette.window}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ border.color:\ control.palette.mid}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ radius:\ 2}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ z:\ -\/1}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ 1}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ y:\ 1}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ parent.width}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ parent.height}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.palette.shadow}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ opacity:\ 0.2}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ radius:\ 2}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00066}00066\ \ \ \ \ Overlay.modal:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00067}00067\ \ \ \ \ \ \ \ \ color:\ Fusion.topShadow}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00070}00070\ \ \ \ \ Overlay.modeless:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00071}00071\ \ \ \ \ \ \ \ \ color:\ Fusion.topShadow}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00074}00074\ \ \ \ \ header:\ Label\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00075}00075\ \ \ \ \ \ \ \ \ text:\ control.title}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00076}00076\ \ \ \ \ \ \ \ \ visible:\ content.parent?.parent\ ===\ Overlay.overlay}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00077}00077\ \ \ \ \ \ \ \ \ horizontalAlignment:\ Label.AlignHCenter}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00078}00078\ \ \ \ \ \ \ \ \ elide:\ Label.ElideRight}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00079}00079\ \ \ \ \ \ \ \ \ font.bold:\ true}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00080}00080\ \ \ \ \ \ \ \ \ padding:\ 6}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00083}00083\ \ \ \ \ contentItem:\ FontDialogContent\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00084}00084\ \ \ \ \ \ \ \ \ id:\ content}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00087}00087\ \ \ \ \ footer:\ RowLayout\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00088}00088\ \ \ \ \ \ \ \ \ id:\ rowLayout}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00089}00089\ \ \ \ \ \ \ \ \ spacing:\ 12}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00091}00091\ \ \ \ \ \ \ \ \ Label\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ text:\ qsTr("{}Writing\ System"{})}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.leftMargin:\ 12}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.topMargin:\ 6}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.bottomMargin:\ 6}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00097}00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00098}00098\ \ \ \ \ \ \ \ \ ComboBox\{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ id:\ writingSystemComboBox}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.fillWidth:\ true}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.topMargin:\ 6}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.bottomMargin:\ 6}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00104}00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00106}00106\ \ \ \ \ \ \ \ \ DialogButtonBox\ \{}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ id:\ buttonBox}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ standardButtons:\ control.standardButtons}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ spacing:\ 6}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ horizontalPadding:\ 0}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ verticalPadding:\ 0}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ background:\ null}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.rightMargin:\ 12}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.topMargin:\ 6}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ Layout.bottomMargin:\ 6}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00117}00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_09_fusion_2_font_dialog_8qml_source_l00119}00119\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,44 @@
+\doxysection{data\+\_\+manager.\+cpp}
+\hypertarget{data__manager_8cpp_source}{}\label{data__manager_8cpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}data\_manager.h"{}}}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <QFile>}}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <QJsonDocument>}}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00006}\mbox{\hyperlink{class_data_manager_affb37dc13db06ecf6853c9fa25e5ed7a}{00006}}\ \mbox{\hyperlink{class_data_manager_affb37dc13db06ecf6853c9fa25e5ed7a}{DataManager::DataManager}}(QObject\ *parent)\ :\ QObject(parent)\ \{\}}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00008}\mbox{\hyperlink{class_data_manager_adb07ac99bfd2139a3125280cf44e9b99}{00008}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_manager_adb07ac99bfd2139a3125280cf44e9b99}{DataManager::saveToFile}}(QJsonArray\ data,\ \textcolor{keyword}{const}\ QString\ \&filename)\ \{}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00009}00009\ \ \ \ \ QFile\ file(filename);}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.open(QIODevice::WriteOnly))\ \{}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ emit\ \mbox{\hyperlink{class_data_manager_ab360df367c6a36fa1fef90009e6d58d6}{saveError}}(\textcolor{stringliteral}{"{}Nie\ można\ zapisać\ pliku:\ "{}}\ +\ file.errorString());}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00013}00013\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00015}00015\ \ \ \ \ QJsonDocument\ doc(data);}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00016}00016\ \ \ \ \ file.write(doc.toJson());}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00017}00017\ \ \ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00018}00018\ \ \ \ \ emit\ \mbox{\hyperlink{class_data_manager_a9b792162b823961d0f8e921b1743a8ef}{saveSuccess}}();}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00021}\mbox{\hyperlink{class_data_manager_afbca6576ef6c865c4695f5d5dcb6db1a}{00021}}\ QJsonArray\ \mbox{\hyperlink{class_data_manager_afbca6576ef6c865c4695f5d5dcb6db1a}{DataManager::loadFromFile}}(\textcolor{keyword}{const}\ QString\ \&filename)\ \{}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00022}00022\ \ \ \ \ QFile\ file(filename);}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00023}00023\ \ \ \ \ qDebug()\ <<\ file.fileName();}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.open(QIODevice::ReadOnly))\ \{}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ emit\ \mbox{\hyperlink{class_data_manager_a2d46f8584b720161986549b2ed8e58b5}{loadError}}(\textcolor{stringliteral}{"{}Nie\ można\ odczytać\ pliku:\ "{}}\ +\ file.errorString());}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ QJsonArray();}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00029}00029\ \ \ \ \ QByteArray\ rawData\ =\ file.readAll();}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00030}00030\ \ \ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00032}00032\ \ \ \ \ QJsonDocument\ doc\ =\ QJsonDocument::fromJson(rawData);}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (doc.isNull()\ ||\ !doc.isArray())\ \{}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ emit\ \mbox{\hyperlink{class_data_manager_a2d46f8584b720161986549b2ed8e58b5}{loadError}}(\textcolor{stringliteral}{"{}Nieprawidłowy\ format\ JSON"{}});}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ QJsonArray();}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00037}00037\ \ \ \ \ emit\ \mbox{\hyperlink{class_data_manager_ae143e1a31d2a40145b1bfc946b6bfe5d}{loadSuccess}}();}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{return}\ doc.array();}
+\DoxyCodeLine{\Hypertarget{data__manager_8cpp_source_l00039}00039\ \}}
+
+\end{DoxyCode}

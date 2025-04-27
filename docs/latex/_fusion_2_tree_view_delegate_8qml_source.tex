@@ -1,0 +1,105 @@
+\doxysection{Tree\+View\+Delegate.\+qml}
+\hypertarget{_fusion_2_tree_view_delegate_8qml_source}{}\label{_fusion_2_tree_view_delegate_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Fusion/TreeViewDelegate.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Fusion/TreeViewDelegate.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2022\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00006}00006\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00007}00007\ import\ QtQuick.Controls.Fusion}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00009}00009\ T.TreeViewDelegate\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00010}00010\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00012}00012\ \ \ \ \ implicitWidth:\ leftMargin\ +\ \_\_contentIndent\ +\ implicitContentWidth\ +\ rightPadding\ +\ rightMargin}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00013}00013\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight,\ implicitContentHeight,\ implicitIndicatorHeight)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00015}00015\ \ \ \ \ indentation:\ indicator\ ?\ indicator.width\ :\ 12}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00016}00016\ \ \ \ \ leftMargin:\ 5}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00017}00017\ \ \ \ \ rightMargin:\ 5}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00018}00018\ \ \ \ \ spacing:\ 5}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00020}00020\ \ \ \ \ topPadding:\ contentItem\ ?\ (height\ -\/\ contentItem.implicitHeight)\ /\ 2\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00021}00021\ \ \ \ \ leftPadding:\ !mirrored\ ?\ leftMargin\ +\ \_\_contentIndent\ :\ width\ -\/\ leftMargin\ -\/\ \_\_contentIndent\ -\/\ implicitContentWidth}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00023}00023\ \ \ \ \ highlighted:\ control.selected\ ||\ control.current}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ ((control.treeView.selectionBehavior\ ===\ TableView.SelectRows}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ control.treeView.selectionBehavior\ ===\ TableView.SelectionDisabled)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ control.row\ ===\ control.treeView.currentRow)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00028}00028\ \ \ \ \ required\ property\ int\ row}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00029}00029\ \ \ \ \ required\ property\ var\ model}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00030}00030\ \ \ \ \ readonly\ property\ real\ \_\_contentIndent:\ !isTreeNode\ ?\ 0\ :\ (depth\ *\ indentation)\ +\ (indicator\ ?\ indicator.width\ +\ spacing\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00032}00032\ \ \ \ \ indicator:\ Item\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ readonly\ property\ real\ \_\_indicatorIndent:\ control.leftMargin\ +\ (control.depth\ *\ control.indentation)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ x:\ !control.mirrored\ ?\ \_\_indicatorIndent\ :\ control.width\ -\/\ \_\_indicatorIndent\ -\/\ width}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ y:\ (control.height\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ implicitWidth:\ Math.max(arrow.implicitWidth,\ 20)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ implicitHeight:\ 24\ //\ same\ as\ Button.qml}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ property\ ColorImage\ arrow\ :\ ColorImage\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ parent:\ control.indicator}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ (parent.width\ -\/\ width)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ y:\ (parent.height\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ rotation:\ \ control.expanded\ ?\ 0\ :\ (control.mirrored\ ?\ 90\ :\ -\/90)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ source:\ "{}qrc:/qt-\/project.org/imports/QtQuick/Controls/Fusion/images/arrow.png"{}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.palette.windowText}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ defaultColor:\ "{}\#353637"{}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00050}00050\ \ \ \ \ background:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ implicitHeight:\ 24\ //\ same\ as\ Button.qml}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ color:\ control.highlighted}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ control.palette.highlight}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ (control.treeView.alternatingRows\ \&\&\ control.row\ \%\ 2\ !==\ 0}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ control.palette.alternateBase\ :\ control.palette.base)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00058}00058\ \ \ \ \ contentItem:\ Label\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ text:\ control.model.display}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ elide:\ Text.ElideRight}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ visible:\ !control.editing}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00064}00064\ \ \ \ \ //\ The\ edit\ delegate\ is\ a\ separate\ component,\ and\ doesn't\ need}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00065}00065\ \ \ \ \ //\ to\ follow\ the\ same\ strict\ rules\ that\ are\ applied\ to\ a\ control.}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00066}00066\ \ \ \ \ //\ qmllint\ disable\ attached-\/property-\/reuse}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00067}00067\ \ \ \ \ //\ qmllint\ disable\ controls-\/attached-\/property-\/reuse}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00068}00068\ \ \ \ \ //\ qmllint\ disable\ controls-\/sanity}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00069}00069\ \ \ \ \ TableView.editDelegate:\ FocusScope\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00070}00070\ \ \ \ \ \ \ \ \ width:\ parent.width}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00071}00071\ \ \ \ \ \ \ \ \ height:\ parent.height}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00073}00073\ \ \ \ \ \ \ \ \ readonly\ property\ int\ \_\_role:\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ let\ model\ =\ control.treeView.model}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ let\ index\ =\ control.treeView.index(row,\ column)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ let\ editText\ =\ model.data(index,\ Qt.EditRole)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ return\ editText\ !==\ undefined\ ?\ Qt.EditRole\ :\ Qt.DisplayRole}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00080}00080\ \ \ \ \ \ \ \ \ TextField\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ id:\ textField}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ control.contentItem.x}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ y:\ (parent.height\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ control.contentItem.width}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ text:\ control.treeView.model.data(control.treeView.index(row,\ column),\ \_\_role)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ focus:\ true}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00089}00089\ \ \ \ \ \ \ \ \ TableView.onCommit:\ \{}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ let\ index\ =\ TableView.view.index(row,\ column)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ TableView.view.model.setData(index,\ textField.text,\ \_\_role)}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00094}00094\ \ \ \ \ \ \ \ \ Component.onCompleted:\ textField.selectAll()}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00095}00095\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00096}00096\ \ \ \ \ //\ qmllint\ enable\ attached-\/property-\/reuse}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00097}00097\ \ \ \ \ //\ qmllint\ enable\ controls-\/attached-\/property-\/reuse}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00098}00098\ \ \ \ \ //\ qmllint\ enable\ controls-\/sanity}
+\DoxyCodeLine{\Hypertarget{_fusion_2_tree_view_delegate_8qml_source_l00099}00099\ \}}
+
+\end{DoxyCode}

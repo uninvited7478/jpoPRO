@@ -1,0 +1,97 @@
+\doxysection{Button\+Background.\+qml}
+\hypertarget{_button_background_8qml_source}{}\label{_button_background_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/FluentWinUI3/impl/ButtonBackground.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/FluentWinUI3/impl/ButtonBackground.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2024\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00005}00005\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00006}00006\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00009}00009\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00010}00010\ \ \ \ \ id:\ buttonBackground}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00012}00012\ \ \ \ \ visible:\ (control.enabled\ \&\&\ control.hovered)\ ||\ control.down\ ||\ accented\ ||\ !subtle}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00014}00014\ \ \ \ \ required\ property\ T.AbstractButton\ control}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00015}00015\ \ \ \ \ property\ bool\ subtle:\ false}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00016}00016\ \ \ \ \ property\ bool\ accented:\ control.highlighted\ ||\ control.checked}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00018}00018\ \ \ \ \ readonly\ property\ bool\ lightScheme:\ Application.styleHints.colorScheme\ ===\ Qt.Light}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00020}00020\ \ \ \ \ readonly\ property\ bool\ hasSolidStroke:\ !subtle\ \&\&\ (control.down\ ||\ (!control.enabled\ \&\&\ !accented)\ ||\ (!lightScheme\ \&\&\ !accented))}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00021}00021\ \ \ \ \ readonly\ property\ bool\ hasGradientStroke:\ !hasSolidStroke\ \&\&\ !subtle\ \&\&\ control.enabled}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00022}00022\ \ \ \ \ readonly\ property\ color\ defaultStrokeColor:\ accented\ ?\ Qt.tint(control.palette.accent,\ control.palette.light)\ :\ control.palette.midlight}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00023}00023\ \ \ \ \ readonly\ property\ color\ secondaryStrokeColor:\ accented\ ?\ Qt.tint(control.palette.accent,\ control.palette.mid)\ :\ control.palette.dark}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00024}00024\ \ \ \ \ readonly\ property\ color\ backgroundColor:\ \{}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ if\ (accented)\ \{}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (control.enabled\ \&\&\ control.down)\ \{}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (lightScheme)}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ Qt.tint(control.palette.accent,\ Color.transparent("{}white"{},\ 0.2))}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ Qt.tint(control.palette.accent,\ Color.transparent("{}black"{},\ 0.2))}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (control.enabled\ \&\&\ control.hovered)\ \{}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (lightScheme)}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ Qt.tint(control.palette.accent,\ Color.transparent("{}white"{},\ 0.1))}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ Qt.tint(control.palette.accent,\ Color.transparent("{}black"{},\ 0.1))}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ return\ control.palette.accent}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ if\ (subtle)\ \{}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (control.down)}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ lightScheme\ ?\ Color.transparent("{}black"{},\ 0.02)\ :\ Color.transparent("{}white"{},\ 0.04)}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (control.hovered)}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ lightScheme\ ?\ Color.transparent("{}black"{},\ 0.04)\ :\ Color.transparent("{}white"{},\ 0.06)}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ if\ (control.down)\ \{}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (lightScheme)\ \{}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ Qt.rgba(control.palette.button.r\ *\ 0.97,\ control.palette.button.g\ *\ 0.97,\ control.palette.button.b\ *\ 0.97,\ 0.3)}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ else\ \{}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ Color.transparent(control.palette.button,\ 0.03)}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ \}\ else\ if\ (control.enabled\ \&\&\ control.hovered)\ \{}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (lightScheme)\ \{}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ Qt.rgba(control.palette.button.r\ *\ 0.97,\ control.palette.button.g\ *\ 0.97,\ control.palette.button.b\ *\ 0.97,\ 0.5)}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ else\ \{}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ Color.transparent(control.palette.button,\ 0.08)}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00060}00060\ \ \ \ \ \ \ \ \ \}\ else\ \{}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ return\ control.palette.button}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00062}00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00065}00065\ \ \ \ \ gradient:\ Gradient\ \{}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00066}00066\ \ \ \ \ \ \ \ \ GradientStop\ \{}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ position:\ 0}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ hasGradientStroke\ ?\ defaultStrokeColor\ :\ "{}transparent"{}}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00070}00070\ \ \ \ \ \ \ \ \ GradientStop\ \{}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ position:\ 0.91}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ hasGradientStroke\ ?\ defaultStrokeColor\ :\ "{}transparent"{}}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00074}00074\ \ \ \ \ \ \ \ \ GradientStop\ \{}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ position:\ 1.0}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ hasGradientStroke\ ?\ secondaryStrokeColor\ :\ "{}transparent"{}}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00080}00080\ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00081}00081\ \ \ \ \ \ \ \ \ x:\ !buttonBackground.hasGradientStroke\ ?\ 0\ :\ border.width}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00082}00082\ \ \ \ \ \ \ \ \ y:\ !buttonBackground.hasGradientStroke\ ?\ 0\ :\ border.width}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00083}00083\ \ \ \ \ \ \ \ \ width:\ !buttonBackground.hasGradientStroke\ ?\ parent.width\ :\ parent.width\ -\/\ border.width\ *\ 2}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00084}00084\ \ \ \ \ \ \ \ \ height:\ !buttonBackground.hasGradientStroke\ ?\ parent.height\ :\ parent.height\ -\/\ border.width\ *\ 2}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00085}00085\ \ \ \ \ \ \ \ \ radius:\ !buttonBackground.hasGradientStroke\ ?\ buttonBackground.radius\ :\ buttonBackground.radius\ -\/\ border.width}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00086}00086\ \ \ \ \ \ \ \ \ border.width:\ 1}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00087}00087\ \ \ \ \ \ \ \ \ border.color:\ buttonBackground.hasGradientStroke\ ||\ buttonBackground.subtle\ ||\ (buttonBackground.accented\ \&\&\ (!control.enabled\ ||\ control.down))}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ "{}transparent"{}\ :\ buttonBackground.defaultStrokeColor}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00089}00089\ \ \ \ \ \ \ \ \ color:\ buttonBackground.backgroundColor}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_button_background_8qml_source_l00091}00091\ \}}
+
+\end{DoxyCode}

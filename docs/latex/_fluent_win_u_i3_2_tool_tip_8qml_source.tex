@@ -1,0 +1,65 @@
+\doxysection{Tool\+Tip.\+qml}
+\hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source}{}\label{_fluent_win_u_i3_2_tool_tip_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/FluentWinUI3/ToolTip.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/FluentWinUI3/ToolTip.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2024\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00005}00005\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00006}00006\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00007}00007\ import\ QtQuick.Effects}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00009}00009\ T.ToolTip\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00010}00010\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00012}00012\ \ \ \ \ x:\ parent\ ?\ (parent.width\ -\/\ implicitWidth)\ /\ 2\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00013}00013\ \ \ \ \ y:\ -\/implicitHeight}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00015}00015\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00017}00017\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00020}00020\ \ \ \ \ padding:\ 8}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00022}00022\ \ \ \ \ topInset:\ -\/8}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00023}00023\ \ \ \ \ bottomInset:\ -\/8}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00024}00024\ \ \ \ \ leftInset:\ -\/8}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00025}00025\ \ \ \ \ rightInset:\ -\/8}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00027}00027\ \ \ \ \ closePolicy:\ T.Popup.CloseOnEscape\ |\ T.Popup.CloseOnPressOutsideParent\ |\ T.Popup.CloseOnReleaseOutsideParent}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00029}00029\ \ \ \ \ contentItem:\ Text\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ text:\ control.text}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ font:\ control.font}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ wrapMode:\ Text.Wrap}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ color:\ control.palette.toolTipText}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00036}00036\ \ \ \ \ background:\ Item\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ MultiEffect\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ -\/control.leftInset}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ y:\ -\/control.topInset}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ source.width}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ source.height}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ source:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width:\ control.background.width\ +\ control.leftInset\ +\ control.rightInset}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitHeight:\ 30}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ height:\ control.background.height\ +\ control.topInset\ +\ control.bottomInset}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.palette.toolTipBase}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ border.width:\ 1}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ border.color:\ Application.styleHints.colorScheme\ ===\ Qt.Light\ ?\ control.palette.midlight\ :\ Color.transparent(control.palette.shadow,\ 0.2)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ radius:\ 4}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ shadowOpacity:\ Application.styleHints.colorScheme\ ===\ Qt.Light\ ?\ 0.14\ :\ 0.26}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ shadowColor:\ control.palette.shadow}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ shadowEnabled:\ true}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ shadowHorizontalOffset:\ 0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ shadowVerticalOffset:\ 4}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ blurMax:\ 32}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_tip_8qml_source_l00059}00059\ \}}
+
+\end{DoxyCode}

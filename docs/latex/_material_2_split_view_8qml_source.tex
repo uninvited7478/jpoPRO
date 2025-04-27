@@ -1,0 +1,46 @@
+\doxysection{Split\+View.\+qml}
+\hypertarget{_material_2_split_view_8qml_source}{}\label{_material_2_split_view_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/SplitView.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/SplitView.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2018\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00006}00006\ import\ QtQuick.Controls.impl}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00007}00007\ import\ QtQuick.Controls.Material}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00009}00009\ T.SplitView\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00010}00010\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00011}00011\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00013}00013\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00016}00016\ \ \ \ \ handle:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00017}00017\ \ \ \ \ \ \ \ \ implicitWidth:\ control.orientation\ ===\ Qt.Horizontal\ ?\ 6\ :\ control.width}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00018}00018\ \ \ \ \ \ \ \ \ implicitHeight:\ control.orientation\ ===\ Qt.Horizontal\ ?\ control.height\ :\ 6}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00019}00019\ \ \ \ \ \ \ \ \ color:\ T.SplitHandle.pressed\ ?\ control.Material.background}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ :\ Qt.lighter(control.Material.background,\ T.SplitHandle.hovered\ ?\ 1.2\ :\ 1.1)}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00022}00022\ \ \ \ \ \ \ \ \ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ color:\ control.Material.secondaryTextColor}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ width:\ control.orientation\ ===\ Qt.Horizontal\ ?\ thickness\ :\ length}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ height:\ control.orientation\ ===\ Qt.Horizontal\ ?\ length\ :\ thickness}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ radius:\ thickness}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ x:\ (parent.width\ -\/\ width)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ y:\ (parent.height\ -\/\ height)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ property\ int\ length:\ parent.T.SplitHandle.pressed\ ?\ 3\ :\ 8}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ readonly\ property\ int\ thickness:\ parent.T.SplitHandle.pressed\ ?\ 3\ :\ 1}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ Behavior\ on\ length\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NumberAnimation\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ duration:\ 100}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_split_view_8qml_source_l00040}00040\ \}}
+
+\end{DoxyCode}

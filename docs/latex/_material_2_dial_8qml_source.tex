@@ -1,0 +1,59 @@
+\doxysection{Dial.\+qml}
+\hypertarget{_material_2_dial_8qml_source}{}\label{_material_2_dial_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/Dial.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/Material/Dial.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2017\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00006}00006\ import\ QtQuick.Controls.Material}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00007}00007\ import\ QtQuick.Controls.Material.impl}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00009}00009\ T.Dial\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00010}00010\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00012}00012\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00014}00014\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00017}00017\ \ \ \ \ background:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00018}00018\ \ \ \ \ \ \ \ \ implicitWidth:\ 100}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00019}00019\ \ \ \ \ \ \ \ \ implicitHeight:\ 100}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00021}00021\ \ \ \ \ \ \ \ \ x:\ control.width\ /\ 2\ -\/\ width\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00022}00022\ \ \ \ \ \ \ \ \ y:\ control.height\ /\ 2\ -\/\ height\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00023}00023\ \ \ \ \ \ \ \ \ width:\ Math.max(64,\ Math.min(control.width,\ control.height))}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00024}00024\ \ \ \ \ \ \ \ \ height:\ width}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ color:\ "{}transparent"{}}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ radius:\ width\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00028}00028\ \ \ \ \ \ \ \ \ border.color:\ control.enabled\ ?\ control.Material.accentColor\ :\ control.Material.hintTextColor}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00031}00031\ \ \ \ \ handle:\ SliderHandle\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00032}00032\ \ \ \ \ \ \ \ \ x:\ control.background.x\ +\ control.background.width\ /\ 2\ -\/\ width\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00033}00033\ \ \ \ \ \ \ \ \ y:\ control.background.y\ +\ control.background.height\ /\ 2\ -\/\ height\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00034}00034\ \ \ \ \ \ \ \ \ transform:\ [}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ Translate\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y:\ -\/control.background.height\ *\ 0.4}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ (control.handle\ ?\ control.handle.height\ /\ 2\ :\ 0)}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ Rotation\ \{}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ angle:\ control.angle}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ origin.x:\ control.handle\ ?\ control.handle.width\ /\ 2\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ origin.y:\ control.handle\ ?\ control.handle.height\ /\ 2\ :\ 0}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00044}00044\ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00045}00045\ \ \ \ \ \ \ \ \ implicitWidth:\ 10}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00046}00046\ \ \ \ \ \ \ \ \ implicitHeight:\ 10}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00048}00048\ \ \ \ \ \ \ \ \ value:\ control.value}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00049}00049\ \ \ \ \ \ \ \ \ handleHasFocus:\ control.visualFocus}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00050}00050\ \ \ \ \ \ \ \ \ handlePressed:\ control.pressed}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00051}00051\ \ \ \ \ \ \ \ \ handleHovered:\ control.hovered}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_material_2_dial_8qml_source_l00053}00053\ \}}
+
+\end{DoxyCode}

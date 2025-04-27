@@ -1,0 +1,38 @@
+\doxysection{api\+\_\+client.\+h}
+\hypertarget{api__client_8h_source}{}\label{api__client_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ API\_CLIENT\_H}}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ API\_CLIENT\_H}}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <QNetworkAccessManager>}}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <QNetworkReply>}}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00015}\mbox{\hyperlink{class_api_client}{00015}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_api_client_a7ac17ab761c4ee56fa63802573b343e3}{ApiClient}}\ :\ \textcolor{keyword}{public}\ QObject\ \{}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00016}00016\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00017}00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_api_client_a7ac17ab761c4ee56fa63802573b343e3}{ApiClient}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00027}00027\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_ae81dff8f0fb995816b7ee6c4071ee439}{fetchStations}}();}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00033}00033\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_ad7d84fea01915462dfefadd62ad98d79}{fetchSensors}}(\textcolor{keywordtype}{int}\ stationId);}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00039}00039\ \ \ \ \ Q\_INVOKABLE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_a4bdea3687c8e0d9d1b2b55acb470ff59}{fetchSensorData}}(\textcolor{keywordtype}{int}\ sensorId);}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00041}00041\ signals:}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_a364d1d611a212837c985986a82b5ea61}{stationsReady}}(QJsonArray\ stations);}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_a7e9ff3fc3bb6e23a426d788f6edcc6aa}{sensorsReady}}(QJsonArray\ sensors);}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_ac26492a438b75829ef1dc3294036aa8b}{sensorDataReady}}(QJsonArray\ values);}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_api_client_a9ff5389548d177bceea7cb05f3d9eaaa}{errorOccurred}}(QString\ message);}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00058}00058\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00059}00059\ \ \ \ \ QNetworkAccessManager\ manager;\ }
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00060}00060\ \};}
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{api__client_8h_source_l00062}00062\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

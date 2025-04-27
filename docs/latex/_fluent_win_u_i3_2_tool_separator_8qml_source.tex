@@ -1,0 +1,34 @@
+\doxysection{Tool\+Separator.\+qml}
+\hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source}{}\label{_fluent_win_u_i3_2_tool_separator_8qml_source}\index{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/FluentWinUI3/ToolSeparator.qml@{build/Desktop\_Qt\_6\_9\_0\_MinGW\_64\_bit-\/Debug/qml/QtQuick/Controls/FluentWinUI3/ToolSeparator.qml}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00001}00001\ //\ Copyright\ (C)\ 2024\ The\ Qt\ Company\ Ltd.}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00002}00002\ //\ SPDX-\/License-\/Identifier:\ LicenseRef-\/Qt-\/Commercial\ OR\ LGPL-\/3.0-\/only\ OR\ GPL-\/2.0-\/only\ OR\ GPL-\/3.0-\/only}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00004}00004\ import\ QtQuick}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00005}00005\ import\ QtQuick.Templates\ as\ T}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00007}00007\ T.ToolSeparator\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00008}00008\ \ \ \ \ id:\ control}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00010}00010\ \ \ \ \ implicitWidth:\ Math.max(implicitBackgroundWidth\ +\ leftInset\ +\ rightInset,}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00011}00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentWidth\ +\ leftPadding\ +\ rightPadding)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00012}00012\ \ \ \ \ implicitHeight:\ Math.max(implicitBackgroundHeight\ +\ topInset\ +\ bottomInset,}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ implicitContentHeight\ +\ topPadding\ +\ bottomPadding)}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00015}00015\ \ \ \ \ padding:\ 2}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00016}00016\ \ \ \ \ topPadding:\ vertical\ ?\ config.topPadding\ :\ padding}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00017}00017\ \ \ \ \ bottomPadding:\ vertical\ ?\ config.bottomPadding\ :\ padding}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00018}00018\ \ \ \ \ leftPadding:\ vertical\ ?\ padding\ :\ config.topPadding}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00019}00019\ \ \ \ \ rightPadding:\ vertical\ ?\ padding\ :\ config.bottomPadding}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00021}00021\ \ \ \ \ readonly\ property\ var\ config:\ Config.controls.toolbutton["{}normal"{}]\ ||\ \{\}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00023}00023\ \ \ \ \ contentItem:\ Rectangle\ \{}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00024}00024\ \ \ \ \ \ \ \ \ implicitWidth:\ control.vertical\ ?\ 1\ :\ control.config.background.height}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00025}00025\ \ \ \ \ \ \ \ \ implicitHeight:\ control.vertical\ ?\ control.config.background.height\ :\ 1}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00026}00026\ \ \ \ \ \ \ \ \ color:\ Application.styleHints.colorScheme\ ===\ Qt.Light\ ?\ "{}\#0F000000"{}\ :\ "{}\#15FFFFFF"{}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fluent_win_u_i3_2_tool_separator_8qml_source_l00028}00028\ \}}
+
+\end{DoxyCode}
